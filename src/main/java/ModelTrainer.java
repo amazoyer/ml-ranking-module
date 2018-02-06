@@ -32,12 +32,18 @@ import org.apache.solr.common.SolrDocumentList;
 import org.json.JSONObject;
 import org.junit.Assert;
 
-
 public class ModelTrainer {
-	SolrClient client = new HttpSolrClient.Builder("http://localhost:8983/solr/techproducts").build();
-
+	SolrClient client;
 	Logger logger = Logger.getLogger(ModelTrainer.class.getName());
 
+	public ModelTrainer(SolrClient client){
+		this.client = client;
+	}
+	
+	public ModelTrainer(){
+		
+	}
+	
 	
 	public final String store = "_DEFAULT_";
 	public final String efiUserQuery = "efi.user_query";
@@ -50,16 +56,17 @@ public class ModelTrainer {
 
 	public SolrQuery generateSolrQuery(String queryStr, String docId) {
 		SolrQuery query = new SolrQuery(queryStr);
-		query.addFilterQuery("id:("+docId+")");
+		query.addFilterQuery("id:(" + docId + ")");
 		query.addField("id");
 		query.addField("score");
-		//query.addField("[features store=" + store + " " + efiUserQuery + "=\'\\\'" + efiQuery + "\\\'\']");
+		// query.addField("[features store=" + store + " " + efiUserQuery +
+		// "=\'\\\'" + efiQuery + "\\\'\']");
 		query.addField("[features]");
 		return query;
 	}
 
-	public Iterable<String> getQueries() {
-		InputStream in = ModelTrainer.class.getResourceAsStream("user_queries.txt");
+	public Iterable<String> getLine(String fileName) {
+		InputStream in = TrainerTest.class.getResourceAsStream(fileName);
 		BufferedReader readerIn = new BufferedReader(new InputStreamReader(in));
 		return new Iterable<String>() {
 			@Override
@@ -113,7 +120,7 @@ public class ModelTrainer {
 	}
 
 	public List<TrainingEntry> getTrainingEntries() throws SolrServerException, IOException {
-		Iterator<String> queryIterator = getQueries().iterator();
+		Iterator<String> queryIterator = this.getLine("user_queries.txt").iterator();
 		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
 		while (queryIterator.hasNext()) {
 			String[] userQuerySplitted = queryIterator.next().split("\\|");
@@ -125,20 +132,18 @@ public class ModelTrainer {
 			SolrQuery query = generateSolrQuery(queryStr, docid);
 			QueryResponse response = sendQuery(query);
 			SolrDocumentList results = response.getResults();
-			if (results.size() == 1){
+			if (results.size() == 1) {
 				String featuresValues = (String) results.get(0).getFieldValue("[features]");
-				Map<String, Double> features = Arrays.stream(featuresValues.split(",")).collect(Collectors.toMap(entry -> (String)entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1])));
+				Map<String, Double> features = Arrays.stream(featuresValues.split(",")).collect(Collectors.toMap(
+						entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1])));
 				trainingEntries.add(new TrainingEntry(queryStr, docid, features, score, type));
-				
 			} else {
-				logger.log(Level.WARNING, "Got "+results.size() + " results for query "+query.toQueryString());
+				logger.log(Level.WARNING, "Got " + results.size() + " results for query " + query.toQueryString());
 			}
-			
+
 		}
-		
+
 		return trainingEntries;
 	}
-
-
 
 }

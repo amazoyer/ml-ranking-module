@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -7,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import ciir.umass.edu.eval.Evaluator;
 import ciir.umass.edu.features.FeatureManager;
@@ -24,29 +29,33 @@ import ciir.umass.edu.utilities.SimpleMath;
 
 public class InMemoryIOEvaluator extends Evaluator {
 
-	private LinkedHashSet<String> queries = new LinkedHashSet<String>();
-	private LinkedHashSet<String> features = new LinkedHashSet<String>();
+	private Map<String, Integer> queries = new HashMap<String, Integer>();
+	private Map<String, Integer> features = new HashMap<String, Integer>();
+
+	private int getId(String newEntry, Map<String, Integer> container) {
+		if (!container.containsKey(newEntry)) {
+			int id = container.size() + 1;
+			container.put(newEntry, id);
+			return id;
+		} else {
+			return container.get(newEntry);
+		}
+	}
 
 	public int getQueryID(String query) {
-		if (!queries.contains(query)) {
-			queries.add(query);
-		}
-		return queries.size();
+		return getId(query, queries);
+
 	}
 
 	public int getFeatureID(String feature) {
-		if (!features.contains(feature)) {
-			features.add(feature);
-		}
-		return features.size();
+		return getId(feature, features);
 	}
 
-	public InMemoryIOEvaluator(String trainMetric, String testMetric) {
-		super(RANKER_TYPE.LAMBDAMART, trainMetric, testMetric);
+	public InMemoryIOEvaluator(String metric) {
+		super(RANKER_TYPE.LAMBDAMART, metric, metric);
 	}
 
-
-	public String evaluate(List<RankList> train, List<RankList> validation, List<RankList> test) {
+	public String evaluate(List<RankList> train, List<RankList> validation, List<RankList> test) throws IOException, SAXException, ParserConfigurationException {
 		int[] features = FeatureManager.getFeatureFromSampleVector(train);
 		if (normalize) {
 			normalize(train, features);
@@ -64,20 +73,13 @@ public class InMemoryIOEvaluator extends Evaluator {
 			System.out.println(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
 		}
 
-		
-
 		if (test != null) {
 			double rankScore = evaluate(ranker, test);
 			System.out.println(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
 		}
-		if (modelFile.compareTo("") != 0) {
-			System.out.println("");
-			ranker.save(modelFile);
-			System.out.println("Model saved to: " + modelFile);
-		}
-		
-		return null;
-		//return new SolrLTROutputEnsemble(ranker.getEnsemble()).toSolrLtrJsonOuput();
+	
+
+		return new SolrLTROutputEnsemble(ranker.getEnsemble(), this.features).toSolrLtrJsonOuput();
 
 	}
 
@@ -144,6 +146,10 @@ public class InMemoryIOEvaluator extends Evaluator {
 		return trainingEntry.getScore().toString() + SEPARATOR + "qid:" + getQueryID(trainingEntry.getQuery())
 				+ SEPARATOR + flattenFeatures + SEPARATOR + "#" + SEPARATOR + trainingEntry.getDocid() + SEPARATOR
 				+ trainingEntry.getQuery();
+	}
+
+	public void setNTrees(int i) {
+		LambdaMART.nTrees = 1;
 	}
 
 }

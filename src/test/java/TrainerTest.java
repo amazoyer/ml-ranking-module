@@ -1,32 +1,29 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URLDecoder;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.solr.client.solrj.SolrQuery;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.response.QueryResponse;
-import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.xml.sax.SAXException;
+import junit.framework.TestCase;
 
-import ciir.umass.edu.eval.Evaluator;
-import ciir.umass.edu.learning.RANKER_TYPE;
-import ciir.umass.edu.learning.tree.LambdaMART;
-import ciir.umass.edu.metric.MetricScorer;
-import ciir.umass.edu.metric.MetricScorerFactory;
-import ciir.umass.edu.metric.NDCGScorer;
+public class TrainerTest extends TestCase {
 
-public class TrainerTest {
+	
 
 	@Test
 	public void readConfig() throws IOException {
@@ -37,13 +34,13 @@ public class TrainerTest {
 
 	@Test
 	public void sendSolrQueries() throws IOException, SolrServerException {
-		ModelTrainer trainer = new ModelTrainer();
 
 	}
 
 	@Test
 	public void sendModel() throws IOException, ParseException {
 		ModelTrainer trainer = new ModelTrainer();
+
 		JSONParser parser = new JSONParser();
 		InputStream in = TrainerTest.class.getResourceAsStream("features.json");
 		Object obj = parser.parse(new InputStreamReader(in));
@@ -54,6 +51,7 @@ public class TrainerTest {
 	@Test
 	public void getFeaturesTest() throws IOException, ParseException, SolrServerException {
 		ModelTrainer trainer = new ModelTrainer();
+
 		List<TrainingEntry> trainingEntries = trainer.getTrainingEntries();
 		for (TrainingEntry trainingEntry : trainingEntries) {
 		}
@@ -62,13 +60,13 @@ public class TrainerTest {
 
 	@Ignore
 	public void buildQuerySolr() throws IOException {
-
 		InputStream out = ModelTrainer.class.getResourceAsStream("expected_queries_output.txt");
-		ModelTrainer trainer = new ModelTrainer();
 		BufferedReader readerOut = new BufferedReader(new InputStreamReader(out));
 		URLDecoder decoder = new URLDecoder();
 		String userQueryOut = null;
-		Iterator<String> queryIterator = trainer.getQueries().iterator();
+		ModelTrainer trainer = new ModelTrainer();
+
+		Iterator<String> queryIterator = trainer.getLine("user_queries.txt").iterator();
 		while (queryIterator.hasNext()) {
 			userQueryOut = readerOut.readLine();
 			String[] userQuerySplitted = queryIterator.next().split("\\|");
@@ -80,14 +78,40 @@ public class TrainerTest {
 	}
 
 	@Test
-	public void testTrain() throws SolrServerException, IOException {
-		ModelTrainer trainer = new ModelTrainer();
+	public void testTrain() throws SolrServerException, IOException, SAXException, ParserConfigurationException {
+
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("solrhome_test").getFile());
+		EmbeddedSolrServer server = new EmbeddedSolrServer(file.toPath(), "techproducts");
+	
+		
+		ModelTrainer trainer = new ModelTrainer(server);
+
 		List<TrainingEntry> trainingEntries = trainer.getTrainingEntries();
-		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10", "NDCG@10");
-		LambdaMART.nTrees = 10;
-		evaluator.modelFile = "d:\\temp2.txt";
+		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
+		evaluator.setNTrees(1);
 		String result = evaluator.evaluate(evaluator.readInput(trainingEntries, false, false), null, null);
 		System.out.println(result);
+		server.close();
+
+	}
+
+	@Test
+	public void testConvert() throws SolrServerException, IOException {
+
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("solrhome_test").getFile());
+		EmbeddedSolrServer server = new EmbeddedSolrServer(file.toPath(), "techproducts");
+		ModelTrainer trainer = new ModelTrainer(server);
+		List<TrainingEntry> trainingEntries = trainer.getTrainingEntries();
+		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
+		Iterator<String> expectedEntries = trainer.getLine("expected_training_entry.txt").iterator();
+		trainingEntries.stream().map(evaluator::convertToLambdaMARTFormat).forEach(entry -> {
+			Assert.assertTrue(expectedEntries.hasNext());
+			Assert.assertEquals(expectedEntries.next(), entry);
+		});
+		server.close();
+
 	}
 
 }
