@@ -16,7 +16,7 @@ public class TestRDD extends AbstractTest {
 	@Inject
 	private DatafariUsageDao dud;
 
-	@Ignore
+	@Test
 	public void getNumFavoritePerdocument() throws InterruptedException {
 		dud.getNumFavoritePerdocument().foreach(TestRDD::printEntry);
 	}
