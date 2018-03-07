@@ -22,9 +22,6 @@ import org.xml.sax.SAXException;
 import junit.framework.TestCase;
 
 public class TrainerTest extends TestCase {
-
-	
-
 	@Test
 	public void readConfig() throws IOException {
 		ModelTrainer trainer = new ModelTrainer();
@@ -40,12 +37,10 @@ public class TrainerTest extends TestCase {
 	@Test
 	public void sendModel() throws IOException, ParseException {
 		ModelTrainer trainer = new ModelTrainer();
-
 		JSONParser parser = new JSONParser();
 		InputStream in = TrainerTest.class.getResourceAsStream("features.json");
 		Object obj = parser.parse(new InputStreamReader(in));
 		trainer.sendModel(obj.toString());
-
 	}
 
 	@Test
@@ -79,26 +74,20 @@ public class TrainerTest extends TestCase {
 
 	@Test
 	public void testTrain() throws SolrServerException, IOException, SAXException, ParserConfigurationException {
-
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("solrhome_test").getFile());
 		EmbeddedSolrServer server = new EmbeddedSolrServer(file.toPath(), "techproducts");
-	
-		
 		ModelTrainer trainer = new ModelTrainer(server);
-
 		List<TrainingEntry> trainingEntries = trainer.getTrainingEntries();
 		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
 		evaluator.setNTrees(1);
 		String result = evaluator.evaluate(evaluator.readInput(trainingEntries, false, false), null, null);
 		System.out.println(result);
 		server.close();
-
 	}
 
 	@Test
 	public void testConvert() throws SolrServerException, IOException {
-
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("solrhome_test").getFile());
 		EmbeddedSolrServer server = new EmbeddedSolrServer(file.toPath(), "techproducts");
@@ -111,7 +100,5 @@ public class TrainerTest extends TestCase {
 			Assert.assertEquals(expectedEntries.next(), entry);
 		});
 		server.close();
-
 	}
-
 }

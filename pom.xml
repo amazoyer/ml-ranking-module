@@ -6,47 +6,47 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>LTR Module</name>
 	<dependencies>
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.spark</groupId> -->
-		<!-- <artifactId>spark-core_2.11</artifactId> -->
-		<!-- <exclusions> -->
-		<!-- <exclusion> -->
-		<!-- <groupId>io.dropwizard.metrics</groupId> -->
-		<!-- <artifactId>metrics-core</artifactId> -->
-		<!-- </exclusion> -->
-		<!-- </exclusions> -->
-		<!-- <version>2.0.1</version> -->
-		<!-- </dependency> -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.spark</groupId> -->
-		<!-- <artifactId>spark-streaming_2.11</artifactId> -->
-		<!-- <version>2.0.1</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>io.dropwizard.metrics</groupId>
+					<artifactId>metrics-core</artifactId>
+				</exclusion>
+			</exclusions>
+			<version>2.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.11</artifactId>
+			<version>2.0.1</version>
+		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.datastax.spark</groupId> -->
-		<!-- <artifactId>spark-cassandra-connector_2.11</artifactId> -->
-		<!-- <version>2.0.1</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.11</artifactId>
+			<version>2.0.1</version>
+		</dependency>
 
-	<dependency>
-		<groupId>com.googlecode.json-simple</groupId>
-		<artifactId>json-simple</artifactId>
-		<version>1.1.1</version>
-	</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.datastax.spark</groupId> -->
-		<!-- <artifactId>spark-cassandra-connector-java_2.11</artifactId> -->
-		<!-- <version>1.5.2</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector-java_2.11</artifactId>
+			<version>1.5.2</version>
+		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.spark</groupId> -->
-		<!-- <artifactId>spark-sql_2.11</artifactId> -->
-		<!-- <version>2.0.1</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.11</artifactId>
+			<version>2.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -65,11 +65,11 @@
 
 
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.lucidworks.spark</groupId> -->
-		<!-- <artifactId>spark-solr</artifactId> -->
-		<!-- <version>3.4.0</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.lucidworks.spark</groupId>
+			<artifactId>spark-solr</artifactId>
+			<version>3.4.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.json</groupId>
@@ -93,6 +93,24 @@
 
 
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core -->
+			<dependency>
+				<groupId>io.dropwizard.metrics</groupId>
+				<artifactId>metrics-core</artifactId>
+				<version>3.2.2</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.5</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 
