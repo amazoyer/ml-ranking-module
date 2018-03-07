@@ -1,3 +1,5 @@
+package com.datafari.ranking;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,8 +31,11 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Assert;
+
+import com.datafari.ranking.model.TrainingEntry;
 
 public class ModelTrainer {
 	SolrClient client;
@@ -48,7 +53,7 @@ public class ModelTrainer {
 	public final String store = "_DEFAULT_";
 	public final String efiUserQuery = "efi.user_query";
 
-	public JSONObject parseConfig(String configFileName) throws IOException {
+	public JSONObject parseConfig(String configFileName) throws IOException, JSONException {
 		InputStream is = ModelTrainer.class.getResourceAsStream(configFileName);
 		String jsonTxt = IOUtils.toString(is);
 		return new JSONObject(jsonTxt);
@@ -66,7 +71,7 @@ public class ModelTrainer {
 	}
 
 	public Iterable<String> getLine(String fileName) {
-		InputStream in = TrainerTest.class.getResourceAsStream(fileName);
+		InputStream in = ModelTrainer.class.getResourceAsStream(fileName);
 		BufferedReader readerIn = new BufferedReader(new InputStreamReader(in));
 		return new Iterable<String>() {
 			@Override

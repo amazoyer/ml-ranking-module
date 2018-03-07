@@ -1,3 +1,6 @@
+package com.datafari.ranking;
+
+
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

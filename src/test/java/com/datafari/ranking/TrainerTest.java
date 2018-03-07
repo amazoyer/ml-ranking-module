@@ -1,3 +1,6 @@
+package com.datafari.ranking;
+
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -19,11 +23,14 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.xml.sax.SAXException;
+
+import com.datafari.ranking.model.TrainingEntry;
+
 import junit.framework.TestCase;
 
 public class TrainerTest extends TestCase {
 	@Test
-	public void readConfig() throws IOException {
+	public void readConfig() throws IOException, JSONException {
 		ModelTrainer trainer = new ModelTrainer();
 		JSONObject config = trainer.parseConfig("config.json");
 		Assert.assertEquals("localhost", config.get("host"));

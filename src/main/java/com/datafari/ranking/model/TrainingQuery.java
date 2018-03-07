@@ -1,3 +1,4 @@
+package com.datafari.ranking.model;
 
 
 public class TrainingQuery {

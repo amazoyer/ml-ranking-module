@@ -1,3 +1,6 @@
+package com.datafari.ranking;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +15,8 @@ import java.util.stream.Collectors;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
+
+import com.datafari.ranking.model.TrainingEntry;
 
 import ciir.umass.edu.eval.Evaluator;
 import ciir.umass.edu.features.FeatureManager;

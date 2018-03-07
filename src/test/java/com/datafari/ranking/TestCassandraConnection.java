@@ -1,3 +1,5 @@
+package com.datafari.ranking;
+
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
 
 import java.io.IOException;

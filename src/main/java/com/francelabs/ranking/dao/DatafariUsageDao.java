@@ -13,14 +13,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
@@ -33,20 +34,23 @@ import com.lucidworks.spark.rdd.SolrJavaRDD;
 import scala.Tuple2;
 import scala.Tuple3;
 
+
+@Named
 public class DatafariUsageDao {
 
-	private static JavaSparkContext sparkContext;
-	private static CloudSolrClient solrClient;
+	@Inject
+	private SparkContextProvider sparkContextProvider;
+	
+	@Inject
+	private SolrClientProvider solrClientProvider;
+
+	
+	
 	private static String DATAFARI_CASSANDRA_TABLE = "datafari";
 	private static String DATAFARI_RANKING_TABLE = "ranking";
 
-	public DatafariUsageDao(JavaSparkContext sparkContext, CloudSolrClient solrClient) {
-		this.sparkContext = sparkContext;
-		this.solrClient = solrClient;
-	}
-
 	public JavaRDD<Tuple2<String, Tuple2<Double, Double>>> getNumFavoritePerdocument() throws InterruptedException {
-		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContext)
+		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext())
 				.cassandraTable(DATAFARI_CASSANDRA_TABLE, DATAFARI_RANKING_TABLE)
 				.select("request", "document_id", "ranking");
 
@@ -55,9 +59,20 @@ public class DatafariUsageDao {
 				.mapToPair(SparkFunctions.mapForEvaluation).reduceByKey(SparkFunctions.reducer).cache();
 		return result.map(calculateScore);
 	}
+//	
+//	public JavaPairRDD<String, Tuple2<List<String>, List<String>>> getNumFavoritePerdocument() throws InterruptedException {
+//		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext())
+//				.cassandraTable(DATAFARI_CASSANDRA_TABLE, DATAFARI_RANKING_TABLE)
+//				.select("request", "document_id", "ranking");
+//
+//		System.out.println("Count per query");
+//		JavaPairRDD<String, Tuple2<List<String>, List<String>>> result = rankingRDD
+//				.mapToPair(SparkFunctions.mapForEvaluation).reduceByKey(SparkFunctions.reducer).cache();
+//		return result;
+//	}
 
 	public void TestCassandra() throws InterruptedException {
-		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContext).cassandraTable("datafari", "ranking")
+		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext()).cassandraTable("datafari", "ranking")
 				.select("request", "document_id", "ranking");
 		System.out.println("Count per query");
 		rankingRDD.mapToPair(SparkFunctions.cassandraRankingMapper).reduceByKey(SparkFunctions.functionSum)
@@ -150,15 +165,18 @@ public class DatafariUsageDao {
 	}
 
 	public void TestSolr() throws SolrServerException {
-		SolrJavaRDD solrRDD = SolrJavaRDD.get("localhost:2181", "Statistics", sparkContext.sc());
-		JavaPairRDD<String, Map<String, Tuple2<Long, Long>>> stat = solrRDD.queryShards("*:*")
+		
+		
+		JavaPairRDD<String, Map<String, Tuple2<Long, Long>>> stat = solrClientProvider.getSolrJavaRDD().queryShards("*:*")
 				.mapToPair(solrStatsMapper)
 				.aggregateByKey(new HashMap<String, Tuple2<Long, Long>>(), localAggregator, globalAggregator);
 		stat.foreach(statEntry -> statEntry._2().entrySet().forEach(subStat -> System.out.println(statEntry._1() + " : "
 				+ subStat.getKey() + " : " + subStat.getValue()._1() + " : " + subStat.getValue()._2())));
 	}
 
-	private static Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>> calculateScore = new Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>>() {
+	private Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>> calculateScore = new Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>>() {
+		
+		
 		@Override
 		public Tuple2<String, Tuple2<Double, Double>> call(Tuple2<String, Tuple2<List<String>, List<String>>> query)
 				throws SolrServerException, IOException {
@@ -166,7 +184,7 @@ public class DatafariUsageDao {
 			solrQuery.setQuery(query._1());
 			solrQuery.setRows(10);
 			solrQuery.setFields("id");
-			QueryResponse result = solrClient.query("FileShare", solrQuery);
+			QueryResponse result = solrClientProvider.getSolrClient().query("FileShare", solrQuery);
 
 			// implement some cache
 			List<String> goodDocuments = query._2()._1();
@@ -196,7 +214,7 @@ public class DatafariUsageDao {
 	};
 
 	public void calculatePrecisionRecall() throws InterruptedException {
-		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContext).cassandraTable("datafari", "ranking")
+		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext()).cassandraTable("datafari", "ranking")
 				.select("request", "document_id", "ranking");
 		System.out.println("Count per query");
 		JavaPairRDD<String, Tuple2<List<String>, List<String>>> result = rankingRDD
@@ -216,8 +234,8 @@ public class DatafariUsageDao {
 		sumBy("like").foreach(entry -> System.out.println(entry._1() + " : " + entry._2()));
 	}
 
-	private static JavaPairRDD<String, Long> sumBy(String table) {
-		CassandraJavaRDD<CassandraRow> rdd = javaFunctions(sparkContext).cassandraTable("datafari", table)
+	private JavaPairRDD<String, Long> sumBy(String table) {
+		CassandraJavaRDD<CassandraRow> rdd = javaFunctions(sparkContextProvider.getSparkContext()).cassandraTable("datafari", table)
 				.select("document_id");
 		return rdd.mapToPair(SparkFunctions.groupByDocumentID).reduceByKey(SparkFunctions.sum);
 	}
