@@ -1,0 +1,8 @@
+q=id%3A"SP2514N"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27hard%2Bdrive%5C%27']
+q=id%3A"6H500F0"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27hard%2Bdrive%5C%27']
+q=id%3A"F8V7067-APL-KIT"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27hard%2Bdrive%5C%27']
+q=id%3A"IW-02"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27hard%2Bdrive%5C%27']
+q=id%3A"MA147LL%2FA"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27ipod%5C%27']
+q=id%3A"F8V7067-APL-KIT"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27ipod%5C%27']
+q=id%3A"IW-02"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27ipod%5C%27']
+q=id%3A"6H500F0"&fl=id,score,[features+store=_DEFAULT_+efi.user_query='%5C%27ipod%5C%27']

@@ -9,8 +9,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaSparkContext;
 
-@Named
-public class SparkContextProvider {
+public class SparkContextProviderImpl implements ISparkContextProvider{
 //	
 //	Properties configurationFile = new Properties();
 //	configurationFile.load(TestCassandraConnection.class.getClassLoader().getResourceAsStream("config.properties"));
@@ -21,7 +20,7 @@ public class SparkContextProvider {
 //	sparkContext = new JavaSparkContext(conf);
 	
 	
-	public SparkContextProvider(){
+	public SparkContextProviderImpl(){
 		SparkConf conf = new SparkConf(true).setMaster("local").setAppName("test").set("spark.cassandra.connection.host",
 				"localhost");
 		sparkContext = new JavaSparkContext(conf);	

@@ -1,6 +1,8 @@
 package com.datafari.ranking;
 
 
+import java.io.IOException;
+
 import javax.inject.Inject;
 
 import org.apache.solr.client.solrj.SolrServerException;
@@ -22,7 +24,7 @@ public class TestRDD extends AbstractTest {
 	}
 	
 	@Test
-	public void testSolr() throws SolrServerException{
+	public void testSolr() throws SolrServerException, IOException{
 		dud.TestSolr();
 	}
 

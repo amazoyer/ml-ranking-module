@@ -39,10 +39,10 @@ import scala.Tuple3;
 public class DatafariUsageDao {
 
 	@Inject
-	private SparkContextProvider sparkContextProvider;
+	private SparkContextProviderImpl sparkContextProvider;
 	
 	@Inject
-	private SolrClientProvider solrClientProvider;
+	private ISolrClientProvider solrClientProvider;
 
 	
 	
@@ -164,7 +164,7 @@ public class DatafariUsageDao {
 		throw new RuntimeException("Cannot correctly parse entry : " + history);
 	}
 
-	public void TestSolr() throws SolrServerException {
+	public void TestSolr() throws SolrServerException, IOException {
 		
 		
 		JavaPairRDD<String, Map<String, Tuple2<Long, Long>>> stat = solrClientProvider.getSolrJavaRDD().queryShards("*:*")

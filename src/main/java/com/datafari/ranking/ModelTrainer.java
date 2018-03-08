@@ -1,14 +1,9 @@
 package com.datafari.ranking;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -16,11 +11,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -28,25 +25,30 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
-import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Assert;
 
+import com.datafari.ranking.configuration.ConfigUtils;
 import com.datafari.ranking.model.TrainingEntry;
+import com.francelabs.ranking.dao.ISolrClientProvider;
+import com.francelabs.ranking.dao.SolrHttpClientException;
 
+@Named
 public class ModelTrainer {
-	SolrClient client;
-	Logger logger = Logger.getLogger(ModelTrainer.class.getName());
-
-	public ModelTrainer(SolrClient client){
-		this.client = client;
-	}
 	
-	public ModelTrainer(){
-		
+	
+	private ISolrClientProvider solrClientProvider;
+	Logger logger = Logger.getLogger(ModelTrainer.class.getName());
+	
+	@Inject
+	private ConfigUtils configUtils;
+	
+	@Inject
+	public ModelTrainer(ISolrClientProvider solrClientProvider){
+		this.solrClientProvider = solrClientProvider;
 	}
 	
 	
@@ -54,7 +56,7 @@ public class ModelTrainer {
 	public final String efiUserQuery = "efi.user_query";
 
 	public JSONObject parseConfig(String configFileName) throws IOException, JSONException {
-		InputStream is = ModelTrainer.class.getResourceAsStream(configFileName);
+		InputStream is = configUtils.getResource(configFileName).getInputStream();
 		String jsonTxt = IOUtils.toString(is);
 		return new JSONObject(jsonTxt);
 	}
@@ -70,62 +72,21 @@ public class ModelTrainer {
 		return query;
 	}
 
-	public Iterable<String> getLine(String fileName) {
-		InputStream in = ModelTrainer.class.getResourceAsStream(fileName);
-		BufferedReader readerIn = new BufferedReader(new InputStreamReader(in));
-		return new Iterable<String>() {
-			@Override
-			public Iterator<String> iterator() {
-				return new Iterator<String>() {
-					String userQuery = null;
 
-					@Override
-					public boolean hasNext() {
-						try {
-							userQuery = readerIn.readLine();
-						} catch (IOException e) {
-							return false;
-						}
-						return userQuery != null;
-					}
-
-					@Override
-					public String next() {
-						return userQuery;
-					}
-				};
-			}
-		};
-
-	}
 
 	public QueryResponse sendQuery(SolrQuery solr) throws SolrServerException, IOException {
-		return client.query(solr);
+		return solrClientProvider.getSolrClient().query(solr);
 	}
+	
+	private static String MODEL_RESOURCE_NAME = "schema/feature-store/_DEFAULT_";
 
-	public void sendModel(String obj) throws ClientProtocolException, IOException {
-
-		CloseableHttpClient client = HttpClients.createDefault();
-		String url = "http://localhost:8983/solr/techproducts/schema/feature-store/_DEFAULT_";
-		HttpDelete httpDelete = new HttpDelete(url);
-		HttpPut httpPut = new HttpPut(url);
-
-		CloseableHttpResponse response = client.execute(httpDelete);
-		Assert.assertEquals(200, response.getStatusLine().getStatusCode());
-
-		StringEntity entity = new StringEntity(obj);
-		httpPut.setEntity(entity);
-		httpPut.setHeader("Accept", "application/json");
-		httpPut.setHeader("Content-type", "application/json");
-
-		response = client.execute(httpPut);
-		Assert.assertEquals(200, response.getStatusLine().getStatusCode());
-		client.close();
-
+	public void sendFeatures(String obj) throws SolrHttpClientException, IOException  {
+		solrClientProvider.getSolrHttpClient().sendDelete(MODEL_RESOURCE_NAME);
+		solrClientProvider.getSolrHttpClient().sendPut(MODEL_RESOURCE_NAME, obj);
 	}
 
 	public List<TrainingEntry> getTrainingEntries() throws SolrServerException, IOException {
-		Iterator<String> queryIterator = this.getLine("user_queries.txt").iterator();
+		Iterator<String> queryIterator = configUtils.getLine("user_queries.txt").iterator();
 		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
 		while (queryIterator.hasNext()) {
 			String[] userQuerySplitted = queryIterator.next().split("\\|");

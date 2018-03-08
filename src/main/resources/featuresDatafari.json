@@ -1,0 +1,35 @@
+[
+  {
+    "name" : "documentRecency",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "q" : "{!func}recip( ms(NOW,last_modified), 3.16e-11, 1, 1)"
+    }
+  },
+  {
+    "name" : "isPdf",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "fq": ["{!terms f=extension}pdf"]
+    }
+  },
+  {
+    "name" : "isDoc",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "fq": ["{!terms f=extension}doc,docx,odt"]
+    }
+  },
+  {
+    "name" : "isPpt",
+    "class" : "org.apache.solr.ltr.feature.SolrFeature",
+    "params" : {
+      "fq": ["{!terms f=extension}ppt,pptx,odp"]
+    }
+  },
+  {
+    "name" : "originalScore",
+    "class" : "org.apache.solr.ltr.feature.OriginalScoreFeature",
+    "params" : {}
+  }
+]
