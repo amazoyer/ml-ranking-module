@@ -21,4 +21,6 @@ public class ConnectedTrainerTest extends AbstractTest {
 		Object obj = parser.parse(new InputStreamReader(in));
 		modelTrainer.sendFeatures(obj.toString());
 	}
+	
+	
 }
