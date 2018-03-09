@@ -36,30 +36,26 @@ import org.junit.Assert;
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.model.TrainingEntry;
 import com.francelabs.ranking.dao.ISolrClientProvider;
+import com.francelabs.ranking.dao.SolrHttpClient;
 import com.francelabs.ranking.dao.SolrHttpClientException;
 
 @Named
-public class ModelTrainer {
+public class LtrClient {
 
 	private ISolrClientProvider solrClientProvider;
-	Logger logger = Logger.getLogger(ModelTrainer.class.getName());
+	Logger logger = Logger.getLogger(LtrClient.class.getName());
 
 	@Inject
 	private ResourceLoadingUtils configUtils;
 
 	@Inject
-	public ModelTrainer(ISolrClientProvider solrClientProvider) {
+	public LtrClient(ISolrClientProvider solrClientProvider) {
 		this.solrClientProvider = solrClientProvider;
 	}
 
 	public final String store = "_DEFAULT_";
 	public final String efiUserQuery = "efi.user_query";
 
-	public JSONObject parseConfig(String configFileName) throws IOException, JSONException {
-		InputStream is = configUtils.getResource(configFileName).getInputStream();
-		String jsonTxt = IOUtils.toString(is);
-		return new JSONObject(jsonTxt);
-	}
 
 	public SolrQuery generateSolrQuery(String queryStr, String docId) {
 		SolrQuery query = new SolrQuery(queryStr);
@@ -74,29 +70,22 @@ public class ModelTrainer {
 		return solrClientProvider.getSolrClient().query(solr);
 	}
 
-	private static String MODEL_RESOURCE_NAME = "schema/feature-store/_DEFAULT_";
+	public enum LTR_OBJECT_TYPE {
+		model, feature;
+	}
+	private static String SCHEMA = "schema";
+	private static String DEFAULT = "_DEFAULT_";
+	private static String STORE_SUFFIX = "-store";
 
-	public void sendFeatures(String obj) throws SolrHttpClientException, IOException {
-		solrClientProvider.getSolrHttpClient().sendDelete(MODEL_RESOURCE_NAME);
-		solrClientProvider.getSolrHttpClient().sendPut(MODEL_RESOURCE_NAME, obj);
+	public void sendLtrObject(String obj, String name,  LTR_OBJECT_TYPE ltrObjectType) throws SolrHttpClientException, IOException {
+		SolrHttpClient httpClient = solrClientProvider.getSolrHttpClient();
+		String resourceUrl = SCHEMA + "/" + ltrObjectType + STORE_SUFFIX + "/" + DEFAULT;
+		httpClient.sendDelete(ltrObjectType.equals(LTR_OBJECT_TYPE.model) ? resourceUrl.replace(DEFAULT, name) : resourceUrl);
+		httpClient.sendPut(resourceUrl, obj);
+
 	}
 
-	public List<TrainingEntry> getTrainingEntriesFromFile() throws SolrServerException, IOException {
-		Iterator<String> queryIterator = configUtils.getLine("user_queries.txt").iterator();
-		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
-		while (queryIterator.hasNext()) {
-			String[] userQuerySplitted = queryIterator.next().split("\\|");
-			String docId = userQuerySplitted[1];
-			String queryStr = userQuerySplitted[0];
-			Double score = Double.parseDouble(userQuerySplitted[2]);
-			String type = userQuerySplitted[3];
 
-			getFeaturesMap(queryStr, docId).ifPresent(features -> trainingEntries.add(new TrainingEntry(queryStr, docId, features, score, type)));
-
-		}
-
-		return trainingEntries;
-	}
 
 	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
 			throws SolrServerException, IOException {

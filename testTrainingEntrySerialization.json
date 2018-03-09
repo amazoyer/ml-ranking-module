@@ -1,1 +1,7 @@
-{"query":"query","docid":"document","features":{},"score":12.0,"type":"type"}
+{
+  "query" : "query",
+  "docid" : "document",
+  "features" : { },
+  "score" : 12.0,
+  "type" : "type"
+}

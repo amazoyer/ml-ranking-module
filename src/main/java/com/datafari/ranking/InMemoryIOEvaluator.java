@@ -1,6 +1,5 @@
 package com.datafari.ranking;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import java.util.stream.Collectors;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import com.datafari.ranking.model.TrainingEntry;
@@ -33,9 +33,13 @@ import ciir.umass.edu.utilities.RankLibError;
 import ciir.umass.edu.utilities.SimpleMath;
 
 public class InMemoryIOEvaluator extends Evaluator {
+	
+	private static String MODEL_NAME = "DatafariModel";
 
 	private Map<String, Integer> queries = new HashMap<String, Integer>();
 	private Map<String, Integer> features = new HashMap<String, Integer>();
+	
+	Logger logger = Logger.getLogger(this.getClass());
 
 	private int getId(String newEntry, Map<String, Integer> container) {
 		if (!container.containsKey(newEntry)) {
@@ -60,7 +64,8 @@ public class InMemoryIOEvaluator extends Evaluator {
 		super(RANKER_TYPE.LAMBDAMART, metric, metric);
 	}
 
-	public String evaluate(List<RankList> train, List<RankList> validation, List<RankList> test) throws IOException, SAXException, ParserConfigurationException {
+	public String evaluate(List<RankList> train, List<RankList> validation, List<RankList> test)
+			throws IOException, SAXException, ParserConfigurationException {
 		int[] features = FeatureManager.getFeatureFromSampleVector(train);
 		if (normalize) {
 			normalize(train, features);
@@ -75,16 +80,15 @@ public class InMemoryIOEvaluator extends Evaluator {
 
 		if (test != null) {
 			double rankScore = evaluate(ranker, test);
-			System.out.println(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
+			logger.info(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
 		}
 
 		if (test != null) {
 			double rankScore = evaluate(ranker, test);
-			System.out.println(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
+			logger.info(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
 		}
-	
 
-		return new SolrLTROutputEnsemble(ranker.getEnsemble(), this.features).toSolrLtrJsonOuput();
+		return new SolrLTROutputEnsemble(ranker.getEnsemble(), this.features).toSolrLtrJsonOuput(MODEL_NAME);
 
 	}
 
@@ -98,6 +102,10 @@ public class InMemoryIOEvaluator extends Evaluator {
 	 */
 	public List<RankList> readInput(List<TrainingEntry> trainingEntries, boolean mustHaveRelDoc,
 			boolean useSparseRepresentation) {
+		
+		if (trainingEntries == null){
+			return null;
+		}
 		List<RankList> samples = new ArrayList<>();
 		int countRL = 0;
 		int countEntries = 0;
@@ -134,7 +142,7 @@ public class InMemoryIOEvaluator extends Evaluator {
 			if (rl.size() > 0 && (!mustHaveRelDoc || hasRel))
 				samples.add(new RankList(rl));
 
-			System.out.println("(" + samples.size() + " ranked lists, " + countEntries + " entries read)");
+			logger.info("(" + samples.size() + " ranked lists, " + countEntries + " entries read)");
 		} catch (Exception ex) {
 			throw RankLibError.create("Error in FeatureManager::readInput(): ", ex);
 		}
@@ -154,7 +162,13 @@ public class InMemoryIOEvaluator extends Evaluator {
 	}
 
 	public void setNTrees(int i) {
-		LambdaMART.nTrees = 1;
+		LambdaMART.nTrees = i;
+	}
+
+	public String evaluateTrainingEntries(List<TrainingEntry> trainingEntries, List<TrainingEntry> validation,
+			List<TrainingEntry> test) throws IOException, SAXException, ParserConfigurationException {
+		return evaluate(readInput(trainingEntries, false, false), readInput(validation, false, false),
+				readInput(test, false, false));
 	}
 
 }

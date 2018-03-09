@@ -39,10 +39,10 @@ public class SolrLTROutputEnsemble extends Ensemble {
 		xmlParser = dbFactory.newDocumentBuilder();
 	}
 
-	public String toSolrLtrJsonOuput() throws IOException, SAXException {
+	public String toSolrLtrJsonOuput(String name) throws IOException, SAXException {
 		JSONObject object = new JSONObject();
 		object.put("class", "org.apache.solr.ltr.model.MultipleAdditiveTreesModel");
-		object.put("name", "multipleadditivetreesmodel");
+		object.put("name", name);
 		JSONArray features = new JSONArray();
 		for (String featureName : reverseFeaturesMap.values()) {
 			JSONObject featureObj = new JSONObject();

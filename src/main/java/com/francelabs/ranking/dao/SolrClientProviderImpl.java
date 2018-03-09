@@ -1,54 +1,47 @@
 package com.francelabs.ranking.dao;
 
 import java.io.IOException;
-
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
-
 import com.lucidworks.spark.rdd.SolrJavaRDD;
 
 @Named
-public class SolrClientProviderImpl implements ISolrClientProvider{
+public class SolrClientProviderImpl implements ISolrClientProvider {
 
-	
-	private SparkContextProviderImpl sparkContextProvider;
-	
+	private static String FILESHARE = "FileShare";
+	private static String STATISTICS = "Statistics";
+	private static String ZK_HOST = "localhost";
+	private static String ZK_PORT = "2181";
+
 	private SolrHttpClient solrHttpClient;
 	private SolrJavaRDD solrJavaRDD;
 	private CloudSolrClient solrClient;
 
-	
 	@Inject
 	public SolrClientProviderImpl(SparkContextProviderImpl sparkContextProvider) {
-		this.sparkContextProvider = sparkContextProvider;
-		solrClient = new CloudSolrClient.Builder().withZkHost("localhost" + ":2181").build();
-		solrClient.setDefaultCollection("FileShare");
-		solrJavaRDD = SolrJavaRDD.get("localhost:2181", "Statistics", sparkContextProvider.getSparkContext().sc());
-		solrHttpClient = new SolrHttpClient("localhost:8983", "FileShare");
+		solrClient = new CloudSolrClient.Builder().withZkHost(ZK_HOST + ":" + ZK_PORT).build();
+		solrClient.setDefaultCollection(FILESHARE);
+		solrJavaRDD = SolrJavaRDD.get(ZK_HOST + ":" + ZK_PORT, STATISTICS, sparkContextProvider.getSparkContext().sc());
+		solrHttpClient = new SolrHttpClient(solrClient.getZkStateReader().getLeader(FILESHARE, "shard1").getCoreUrl());
 	}
-
 
 	public SolrClient getSolrClient() {
 		return solrClient;
 	}
 
-
 	public SolrJavaRDD getSolrJavaRDD() {
 		return solrJavaRDD;
 	}
-	
-	
+
 	@Override
 	public SolrHttpClient getSolrHttpClient() throws IOException {
 		return solrHttpClient;
 	}
-	
-	public void close() throws IOException{
+
+	public void close() throws IOException {
 		solrHttpClient.close();
 	}
-
 
 }

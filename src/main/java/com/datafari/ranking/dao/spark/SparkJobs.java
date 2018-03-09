@@ -20,7 +20,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFunction;
 
-import com.datafari.ranking.ModelTrainer;
+import com.datafari.ranking.LtrClient;
 import com.datafari.ranking.model.TrainingQuery;
 import com.datastax.spark.connector.japi.CassandraRow;
 import com.datastax.spark.connector.japi.rdd.CassandraJavaRDD;
@@ -39,7 +39,7 @@ public class SparkJobs {
 
 	private static ISolrClientProvider solrClientProvider;
 
-	private static ModelTrainer modelTrainer;
+	private static LtrClient ltrClient;
 
 	@Inject
 	public void setSolrClientProvider(ISolrClientProvider solrClientProvider) {
@@ -47,8 +47,8 @@ public class SparkJobs {
 	}
 
 	@Inject
-	public void setModelTrainer(ModelTrainer modelTrainer) {
-		SparkJobs.modelTrainer = modelTrainer;
+	public void setLTRClient(LtrClient ltrClient) {
+		SparkJobs.ltrClient = ltrClient;
 	}
 
 	private static String DATAFARI_CASSANDRA_TABLE = "datafari";
@@ -165,7 +165,7 @@ public class SparkJobs {
 				Tuple2<String, Tuple3<String, String, Long>> entry) throws Exception {
 			String queryStr = entry._2()._1();
 			String docId = entry._2()._2();
-			Optional<Map<String, Double>> featuresMap = modelTrainer.getFeaturesMap(queryStr, docId);
+			Optional<Map<String, Double>> featuresMap = ltrClient.getFeaturesMap(queryStr, docId);
 		
 			return new Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>(entry._1(),
 					new Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>(entry._2(), featuresMap));

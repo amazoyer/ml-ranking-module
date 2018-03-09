@@ -30,7 +30,6 @@ public class ResourceLoadingUtils implements ResourceLoaderAware {
 	ResourceLoadingUtils() {
 		mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
 	}
 
 	private ResourceLoader resourceLoader;
@@ -55,6 +54,7 @@ public class ResourceLoadingUtils implements ResourceLoaderAware {
 			public Iterator<String> iterator() {
 				return new Iterator<String>() {
 					String line = null;
+					boolean hasNextCalled = false;
 
 					@Override
 					public boolean hasNext() {
@@ -63,12 +63,18 @@ public class ResourceLoadingUtils implements ResourceLoaderAware {
 						} catch (IOException e) {
 							return false;
 						}
+						hasNextCalled = true;
 						return line != null;
 					}
 
 					@Override
 					public String next() {
+						if (!hasNextCalled){
+							hasNext();
+						}
+						hasNextCalled = false;
 						return line;
+						
 					}
 				};
 			}

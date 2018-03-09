@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,23 +40,14 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 
 
 	@Inject
-	protected ModelTrainer modelTrainer;
+	protected LtrClient ltrClient;
 
 	@Test
 	public void readConfig() throws IOException, JSONException {
-		JSONObject config = modelTrainer.parseConfig("config.json");
+		JSONObject config = parseConfig("config.json");
 		Assert.assertEquals("localhost", config.get("host"));
 	}
 
-
-	
-	@Ignore("Didn't find a way to send model to embedded solr server")
-	public void sendModel() throws IOException, ParseException, SolrHttpClientException {
-		JSONParser parser = new JSONParser();
-		InputStream in = resourceLoadingUtils.getResource("features.json").getInputStream();
-		Object obj = parser.parse(new InputStreamReader(in));
-		modelTrainer.sendFeatures(obj.toString());
-	}
 
 
 	@Ignore
@@ -70,7 +63,7 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 			String[] userQuerySplitted = queryIterator.next().split("\\|");
 			String expectedQuery = "?" + decoder.decode(decoder.decode(userQueryOut, "UTF-8"));
 			String query = decoder.decode(
-					modelTrainer.generateSolrQuery(userQuerySplitted[0], userQuerySplitted[1]).toQueryString(), "UTF-8");
+					ltrClient.generateSolrQuery(userQuerySplitted[0], userQuerySplitted[1]).toQueryString(), "UTF-8");
 			Assert.assertEquals(expectedQuery, query);
 		}
 	}
@@ -78,11 +71,10 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 	@Test
 	public void testTrain() throws SolrServerException, IOException, SAXException, ParserConfigurationException {
 		ClassLoader classLoader = getClass().getClassLoader();
-		List<TrainingEntry> trainingEntries = modelTrainer.getTrainingEntriesFromFile();
+		List<TrainingEntry> trainingEntries = getTrainingEntriesFromFile();
 		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
 		evaluator.setNTrees(1);
 		String result = evaluator.evaluate(evaluator.readInput(trainingEntries, false, false), null, null);
-		System.out.println(result);
 	}
 	
 	@Test 
@@ -95,12 +87,38 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 	@Test
 	public void testConvert() throws SolrServerException, IOException {
 		ClassLoader classLoader = getClass().getClassLoader();
-		List<TrainingEntry> trainingEntries = modelTrainer.getTrainingEntriesFromFile();
+		List<TrainingEntry> trainingEntries = getTrainingEntriesFromFile();
 		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
 		Iterator<String> expectedEntries = resourceLoadingUtils.getLine("expected_training_entry.txt").iterator();
 		trainingEntries.stream().map(evaluator::convertToLambdaMARTFormat).forEach(entry -> {
 			Assert.assertTrue(expectedEntries.hasNext());
 			Assert.assertEquals(expectedEntries.next(), entry);
 		});
+	}
+	
+
+	public List<TrainingEntry> getTrainingEntriesFromFile() throws SolrServerException, IOException {
+		Iterator<String> queryIterator = resourceLoadingUtils.getLine("user_queries.txt").iterator();
+		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
+		while (queryIterator.hasNext()) {
+			String[] userQuerySplitted = queryIterator.next().split("\\|");
+			String docId = userQuerySplitted[1];
+			String queryStr = userQuerySplitted[0];
+			Double score = Double.parseDouble(userQuerySplitted[2]);
+			String type = userQuerySplitted[3];
+
+			ltrClient.getFeaturesMap(queryStr, docId).ifPresent(
+					features -> trainingEntries.add(new TrainingEntry(queryStr, docId, features, score, type)));
+
+		}
+
+		return trainingEntries;
+	}
+	
+
+	public JSONObject parseConfig(String configFileName) throws IOException, JSONException {
+		InputStream is = resourceLoadingUtils.getResource(configFileName).getInputStream();
+		String jsonTxt = IOUtils.toString(is);
+		return new JSONObject(jsonTxt);
 	}
 }
