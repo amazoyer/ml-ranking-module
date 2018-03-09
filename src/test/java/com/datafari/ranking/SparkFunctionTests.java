@@ -10,11 +10,12 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.dao.spark.SparkFunctions;
 
 import scala.Tuple2;
 
-public class SparkFunctionTests {
+public class SparkFunctionTests extends AbstractTest{
 
 	@Test
 	public void localClickLogAggregatorTest() throws Exception {

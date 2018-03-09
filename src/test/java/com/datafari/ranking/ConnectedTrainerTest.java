@@ -7,9 +7,12 @@ import javax.inject.Inject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
+
+import com.datafari.ranking.config.AbstractTest;
+import com.datafari.ranking.config.OnlineAbstractTest;
 import com.francelabs.ranking.dao.SolrHttpClientException;
 
-public class ConnectedTrainerTest extends AbstractTest {
+public class ConnectedTrainerTest extends OnlineAbstractTest {
 
 	@Inject
 	protected ModelTrainer modelTrainer;
@@ -17,7 +20,7 @@ public class ConnectedTrainerTest extends AbstractTest {
 	@Test
 	public void sendFeatures() throws IOException, ParseException, SolrHttpClientException {
 		JSONParser parser = new JSONParser();
-		InputStream in = configUtils.getResource("featuresDatafari.json").getInputStream();
+		InputStream in = resourceLoadingUtils.getResource("featuresDatafari.json").getInputStream();
 		Object obj = parser.parse(new InputStreamReader(in));
 		modelTrainer.sendFeatures(obj.toString());
 	}

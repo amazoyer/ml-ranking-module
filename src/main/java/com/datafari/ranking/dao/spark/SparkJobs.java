@@ -7,13 +7,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Optional;
 import java.util.stream.Collectors;
-
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
@@ -21,13 +18,13 @@ import org.apache.solr.common.SolrDocument;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
 
-import com.datafari.ranking.model.QueryEvaluation;
+import com.datafari.ranking.ModelTrainer;
+import com.datafari.ranking.model.TrainingQuery;
 import com.datastax.spark.connector.japi.CassandraRow;
 import com.datastax.spark.connector.japi.rdd.CassandraJavaRDD;
-import com.francelabs.ranking.dao.DatafariUsageDao;
+import com.datastax.spark.connector.japi.rdd.CassandraTableScanJavaRDD;
 import com.francelabs.ranking.dao.ISolrClientProvider;
 import com.francelabs.ranking.dao.SparkContextProviderImpl;
 
@@ -42,9 +39,16 @@ public class SparkJobs {
 
 	private static ISolrClientProvider solrClientProvider;
 
+	private static ModelTrainer modelTrainer;
+
 	@Inject
-	public void setUserAccessor(ISolrClientProvider solrClientProvider) {
+	public void setSolrClientProvider(ISolrClientProvider solrClientProvider) {
 		SparkJobs.solrClientProvider = solrClientProvider;
+	}
+
+	@Inject
+	public void setModelTrainer(ModelTrainer modelTrainer) {
+		SparkJobs.modelTrainer = modelTrainer;
 	}
 
 	private static String DATAFARI_CASSANDRA_TABLE = "datafari";
@@ -54,8 +58,6 @@ public class SparkJobs {
 		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext())
 				.cassandraTable(DATAFARI_CASSANDRA_TABLE, DATAFARI_RANKING_TABLE)
 				.select("request", "document_id", "ranking");
-
-		System.out.println("Count per query");
 		JavaPairRDD<String, Tuple2<List<String>, List<String>>> result = rankingRDD
 				.mapToPair(SparkFunctions.mapForEvaluation).reduceByKey(SparkFunctions.doubleListReducer).cache();
 		return result.map(calculateScore);
@@ -86,9 +88,7 @@ public class SparkJobs {
 	/**
 	 * 
 	 * 
-	 * SolrHistoryDocument =>
-	 * query 
-	 * => list (document, clickPosition) 
+	 * SolrHistoryDocument => query => list (document, clickPosition)
 	 * 
 	 */
 	private static PairFunction<SolrDocument, String, Collection<String>> solrStatsMapper = new PairFunction<SolrDocument, String, Collection<String>>() {
@@ -100,15 +100,11 @@ public class SparkJobs {
 		}
 	};
 
-
-	
-
-
 	public JavaPairRDD<String, Map<String, Tuple2<Long, Long>>> getQueryClickRDD() throws IOException {
-		return  solrClientProvider.getSolrJavaRDD()
-				.queryShards("*:*").mapToPair(solrStatsMapper)
-				.aggregateByKey(new HashMap<String, Tuple2<Long, Long>>(), SparkFunctions.documentClickCountLocalAggregator, SparkFunctions.documentClickCountGlobalAggregator);
-	
+		return solrClientProvider.getSolrJavaRDD().queryShards("*:*").mapToPair(solrStatsMapper).aggregateByKey(
+				new HashMap<String, Tuple2<Long, Long>>(), SparkFunctions.documentClickCountLocalAggregator,
+				SparkFunctions.documentClickCountGlobalAggregator);
+
 	}
 
 	private static Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>> calculateScore = new Function<Tuple2<String, Tuple2<List<String>, List<String>>>, Tuple2<String, Tuple2<Double, Double>>>() {
@@ -150,10 +146,35 @@ public class SparkJobs {
 
 	};
 
-	public JavaPairRDD<String, Tuple2<List<String>, List<String>>> getQueryEvaluationRDD() {
-		CassandraJavaRDD<CassandraRow> rankingRDD = javaFunctions(sparkContextProvider.getSparkContext())
-				.cassandraTable("datafari", "ranking").select("request", "document_id", "ranking");
-		return rankingRDD.mapToPair(SparkFunctions.mapForEvaluation).reduceByKey(SparkFunctions.doubleListReducer);
+	public CassandraTableScanJavaRDD<CassandraRow> getQueryEvaluationRDD() {
+		return javaFunctions(sparkContextProvider.getSparkContext()).cassandraTable("datafari", "ranking")
+				.select("request", "document_id", "ranking");
+	}
+
+	public JavaRDD<Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>> getTrainingEntriesFromQueryEvaluation() {
+		JavaPairRDD<String, Tuple3<String, String, Long>> listQueries = getQueryEvaluationRDD()
+				.mapToPair(SparkFunctions.mapCassandraEntryForTrainingEntries);
+		return listQueries.map(createTrainingQueries)
+				// keep if we there is a feature map
+				.filter(entry -> entry._2()._2().isPresent());
+	}
+
+	public static Function<Tuple2<String, Tuple3<String, String, Long>>, Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>> createTrainingQueries = new Function<Tuple2<String, Tuple3<String, String, Long>>, Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>>() {
+		@Override
+		public Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>> call(
+				Tuple2<String, Tuple3<String, String, Long>> entry) throws Exception {
+			String queryStr = entry._2()._1();
+			String docId = entry._2()._2();
+			Optional<Map<String, Double>> featuresMap = modelTrainer.getFeaturesMap(queryStr, docId);
+		
+			return new Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>(entry._1(),
+					new Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>(entry._2(), featuresMap));
+		}
+	};
+
+	public JavaPairRDD<String, Tuple2<List<String>, List<String>>> getAggregatedQueryEvaluationRDD() {
+		return getQueryEvaluationRDD().mapToPair(SparkFunctions.mapForEvaluation)
+				.reduceByKey(SparkFunctions.doubleListReducer);
 	}
 
 	// public void calculatePrecisionRecall() throws InterruptedException {

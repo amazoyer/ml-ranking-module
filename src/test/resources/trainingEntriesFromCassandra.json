@@ -1,0 +1,5065 @@
+[ {
+  "query" : "total architecture",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Datafari_Total_Wat_POC_01/Sizing%20Architecture.xlsx",
+  "features" : {
+    "originalScore" : 470.07935,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40969434,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Doctissimo/France%20labs%20(Copie%20en%20conflit%20de%20Olivier%20Oliv%202015-07-01).xls",
+  "features" : {
+    "originalScore" : 214.82358,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26227292,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Doctissimo/France%20labs.xls",
+  "features" : {
+    "originalScore" : 368.05515,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2622729,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 316.8875,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.26074466,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 316.8875,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.26074466,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Conseil_Solr_ES_BPCE/20151221_informations-compl-ter-pour-sourcing-digital-1_France_Labs.xls",
+  "features" : {
+    "originalScore" : 186.18845,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32191497,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Formation_Solr_Unleashed_201611_BNF/Renseignements%20administratifs.doc",
+  "features" : {
+    "originalScore" : 62.01402,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.36518002,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Formation_Solr_Unleashed_201611_BNF/Renseignements%20administratifs.pdf",
+  "features" : {
+    "originalScore" : 62.01402,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.36518016,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/segm_FranceLabs_29janv13.xlsx",
+  "features" : {
+    "originalScore" : 290.88794,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16417275,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_09/Envoye/Client_POC_v2_Classification_ClawdTechno-092015.pdf",
+  "features" : {
+    "originalScore" : 60.49826,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.28976932,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/Remboursement_Facture_Revue_du_Digital.pdf",
+  "features" : {
+    "originalScore" : 61.121494,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42962766,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/Dossier_Soumis/DossierCandidature/France%20Labs/Secure_Search_Candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 286.73373,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19631074,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/PSIM_Canveas_candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 286.73373,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19629048,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/Offre_GAC/Convention%20CI%20et%20CII%20204%20pour%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 241.09453,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/JEI/Lettre_Demande_Rescrit.docx",
+  "features" : {
+    "originalScore" : 75.39024,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17343977,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/1%20-%20Constitution%20statuts/FRANCE%20LABS%20statuts%20constitutifs.pdf",
+  "features" : {
+    "originalScore" : 668.93524,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13849069,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/1%20-%20Constitution%20statuts/Statuts_de_la_SAS-Final-conforme-avec-versionsignee.docx",
+  "features" : {
+    "originalScore" : 282.53894,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13849387,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/3%20-%20Libération%20du%20capital%20restant%20du/PV%20AGE%20modification%20statuts%20suite%20à%20libération%20du%20capital%20social%20restant%20du.docx",
+  "features" : {
+    "originalScore" : 225.1325,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.1504321,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/3%20-%20Libération%20du%20capital%20restant%20du/Statuts_de_la_SAS-mis%20à%20jour%20suite%20à%20libéralisation%20du%20capital%20social.docx",
+  "features" : {
+    "originalScore" : 224.74956,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15043132,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/4%20-%20Transfert%20de%20siège/Courrier-%20envoi%20pièces%20au%20greffe.docx",
+  "features" : {
+    "originalScore" : 62.8626,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15573992,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/4%20-%20Transfert%20de%20siège/PV%20AGE%20transfert%20de%20siège%20social.docx",
+  "features" : {
+    "originalScore" : 69.82576,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15532453,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/4%20-%20Transfert%20de%20siège/Statuts_de_la_SAS-mis%20à%20jour%20suite%20au%20transfert%20de%20siège%20social.docx",
+  "features" : {
+    "originalScore" : 224.74956,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15568191,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/4%20-%20Transfert%20de%20siège/Statuts_de_la_SAS-mis%20à%20jour%20suite%20au%20transfert%20de%20siège%20social.pdf",
+  "features" : {
+    "originalScore" : 224.74956,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35637125,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Doculibre/Programme%20de%20partenariatV12-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 241.09453,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.1354279,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/Convention-Incub_IPE208_Annexe4.doc",
+  "features" : {
+    "originalScore" : 68.21191,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13811441,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/DossierIncubateurPacaEst-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 288.90372,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13975775,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/Documentation/Corpus%20Linguistics/Self%20Corpus/dossierincubparitechfiche_projet-FranceLabs-Juillet2011.docx",
+  "features" : {
+    "originalScore" : 278.62302,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.1312913,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "statuts france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/Documentation/Corpus%20Linguistics/Self%20Corpus/dossierincubparitechfiche_projet-FranceLabs-Juillet2011.txt",
+  "features" : {
+    "originalScore" : 278.62302,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Scan_Mission_Aide_Premiere_Embauche_Massiera_2016-2015.pdf",
+  "features" : {
+    "originalScore" : 332.86462,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35387972,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh janvier 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160914.xlsx",
+  "features" : {
+    "originalScore" : 107.75564,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.41265568,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh janvier 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161109.xlsx",
+  "features" : {
+    "originalScore" : 102.99822,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.45065165,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201404_Campagne_Phoning_Aktisea/Offre_de_service_Aktisea_Phoning/OS-NOV13.272%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 298.81522,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18971322,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201404_Campagne_Phoning_Aktisea/Offre_de_service_Aktisea_Phoning/OS-NOV13.274%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 298.81522,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18978673,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Communiques_de_presse/LucidWorks/Press_Release-Partnership_LucidWorks_FranceLabs-2012.pdf",
+  "features" : {
+    "originalScore" : 437.40625,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.15653504,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Communiques_de_presse/LucidWorks/Press_Release-Partnership_LucidWorks_FranceLabs_V1-20120910.docx",
+  "features" : {
+    "originalScore" : 339.31708,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15653503,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_05/Envoye/Facture_Github_Mai2015_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_06/Envoye/Facture_Github_062015_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_09/Envoye/Facture_github-francelabs-receipt-2015-09-21_CBFL.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.30378804,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_11/Envoye/Facture_Github_6EUR56CENTS_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.30445877,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_01/Envoye/github-francelabs-receipt-2016-01-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32050994,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_02/Envoye/facture_Github_github-francelabs-receipt-2016-02-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_03/Envoye/facture_github-francelabs-receipt-2016-03-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3379046,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_04/Envoye/facture_github-francelabs-receipt-2016-04-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_05/Envoye/Facture_github-francelabs-receipt-2016-05-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_06/Envoye/facture_github-francelabs-receipt-2016-06-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_07/Envoye/github-francelabs-receipt-2016-07-21_CBCU.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.38079777,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_09/Envoye/facture_github-hebergement_code_logiciel_201609_CBFL.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_09/Envoye/facture_github-hebergement_code_logiciel_Annuel_201609_PayPalOlivierTavard.pdf",
+  "features" : {
+    "originalScore" : 181.03708,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_06_InstrumentPME/Forms%20h2020-call-pt-sme-1_en.doc",
+  "features" : {
+    "originalScore" : 172.66403,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.28359708,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/CVSVM-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 402.43103,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18159777,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/PRM-Media_FranceLabs_MI4-V3.pdf",
+  "features" : {
+    "originalScore" : 275.65164,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18793194,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/PRM-Media_FranceLabs_MI4.pdf",
+  "features" : {
+    "originalScore" : 308.64484,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18344234,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/PRM-Media_FranceLabs_MI4v2.pdf",
+  "features" : {
+    "originalScore" : 275.65164,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.184066,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/PRM_FranceLabs.docx",
+  "features" : {
+    "originalScore" : 384.91602,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.18369596,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "business plan france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/201509_InstrumentPME/SME%20instrument%20-%20Draft%20proposal%20template%20-%20Phase%201%20-PP_CV_v1-clean1-3.doc",
+  "features" : {
+    "originalScore" : 178.35751,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.28982374,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2014/2014_IFCE/Ajout_fonctionnalites%20(Copie%20en%20conflit%20de%20Cedric%20Ulmer%202014-01-30).doc",
+  "features" : {
+    "originalScore" : 289.56677,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19639133,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/JEI/Lettre_Demande_Rescrit.docx",
+  "features" : {
+    "originalScore" : 102.090485,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17343977,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 941.1349,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13785484,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 941.1349,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785487,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_022015.docx",
+  "features" : {
+    "originalScore" : 771.7278,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.24469784,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_022015.pdf",
+  "features" : {
+    "originalScore" : 771.7278,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2446979,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_092014.docx",
+  "features" : {
+    "originalScore" : 771.7278,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.22143112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_092014.pdf",
+  "features" : {
+    "originalScore" : 771.7278,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22187565,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-Web.pdf",
+  "features" : {
+    "originalScore" : 941.1349,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785988,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs-AOBelgique.docx",
+  "features" : {
+    "originalScore" : 547.3715,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15634038,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs-AOBelgique.pdf",
+  "features" : {
+    "originalScore" : 547.3715,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.15634042,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 649.5626,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13785553,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 649.5626,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785554,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs_SolutionsLinux.docx",
+  "features" : {
+    "originalScore" : 547.3715,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.16582058,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs_SolutionsLinux.pdf",
+  "features" : {
+    "originalScore" : 547.3715,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16582063,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-Web.pdf",
+  "features" : {
+    "originalScore" : 649.5626,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.1378599,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer_Lettre_de_motivation_EIT-ICT.docx",
+  "features" : {
+    "originalScore" : 383.292,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.24468619,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer_Lettre_de_motivation_EIT-ICT.pdf",
+  "features" : {
+    "originalScore" : 383.292,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24469796,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Copy%20of%20Cedric_Ulmer-CV-Francais-FranceLabs-AOBelgique%20(conflict%20from%2002-13-2015%20at%2019h18).docx",
+  "features" : {
+    "originalScore" : 478.39923,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv cedric ulmer",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Copy%20of%20Cedric_Ulmer-CV-Francais-FranceLabs-AOBelgique%20(conflict%20from%2002-13-2015%20at%2019h18).pdf",
+  "features" : {
+    "originalScore" : 478.39923,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/DR_ASP/Demande_Aide_1ere_Embauche_asp.docx",
+  "features" : {
+    "originalScore" : 73.779495,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.33917385,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/Malakoff%20Mederic%20Prevoyance/DUCS-Malakoff-2014Q1.PDF",
+  "features" : {
+    "originalScore" : 82.03193,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20317838,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2013/ReleveBNP-2013-02.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16673042,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2013/ReleveBNP-2013-07.pdf",
+  "features" : {
+    "originalScore" : 239.20354,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17900638,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2013/ReleveBNP-2013-10.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18771441,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2013/ReleveBNP-2013-12.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19420928,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2015/ReleveBNP-2015-02.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24947156,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2015/ReleveBNP-2015-03.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.25469747,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2015/ReleveBNP-2015-09.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2918452,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2015/ReleveBNP-2015-10.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2995506,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2015/ReleveBNP-2015-11.pdf",
+  "features" : {
+    "originalScore" : 227.23857,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.30673885,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-02.pdf",
+  "features" : {
+    "originalScore" : 232.91473,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3321563,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-03.pdf",
+  "features" : {
+    "originalScore" : 239.73058,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2017/ReleveBNP-2017-01.pdf",
+  "features" : {
+    "originalScore" : 234.51727,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Syntheses/2013/SyntheseBNP-2013-01.pdf",
+  "features" : {
+    "originalScore" : 213.74323,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16445167,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Syntheses/2013/SyntheseBNP-2013-02.pdf",
+  "features" : {
+    "originalScore" : 213.74323,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.1667304,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Kelkoo/RIB-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 7582.017,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Precom_AFDAS/RIB-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 7582.017,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Syngenta/Courrier_RIB_TVA.docx",
+  "features" : {
+    "originalScore" : 384.65823,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17172465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Syngenta/Courrier_RIB_TVA.pdf",
+  "features" : {
+    "originalScore" : 384.65823,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17172466,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Carrefour/Documents_Computer_Future/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_FORCO_Cdiscount/QUESTIONNAIRE_FG%20FRANCE.doc",
+  "features" : {
+    "originalScore" : 202.09628,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.18591999,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Montpellier/Prets_à_envoi/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Conseil_Solr_ES_DocapostBPO/Matrice%20creation%20fournisseur%20France%20Labs.xls",
+  "features" : {
+    "originalScore" : 333.95898,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2414563,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Datafari_Total_Phase1_0/Catalogue%20Fournisseur/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/RIB-FranceLabs-BNPParibas.pdf%20-%2020141030150349%20-%20Signature%201.xml",
+  "features" : {
+    "originalScore" : 7823.759,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_Espace_Lemanique/RIBFranceLabsBNPParibas.pdf",
+  "features" : {
+    "originalScore" : 248.45058,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/RIB-FranceLabs-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 6957.7837,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/RIB-FranceLabs-BNPParibas.pdf.xades",
+  "features" : {
+    "originalScore" : 9541.203,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2013/2013_12/Envoyees/Facture_Proximum_Techinnov2014_FRANCE_LABS.pdf",
+  "features" : {
+    "originalScore" : 319.18567,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19108845,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/201311_VeilleMag_FRANCELABSPetitDej_Information.doc",
+  "features" : {
+    "originalScore" : 73.94156,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.1898799,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_12/Envoyes/Facture_Techinnov_France_Labs_Virement_Janv2015.pdf",
+  "features" : {
+    "originalScore" : 277.22546,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.23602918,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_05/Envoye/Facture_ITIFORUMS_N1605324_FRANCE_LABS_Virement.pdf",
+  "features" : {
+    "originalScore" : 271.40866,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3522502,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/Facture_salon_ITIFORUMS%20N°1711090%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 271.40866,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/Dossier_Soumis/Admin/France%20Labs/RIB-BNPParibas.pdf",
+  "features" : {
+    "originalScore" : 383.93564,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/Dossier_Soumis/Admin/SAP%20Labs%20France%20SAS/RIB%20RBS%20SAP%20LABS%20France%20200736221.pdf",
+  "features" : {
+    "originalScore" : 561.3219,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/Dossier_Soumis/DossierCandidature/France%20Labs/Secure_Search_Candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 282.1265,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19631074,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rib france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/PSIM_Canveas_candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 282.1265,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19629048,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "tableau de financement",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20170613.xlsx",
+  "features" : {
+    "originalScore" : 7550.4966,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5916856,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201404_Campagne_Phoning_Aktisea/Offre_de_service_Aktisea_Phoning/OS-MAR14.315%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 122.655235,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19997138,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201404_Campagne_Phoning_Aktisea/Offre_de_service_Aktisea_Phoning/OS-NOV13.272%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 100.82601,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18971321,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201404_Campagne_Phoning_Aktisea/Offre_de_service_Aktisea_Phoning/OS-NOV13.274%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 100.82601,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18978673,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/Perdu_Concours-OpenPACA-2013/reglement-consultation-concours-2013.pdf",
+  "features" : {
+    "originalScore" : 103.9257,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17019007,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2013/RESCRIT%20CIR.rtf",
+  "features" : {
+    "originalScore" : 94.46489,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Plan_Revitalisation_Samsung_2015/150728_SFRC_Acc_Entreprise_présentation_projet.pptx",
+  "features" : {
+    "originalScore" : 81.36959,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2944908,
+    "isPdf" : 0.0,
+    "isPpt" : 1.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Legal/FranceLabs-Legipolis-IPE_23-11-2011.docx",
+  "features" : {
+    "originalScore" : 179.17671,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13775697,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/CEEI/FRANCE%20LAB%20Convhébergt_IPE-NCA-IPE208_2013-76.pdf",
+  "features" : {
+    "originalScore" : 162.7534,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18087941,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/CompteRendu2013-Juillet-Aout-Incubs.doc",
+  "features" : {
+    "originalScore" : 351.6444,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.18143433,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/CompteRendu2013-Mai-Juin-Incubs.doc",
+  "features" : {
+    "originalScore" : 362.1015,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17635643,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/Convention-Incub_IPE208.pdf",
+  "features" : {
+    "originalScore" : 397.60016,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13811442,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/DossierIncubateurPacaEst-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 1007.865,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13975774,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/Form°PP_2011.pdf",
+  "features" : {
+    "originalScore" : 147.31856,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/Guide%20des%20aides%20financières-2009.pdf",
+  "features" : {
+    "originalScore" : 103.36652,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Incubateur-PACAEst/Process-Incubation_2011.pdf",
+  "features" : {
+    "originalScore" : 433.72064,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "contrat incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Reseau_Entreprendre/Résumé%20vierge%20CE%20%20Innovation.doc",
+  "features" : {
+    "originalScore" : 80.898026,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15376313,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/DR_ASP/Demande_Aide_1ere_Embauche_asp.docx",
+  "features" : {
+    "originalScore" : 1629.3636,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.33917382,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/Mutuelle/H8523%20-%20CG%20VEO%203%20%20PREVOYANCE%20-%2020161110.pdf",
+  "features" : {
+    "originalScore" : 23.517662,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.43107212,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Datafari_Vaucluse/Règlement%20de%20consultation.doc",
+  "features" : {
+    "originalScore" : 23.517662,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.366709,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Scan_Mission_Aide_Premiere_Embauche_Massiera_2016-2015.pdf",
+  "features" : {
+    "originalScore" : 6941.1333,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3538797,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/2013_OSEO/PresentationDuProgrammeFaisabilite.docx",
+  "features" : {
+    "originalScore" : 61.294147,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15980838,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "premiere embauche",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/NOTE%20CIR%20JEI.pdf",
+  "features" : {
+    "originalScore" : 731.87573,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18566027,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "1347,96",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Conseil_Solr_ComputerFutures_Carrefour/Facture_ComputerFutures_AccompSolr_012015.docx",
+  "features" : {
+    "originalScore" : 1607.5706,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2658043,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "1347,96",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Conseil_Solr_ComputerFutures_Carrefour/Facture_ComputerFutures_AccompSolr_012015.pdf",
+  "features" : {
+    "originalScore" : 1607.5706,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26580438,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "1347,96",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_06/Envoye/Client_ComputerFutures_AccompSolr_012015.pdf",
+  "features" : {
+    "originalScore" : 1607.5706,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26580438,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "progit",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/progit.fr.pdf",
+  "features" : {
+    "originalScore" : 565.23303,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh serveurs cloud",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_03/Envoye/facture_OVH_serveurs_cloud_FR15746451_CBFL.pdf",
+  "features" : {
+    "originalScore" : 7718.0415,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh serveurs cloud",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_06/Envoye/facture_OVH_Serveurs_Cloud_FR16437676_CBFL.pdf",
+  "features" : {
+    "originalScore" : 7718.0415,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh serveurs cloud",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_06/Envoye/facture_OVH_Serveurs_Cloud_FR16597810_CBFL.pdf",
+  "features" : {
+    "originalScore" : 7718.0415,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture ovh serveurs cloud",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_07/Envoye/facture_OVH_Serveurs_Cloud_FR16855200_CBFL.pdf",
+  "features" : {
+    "originalScore" : 10767.753,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "evaluation carlavan",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Stages/2013Q2/Mathieu_Carlavan/Evaluation_Mathieu_Carlavan.pdf",
+  "features" : {
+    "originalScore" : 845.807,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "semantic",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/Formations/20130319/AO_IFCE_2012_solr/source/JProtoIFCELET/js/jquery.form.js",
+  "features" : {
+    "originalScore" : 77.81172,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "semantic",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/Formations/20130319/AO_IFCE_2012_solr/source/ifce-sba-push/lib/cloudview-core-apis.jar",
+  "features" : {
+    "originalScore" : 96.3162,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "semantic",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/white_paper_semantic_search.docx",
+  "features" : {
+    "originalScore" : 463.60394,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.4946738,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "semantic",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/EIT/Call_2016/Copie%20de%20EIT%20Digital%20Registration%20of%20Interests1.xlsx",
+  "features" : {
+    "originalScore" : 67.52994,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.34488437,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/Formation_Pro/2015_2016_Declaration_activites_formation_bpf_93060704506_2015.pdf",
+  "features" : {
+    "originalScore" : 262.58075,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.34047043,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France%20Labs_Bilan%202014.pdf",
+  "features" : {
+    "originalScore" : 345.0738,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24864848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/Bilan2012_FranceLabs.pdf.xades",
+  "features" : {
+    "originalScore" : 415.5182,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/Bilan2013_FranceLabs.pdf.xades",
+  "features" : {
+    "originalScore" : 415.5182,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Old/201404_Prospection_Phoning_Formations/Grille_Tarifaire_Datafari_2015.docx",
+  "features" : {
+    "originalScore" : 240.76653,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.23757112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Tarifs/Grille_Tarifaire_Datafari_2015.docx",
+  "features" : {
+    "originalScore" : 240.76653,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.23757112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Tarifs/Grille_Tarifaire_Datafari_2015.pdf",
+  "features" : {
+    "originalScore" : 240.76653,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.23757115,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Tarifs/Grille_Tarifaire_Datafari_Par_Docs_2015.pdf",
+  "features" : {
+    "originalScore" : 219.58116,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.23757115,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Tarifs/Grille_Tarifaire_Datafari_Par_Serveurs_2015.docx",
+  "features" : {
+    "originalScore" : 226.39218,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.28356978,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/Tarifs/Grille_Tarifaire_Datafari_Par_Serveurs_2015.pdf",
+  "features" : {
+    "originalScore" : 226.39218,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.28356984,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/Formation_Pro/2016_2017_Declaration_activites_formation_bpf_bilan_pedagogique_financier.pdf",
+  "features" : {
+    "originalScore" : 171.2957,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.41714886,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-04.pdf",
+  "features" : {
+    "originalScore" : 62.194237,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2017/ReleveBNP-2017-05.pdf",
+  "features" : {
+    "originalScore" : 284.15723,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5770432,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/BakerMcKenzie_Leyton%20Webconférence%20CIR%20du%2017oct2014.pdf",
+  "features" : {
+    "originalScore" : 42.88996,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22820769,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Formations/2015_Chomage_Mandataires_Sociaux/2711-Guide-PL-2015_janv.pdf",
+  "features" : {
+    "originalScore" : 51.31085,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24147034,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Formations/2015_Chomage_Mandataires_Sociaux/2712-GuideCrea-ACI-2015_janv.pdf",
+  "features" : {
+    "originalScore" : 57.56131,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24145944,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_05_Massiera.pdf",
+  "features" : {
+    "originalScore" : 247.2387,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.56457657,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_05_Mazoyer.pdf",
+  "features" : {
+    "originalScore" : 255.26245,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.56457704,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_05_Tavard.pdf",
+  "features" : {
+    "originalScore" : 255.26245,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.56457746,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire mai 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_05_Ulmer.pdf",
+  "features" : {
+    "originalScore" : 255.26245,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5645776,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/LetterIntention_SECROWDproposal.docx",
+  "features" : {
+    "originalScore" : 160.8675,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2800547,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/LetterIntention_SECROWDproposal_Beepeers.docx",
+  "features" : {
+    "originalScore" : 160.8675,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.28005692,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/LetterIntention_SECROWDproposal_Gridpocket.docx",
+  "features" : {
+    "originalScore" : 160.8675,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.28005707,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/LetterIntention_SECROWDproposal_Reador.docx",
+  "features" : {
+    "originalScore" : 160.8675,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2800547,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/SECROWD%20Beepeers%20letter.pdf",
+  "features" : {
+    "originalScore" : 494.76065,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/SECROWD%20Esioox%20letter.pdf",
+  "features" : {
+    "originalScore" : 494.76065,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/SECROWD%20GridPocket%20letter.pdf",
+  "features" : {
+    "originalScore" : 445.77277,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2800784,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/SECROWD%20Reador%20letter.pdf",
+  "features" : {
+    "originalScore" : 494.76065,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "secrowd",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/SECROWD%20TeachOnMars%20letter.pdf",
+  "features" : {
+    "originalScore" : 386.7695,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.28352922,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Datafari_Total_Phase1_0/Moteur%20de%20recherche%20Polyvalent%201.1.docx",
+  "features" : {
+    "originalScore" : 397.26605,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.3177218,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Conseil_Solr_ES_BPCE/20151221_informations-compl-ter-pour-sourcing-digital-1_France_Labs.xls",
+  "features" : {
+    "originalScore" : 388.85062,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32191494,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201507_Veille_Concurrentielle_Postes_Commerciaux/Lucidworks_SalesDevelopmentRepresentative_SF_2.txt",
+  "features" : {
+    "originalScore" : 1272.1483,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/strata-hadoop-contact_list_a_traiter.xlsx",
+  "features" : {
+    "originalScore" : 1170.1865,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.30176178,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/white_paper_semantic_search.docx",
+  "features" : {
+    "originalScore" : 862.5221,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.49467373,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2015/Trame_Dossier_Justificatif_CII.docx",
+  "features" : {
+    "originalScore" : 688.8249,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.34559622,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2015/Trame_Dossier_Justificatif_CII_2016.PDF",
+  "features" : {
+    "originalScore" : 699.6194,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.49517235,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/Proposal/WP%20list%20v4.docx",
+  "features" : {
+    "originalScore" : 943.8738,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.27626893,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/2015_SECROWD/Proposal/WP%20list%20v7_SAP_SecludIT_FranceLabs.docx",
+  "features" : {
+    "originalScore" : 754.692,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.27770963,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/201608_MASTIVE/740876-MASTIVE-Evaluation%20Summary%20Report.pdf",
+  "features" : {
+    "originalScore" : 930.1145,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.44954208,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/201608_MASTIVE/MASTIVE_PartB_section4-5_all_FRL.docx",
+  "features" : {
+    "originalScore" : 1049.7853,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.39353377,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Concurrence/Synata/What%20are%20some%20low-cost%20options%20for%20implementing%20enterprise%20search%20%20-%20Quora.htm",
+  "features" : {
+    "originalScore" : 374.84888,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Market_Studies/2016/IDC-technology-spotlight-2016_unstructured_info_revolutionBigData_Analytics.pdf",
+  "features" : {
+    "originalScore" : 1541.5768,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32535467,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Doculibre/Exemple_Appel_d_Offres/CIC/SectionI(2).docx",
+  "features" : {
+    "originalScore" : 623.1438,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.12613894,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/Documentation/2012_Multimedia-retrieval-framework_based_on_automatic_graded_relevance_judgments.pdf",
+  "features" : {
+    "originalScore" : 426.22342,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13441178,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Datafari/Reflexions%20amelio%20pertinence/Reflexions.txt",
+  "features" : {
+    "originalScore" : 1406.2738,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Total/Phase%201.1/Moteur%20de%20recherche%20Polyvalent_V1.docx",
+  "features" : {
+    "originalScore" : 397.26605,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.3722991,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Tractebel/Datafari%20-%20Tractebel%20-%2004052017.pptx",
+  "features" : {
+    "originalScore" : 1195.9028,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5420425,
+    "isPdf" : 0.0,
+    "isPpt" : 1.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "machine AND learning",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/ENRON_POUR_PONOT/sousrep2/Intro%20to%20Data%20Mining%20(3rd%20edition).pdf",
+  "features" : {
+    "originalScore" : 799.0229,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.05151639,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "nespresso",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_07/Facture_Nespresso.pdf",
+  "features" : {
+    "originalScore" : 565.23303,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "nespresso",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_10/Envoye/Facture_Nespresso_CBFL.pdf",
+  "features" : {
+    "originalScore" : 474.6414,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22965391,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "nespresso",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_02/Envoyes/facture_Nespresso_CBFL.pdf",
+  "features" : {
+    "originalScore" : 474.6414,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rescrit jeune entreprise innovante",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2014/Rapport%20technique.docx",
+  "features" : {
+    "originalScore" : 69.55816,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.26331112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rescrit jeune entreprise innovante",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2015/Trame_Dossier_Justificatif_CII_2016.PDF",
+  "features" : {
+    "originalScore" : 122.140656,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.49517235,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rescrit jeune entreprise innovante",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/NOTE%20CIR%20JEI.pdf",
+  "features" : {
+    "originalScore" : 163.99516,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18566027,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "rescrit jeune entreprise innovante",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/JEI/Lettre_Demande_Rescrit.docx",
+  "features" : {
+    "originalScore" : 632.15137,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17343976,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Datafari_BNPParibas/Minutes_20161206.txt",
+  "features" : {
+    "originalScore" : 99.28114,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Commercial/201611_ParisOpenSourceSummit/Contacts_Paris_Open_Source_Summit.xls",
+  "features" : {
+    "originalScore" : 131.7817,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5402263,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Mailing/2017_Mailing_Pre_BigData/BAT%20Le%20Big%20Data%20cognitif%20avec%20Datafari%203.htm",
+  "features" : {
+    "originalScore" : 238.17744,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Mailing/2017_Mailing_Pre_BigData/Datafari_3_1%20-%20Copy.html",
+  "features" : {
+    "originalScore" : 267.53406,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Mailing/2017_Mailing_Pre_BigData/Datafari_3_1.html",
+  "features" : {
+    "originalScore" : 310.06946,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Communication/Mailing/2017_Mailing_Pre_BigData/test2.html",
+  "features" : {
+    "originalScore" : 125.04783,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/Datafari/Depliant/Plaquette_Datafari_Brochure_3_pans_minifie.pdf",
+  "features" : {
+    "originalScore" : 513.5198,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20172146,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/Datafari/Depliant/Plaquette_Datafari_Brochure_Mairies-3pans-mini.pdf",
+  "features" : {
+    "originalScore" : 432.73132,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2347803,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Plaquette/Plaquette_France_Labs_Brochure_3_pans.pdf",
+  "features" : {
+    "originalScore" : 354.23877,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18708299,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/2016/201603_Salon_BigData/FRANCE%20LABS_description_brochure.docx",
+  "features" : {
+    "originalScore" : 407.08124,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.32051098,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Plaquette_France_Labs_Brochure_3_pans.pdf",
+  "features" : {
+    "originalScore" : 354.23877,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18708299,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Website/FranceLabs_v3/contact-brochure.html",
+  "features" : {
+    "originalScore" : 444.5266,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Website/FranceLabs_v3/php/mailer_brochure.php",
+  "features" : {
+    "originalScore" : 1929.2911,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "brochure datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/Tabayon/Discussion_2017_04_21.txt",
+  "features" : {
+    "originalScore" : 162.55464,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Formation_Solr_Unleashed_BPI_092015/Facture_BPI_SolrUnleashed_092015.pdf",
+  "features" : {
+    "originalScore" : 760.8279,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2928139,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150902.xlsx",
+  "features" : {
+    "originalScore" : 174.9572,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.29330632,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151009.xlsx",
+  "features" : {
+    "originalScore" : 174.97768,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.29468995,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151016.xlsx",
+  "features" : {
+    "originalScore" : 174.97768,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.29519197,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151110.xlsx",
+  "features" : {
+    "originalScore" : 175.6053,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.31096965,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151218.xlsx",
+  "features" : {
+    "originalScore" : 175.6053,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3125356,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160201.xlsx",
+  "features" : {
+    "originalScore" : 175.64685,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32428065,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160216.xlsx",
+  "features" : {
+    "originalScore" : 175.64685,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32797223,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160217.xlsx",
+  "features" : {
+    "originalScore" : 175.64685,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32777274,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160303.xlsx",
+  "features" : {
+    "originalScore" : 175.64685,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.33254752,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160312.xlsx",
+  "features" : {
+    "originalScore" : 178.0836,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.33920905,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160415.xlsx",
+  "features" : {
+    "originalScore" : 178.11804,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35167116,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160502.xlsx",
+  "features" : {
+    "originalScore" : 178.11804,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.351667,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160504.xlsx",
+  "features" : {
+    "originalScore" : 178.11804,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35869932,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160527.xlsx",
+  "features" : {
+    "originalScore" : 178.18198,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.3617376,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160609.xlsx",
+  "features" : {
+    "originalScore" : 185.67764,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.37337583,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160705.xlsx",
+  "features" : {
+    "originalScore" : 185.69234,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.377022,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160713.xlsx",
+  "features" : {
+    "originalScore" : 185.70667,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.38363916,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160808.xlsx",
+  "features" : {
+    "originalScore" : 185.72069,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.38880137,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160907.xlsx",
+  "features" : {
+    "originalScore" : 197.40678,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40078092,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160914.xlsx",
+  "features" : {
+    "originalScore" : 198.62357,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.4126556,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161006.xlsx",
+  "features" : {
+    "originalScore" : 181.46498,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42353258,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161109.xlsx",
+  "features" : {
+    "originalScore" : 182.12572,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.45065153,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161219.xlsx",
+  "features" : {
+    "originalScore" : 182.1664,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.45216322,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture bpi solr unleashed octobre 2015",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20170116.xlsx",
+  "features" : {
+    "originalScore" : 168.5919,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5474744,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-09.pdf",
+  "features" : {
+    "originalScore" : 45.187233,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-11.pdf",
+  "features" : {
+    "originalScore" : 54.942993,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Bibliotheque_Grenoble/CCTP.pdf",
+  "features" : {
+    "originalScore" : 53.928127,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24585088,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Bibliotheque_Grenoble/Présentation%20du%20moteur%20du%20projet%20BMG.pdf",
+  "features" : {
+    "originalScore" : 38.500553,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2458516,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_09/Envoye/facture_Convention_Affaire_Revue_du_Digital_Virement.pdf",
+  "features" : {
+    "originalScore" : 515.8222,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.39267832,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "La Revue Digitale",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/Remboursement_Facture_Revue_du_Digital.pdf",
+  "features" : {
+    "originalScore" : 609.63275,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42962754,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon cartouche imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_10/Envoyes/facture_Amazon_Cartouches_Encre_Imprimante_CBFL.pdf",
+  "features" : {
+    "originalScore" : 1048.1646,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42555517,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon cartouche imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/facture_Amazon_Cartouches_Imprimante_1_CBFL.pdf",
+  "features" : {
+    "originalScore" : 11529.811,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42940047,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon cartouche imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/facture_Amazon_Cartouches_Imprimante_2_CBFL.pdf",
+  "features" : {
+    "originalScore" : 11529.811,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42940047,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture citya",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Datafari_Citya/Facture_Citya-Datafari-Audit-012016.docx",
+  "features" : {
+    "originalScore" : 4487.5986,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.3217092,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture citya",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Datafari_Citya/Facture_Citya-Datafari-Audit-012016.pdf",
+  "features" : {
+    "originalScore" : 4487.5986,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32170925,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture citya",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_01/Attente_de_reglement/Client_Citya-Datafari-Audit-012016.pdf",
+  "features" : {
+    "originalScore" : 334.01807,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32170925,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture citya",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_01/Envoye/Facture_Hotel_Tours_Visite_Citya_Janvier2016_CBFL.pdf",
+  "features" : {
+    "originalScore" : 483.22784,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.32158226,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_DBI-Services/Technique/DBi%20Services.docx",
+  "features" : {
+    "originalScore" : 95.86609,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.22040558,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/H2020/201608_MASTIVE/MASTIVE_PartB_section4-5_all_FRL.docx",
+  "features" : {
+    "originalScore" : 47.03485,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.39353377,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/2013/20131105_SAP_Teched/Script3.docx",
+  "features" : {
+    "originalScore" : 82.30339,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.18697631,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/2014/20140418_DEVOXX/Proposal_Presentation_Datafari_ToolsInAction.docx",
+  "features" : {
+    "originalScore" : 668.30206,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19651987,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/Documentation/2012_12_The-business-of-search.pdf",
+  "features" : {
+    "originalScore" : 38.22342,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16017246,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2003.pdf",
+  "features" : {
+    "originalScore" : 142.25854,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20704347,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2005.pdf",
+  "features" : {
+    "originalScore" : 147.35808,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20898621,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2006.pdf",
+  "features" : {
+    "originalScore" : 142.52097,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20695537,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2007.pdf",
+  "features" : {
+    "originalScore" : 136.81937,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20753595,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2008.pdf",
+  "features" : {
+    "originalScore" : 137.54622,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2069556,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Ressources/eBooks/Apache%20ManifoldCF/MCFiA%20CH%2011.pdf",
+  "features" : {
+    "originalScore" : 145.20432,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20872116,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Datafari/Admin_UI.txt",
+  "features" : {
+    "originalScore" : 116.96322,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Amadeus_GreenSide/metasearch_20150312_minutes.docx",
+  "features" : {
+    "originalScore" : 137.2825,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2512163,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Amadeus_GreenSide/metasearch_audit.docx",
+  "features" : {
+    "originalScore" : 107.66337,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.25107113,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Total/Phase%201.1/Livrables/Phase%201/C06%20-%20SEEN%20-%20Authorizations.docx",
+  "features" : {
+    "originalScore" : 106.804794,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.40343112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Projets/Tractebel/POC/Datafari_Tractebel_documentation-installation_configuration.docx",
+  "features" : {
+    "originalScore" : 82.5753,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.42102128,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/common_en_US.properties",
+  "features" : {
+    "originalScore" : 115.496124,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/common_fr_FR.properties",
+  "features" : {
+    "originalScore" : 78.413055,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/fr_FR/programmatic-operation.xml",
+  "features" : {
+    "originalScore" : 119.634834,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/fr_FR/writing-output-connectors.xml",
+  "features" : {
+    "originalScore" : 129.81981,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/fr_FR/writing-repository-connectors.xml",
+  "features" : {
+    "originalScore" : 132.1911,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/fr_FR/writing-transformation-connectors.xml",
+  "features" : {
+    "originalScore" : 129.61168,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "manifoldcf in action",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/ponitponot.properties",
+  "features" : {
+    "originalScore" : 78.413055,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Admin/Formation_Pro/2014_2015_Declaration_activites_formation_bpf_93060704506_2014.pdf",
+  "features" : {
+    "originalScore" : 287.41922,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.25075263,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Agence_Eau_Artois_Picardie/Rapport0614/aestatsQ1-2014.csv",
+  "features" : {
+    "originalScore" : 232.74416,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_Agence_Eau_Artois_Picardie/Rapport0614/aestatsS1-2014.csv",
+  "features" : {
+    "originalScore" : 223.54861,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_CM-CIC-Formation/Contrat%20prestation%2009-2013%20-%20WINE_update.docx",
+  "features" : {
+    "originalScore" : 64.45717,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.23419073,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France%20Labs_Bilan%202013.pdf",
+  "features" : {
+    "originalScore" : 344.97906,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20657848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France%20Labs_Bilan%202014.pdf",
+  "features" : {
+    "originalScore" : 6050.7983,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24864848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Conseil_Solr_ACCE/MPA-15001_CCTP.pdf",
+  "features" : {
+    "originalScore" : 42.31705,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24766952,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/CCTP-METAMOTEUR-INF14006.pdf",
+  "features" : {
+    "originalScore" : 37.899952,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22694129,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/Bilan2012_FranceLabs.pdf%20-%2020141030150334%20-%20Signature%201.xml",
+  "features" : {
+    "originalScore" : 363.5144,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/Bilan2013_FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 344.97906,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20657848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/Bilan2013_FranceLabs.pdf%20-%2020141030150336%20-%20Signature%201.xml",
+  "features" : {
+    "originalScore" : 363.5144,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2014/2014_CNFPT/Rempli/Capacite_Economique_Financiere.doc",
+  "features" : {
+    "originalScore" : 107.062195,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.23008789,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_Espace_Lemanique/CapaciteEconomiqueFinanciere.doc",
+  "features" : {
+    "originalScore" : 107.062195,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.25109804,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/Bilan2013_FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 344.97906,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20657848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/Affaires_Classees/2015/2015_SMITRED/Capacite_Economique_Financiere.doc",
+  "features" : {
+    "originalScore" : 107.062195,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2485213,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/2011_2013_Documents_Sofial/France%20Labs%20-%20Grand%20livre%20complet%202013.pdf",
+  "features" : {
+    "originalScore" : 48.341995,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Bilans/2014_Bilan/France%20Labs_Plaquette%202014.pdf",
+  "features" : {
+    "originalScore" : 268.2349,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24864848,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Bilans/2014_Bilan/France%20Labs_Situation_102014.pdf",
+  "features" : {
+    "originalScore" : 72.52637,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2321381,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Bilans/2015_Bilan/FRANCE%20LABS%20-%20ETATS%20FINANCIERS%20IE%20CANNES%202015.pdf",
+  "features" : {
+    "originalScore" : 77.24921,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35525233,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_11/Envoyes/Facture_InExtenso_BilanOct2014.pdf",
+  "features" : {
+    "originalScore" : 660.14136,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Grand_Livre_20131017-20130101.zip",
+  "features" : {
+    "originalScore" : 96.22554,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/AAP%20PSIM%202013%20-Cahier%20des%20charges.pdf",
+  "features" : {
+    "originalScore" : 40.422306,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19037342,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/Offre_GAC/Convention%20CI%20et%20CII%20204%20pour%20FRANCE%20LABS.pdf",
+  "features" : {
+    "originalScore" : 49.45173,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/Offre_Leyton/LEYTON%20CR%20réunion%2007%2010%202014.pdf",
+  "features" : {
+    "originalScore" : 213.80432,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2268089,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "bilan 2014",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160914.xlsx",
+  "features" : {
+    "originalScore" : 48.983185,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.41265553,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2016/ReleveBNP-2016-12.pdf",
+  "features" : {
+    "originalScore" : 63.363926,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Banque/Releves/2017/ReleveBNP-2017-03.pdf",
+  "features" : {
+    "originalScore" : 45.562492,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Audit_Solr_Kiabi_201609/Facture_Audit_Solr_Kiabi_092016.docx",
+  "features" : {
+    "originalScore" : 1288.2601,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.40979424,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Audit_Solr_Kiabi_201609/Facture_Audit_Solr_Kiabi_092016.pdf",
+  "features" : {
+    "originalScore" : 386.30173,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40979433,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Audit_Solr_Kiabi_201612/Facture_Audit_Solr_Kiabi_122016.docx",
+  "features" : {
+    "originalScore" : 1288.2601,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.46208978,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2016/2016_Audit_Solr_Kiabi_201612/Facture_Audit_Solr_Kiabi_122016.pdf",
+  "features" : {
+    "originalScore" : 386.30173,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.46209025,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_05/Envoye/Facture_Kiabi_TShirts_Comm.pdf",
+  "features" : {
+    "originalScore" : 8463.498,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.30175465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_09/Envoye/Client_Audit_Solr_Kiabi_092016.pdf",
+  "features" : {
+    "originalScore" : 313.7713,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40979433,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_09/Envoye/Facture_HotelsCom_4joursKiabi_Aurelien_Septembre_CBFL.pdf",
+  "features" : {
+    "originalScore" : 325.5276,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.4066148,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_12/Envoye/Client_Audit_Solr_Kiabi_122016.pdf",
+  "features" : {
+    "originalScore" : 314.35587,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.46209025,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_12/Envoye/facture_Hotel_Aurelien_Lilles_Kiabi_CBFL.pdf",
+  "features" : {
+    "originalScore" : 386.30173,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.4424769,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_12/Envoye/facture_easyjet_Aurelien_Lilles_Kiabi_CBFL.pdf",
+  "features" : {
+    "originalScore" : 386.30173,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.44247723,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160502.xlsx",
+  "features" : {
+    "originalScore" : 36.186497,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.35166696,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160907.xlsx",
+  "features" : {
+    "originalScore" : 39.50277,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40078086,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160914.xlsx",
+  "features" : {
+    "originalScore" : 40.719547,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.41265553,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161006.xlsx",
+  "features" : {
+    "originalScore" : 46.983868,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42353258,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161109.xlsx",
+  "features" : {
+    "originalScore" : 46.983868,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.45065153,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161219.xlsx",
+  "features" : {
+    "originalScore" : 46.983868,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.45216322,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20170116.xlsx",
+  "features" : {
+    "originalScore" : 45.722248,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.54747427,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture kiabi",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20170613.xlsx",
+  "features" : {
+    "originalScore" : 54.932823,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5916854,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_La_Poste/Devis_Formation_Avancee_La_Poste-102013.pdf",
+  "features" : {
+    "originalScore" : 484.26166,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.1853693,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_La_Poste/Devis_Formation_La_Poste-072013.pdf",
+  "features" : {
+    "originalScore" : 484.26166,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17695577,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/2013_La_Poste/Devis_Formation_La_Poste-082013.pdf",
+  "features" : {
+    "originalScore" : 484.26166,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18087073,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Worldline/Pendant/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Doctissimo/France%20labs.xls",
+  "features" : {
+    "originalScore" : 364.37103,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26227286,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2015/2015_Formation_Solr_Intra_Doctissimo_FormationInitiale_Mai2015/Olivier/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2014/2014_IFCE/France_Labs_Memoire.doc",
+  "features" : {
+    "originalScore" : 342.7564,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19638954,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 315.4027,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2607446,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 315.4027,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2607446,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_03/Envoyes/Facture_VistaPrint_Flyers_Posters_FranceLabs_CBFL.pdf",
+  "features" : {
+    "originalScore" : 4725.7,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2517756,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/PRM/PRM_FranceLabs.docx",
+  "features" : {
+    "originalScore" : 356.81918,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.18369594,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Formations/Admin/Formation_Solr_Avancee_Pendant/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Formations/Admin/Formation_Solr_Initiale_Pendant/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Formations/Admin/Formation_Solr_Intra_Pendant/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Formations/Admin/Formation_Solr_Unleashed_Pendant/Fiche_Interne_Formateur.docx",
+  "features" : {
+    "originalScore" : 677.02014,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.19952339,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Posters/2015/poster_France_Labs.ai",
+  "features" : {
+    "originalScore" : 6886.2866,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2510888,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Posters/2015/poster_France_Labs_vectorised.ai",
+  "features" : {
+    "originalScore" : 11104.626,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.25108886,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Posters/poster_A1.pdf",
+  "features" : {
+    "originalScore" : 318.5807,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Posters/poster_inkscape.svg",
+  "features" : {
+    "originalScore" : 320.68738,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "poster france labs",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/CEEI/QQC%20France%20Labs.ppt",
+  "features" : {
+    "originalScore" : 368.8319,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18860905,
+    "isPdf" : 0.0,
+    "isPpt" : 1.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/2012_IDILINK/Facture_Formation_IDILINK-112012.pdf",
+  "features" : {
+    "originalScore" : 163.17285,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16567305,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/2012_Questel/Devis_Formation_Questel-102012.docx",
+  "features" : {
+    "originalScore" : 3932.9683,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15680887,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/2012_Questel/Facture_Formation_Questel-112012.docx",
+  "features" : {
+    "originalScore" : 3932.9683,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.16008718,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/2012_Questel/FranceLabs_Convention_de_formation_Questel.docx",
+  "features" : {
+    "originalScore" : 3490.2312,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.15890099,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/Formations/20121128/Facture_Formation_IDILINK-112012.docx",
+  "features" : {
+    "originalScore" : 163.17285,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.165673,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2012/Formations/20121128/Facture_Formation_IDILINK-112012.pdf",
+  "features" : {
+    "originalScore" : 163.17285,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16567305,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/Formations/20130319/FranceLabs_Convention_de_formation_IFCE.docx",
+  "features" : {
+    "originalScore" : 159.38144,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.16672176,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/Formations/20130626/FranceLabs_Convention_de_formation_IFCE_SolrAvance.docx",
+  "features" : {
+    "originalScore" : 139.18301,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.17392732,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2013/Formations/20130626/FranceLabs_Convention_de_formation_IFCE_SolrAvance.pdf",
+  "features" : {
+    "originalScore" : 151.3507,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17392737,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Questel_1/Devis_Audit_Questel-062014.docx",
+  "features" : {
+    "originalScore" : 227.09467,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.21296406,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Questel_1/Devis_Audit_Questel-062014.pdf",
+  "features" : {
+    "originalScore" : 227.09467,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.21296409,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Questel_1/Facture_Audit_Questel-062014.docx",
+  "features" : {
+    "originalScore" : 228.8684,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.21634728,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Questel_1/Facture_Audit_Questel-062014.pdf",
+  "features" : {
+    "originalScore" : 228.8684,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.21634737,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Questel_2/Devis_Audit_Questel-062014.docx",
+  "features" : {
+    "originalScore" : 227.09467,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.21296406,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_07/Client_Audit_Questel-062014.pdf",
+  "features" : {
+    "originalScore" : 228.8684,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.21634737,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2014/2014_10/Envoye/Client_Audit_Questel-062014.pdf",
+  "features" : {
+    "originalScore" : 228.8684,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.21634737,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20160907.xlsx",
+  "features" : {
+    "originalScore" : 82.631,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.40078086,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Partenariats/CEEI/Cycles_clients.xlsx",
+  "features" : {
+    "originalScore" : 191.82681,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22791407,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "formation questel",
+  "docid" : "file:/data/owncloud/France%20Labs/Technique/Questel/ToDelete/Audit%20Questel.docx",
+  "features" : {
+    "originalScore" : 242.77051,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.21560085,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Carrefour/Documents_Computer_Future/Olivier_Tavard_CV_FR.pdf",
+  "features" : {
+    "originalScore" : 498.08145,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20258842,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/A%20envoyer/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 67.58712,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2607446,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2015/2015_Audit_Solr_INRS/France_Labs_Note_Methodologique.doc",
+  "features" : {
+    "originalScore" : 67.58712,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2607446,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 379.03613,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13785484,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 379.03613,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785486,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_022015.docx",
+  "features" : {
+    "originalScore" : 322.9751,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.24469784,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_022015.pdf",
+  "features" : {
+    "originalScore" : 322.9751,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24469784,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_092014.docx",
+  "features" : {
+    "originalScore" : 322.9751,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.22143112,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-FranceLabs_092014.pdf",
+  "features" : {
+    "originalScore" : 322.9751,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.22187562,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-English-Web.pdf",
+  "features" : {
+    "originalScore" : 379.03613,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785985,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs.docx",
+  "features" : {
+    "originalScore" : 275.5307,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.13785553,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs.pdf",
+  "features" : {
+    "originalScore" : 271.8761,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785553,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs_SolutionsLinux.docx",
+  "features" : {
+    "originalScore" : 235.87198,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.16582055,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-FranceLabs_SolutionsLinux.pdf",
+  "features" : {
+    "originalScore" : 235.87198,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.16582061,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Cedric_Ulmer-CV-Francais-Web.pdf",
+  "features" : {
+    "originalScore" : 275.5307,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.13785988,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Olivier_Tavard_CV_FR.docx",
+  "features" : {
+    "originalScore" : 498.08145,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2025883,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Olivier_Tavard_CV_FR.pdf",
+  "features" : {
+    "originalScore" : 498.08145,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20258842,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/CV/Olivier_Tavard_CV_Special-MPlanet.docx",
+  "features" : {
+    "originalScore" : 442.0121,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.20171611,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/Olivier_Tavard_CV_FR.docx",
+  "features" : {
+    "originalScore" : 498.08145,
+    "isDoc" : 1.0,
+    "documentRecency" : 0.2013551,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "cv olivier",
+  "docid" : "file:/data/owncloud/France%20Labs/Temp/Olivier_Tavard_CV_FR.pdf",
+  "features" : {
+    "originalScore" : 498.08145,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20135516,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Formations/2015_Chomage_Mandataires_Sociaux/2711-Guide-PL-2015_janv.pdf",
+  "features" : {
+    "originalScore" : 53.033073,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24147028,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Formations/2015_Chomage_Mandataires_Sociaux/2712-GuideCrea-ACI-2015_janv.pdf",
+  "features" : {
+    "originalScore" : 53.238094,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.24145944,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2016/paie_2016_06_Massiera.pdf",
+  "features" : {
+    "originalScore" : 76.43555,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.37192246,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_06_Massiera.pdf",
+  "features" : {
+    "originalScore" : 254.66676,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.59096664,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_06_Mazoyer.pdf",
+  "features" : {
+    "originalScore" : 264.06216,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5909659,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_06_Tavard.pdf",
+  "features" : {
+    "originalScore" : 264.06216,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.59096575,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "salaire juin 2017",
+  "docid" : "file:/data/owncloud/France%20Labs/RH/Salaires/2017/paie_2017_06_Ulmer.pdf",
+  "features" : {
+    "originalScore" : 264.06216,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.5909653,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/2011_2013_Documents_Sofial/France%20Labs%20-%20Grand%20livre%20complet%202011-12.pdf",
+  "features" : {
+    "originalScore" : 171.53513,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_05/Envoye/Facture_Amazon_Imprimante_CBCU.pdf",
+  "features" : {
+    "originalScore" : 11721.157,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2015/2015_05/Envoye/Note_de_frais_Ulmer_Amazon_Imprimante.xls",
+  "features" : {
+    "originalScore" : 622.8167,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26504555,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_06/Envoye/facture_Amazon_Imprimante_HP.pdf",
+  "features" : {
+    "originalScore" : 11721.157,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_10/Envoyes/facture_Amazon_Cartouches_Encre_Imprimante_CBFL.pdf",
+  "features" : {
+    "originalScore" : 700.04034,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.4255551,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/facture_Amazon_Cartouches_Imprimante_1_CBFL.pdf",
+  "features" : {
+    "originalScore" : 700.04034,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42940038,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture amazon imprimante",
+  "docid" : "file:/data/owncloud/France%20Labs/Compta/Factures/2016/2016_11/Envoyes/facture_Amazon_Cartouches_Imprimante_2_CBFL.pdf",
+  "features" : {
+    "originalScore" : 700.04034,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.42940038,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/Prospects/2016/2016_Datafari_BouyguesConstruction/RE%20%20%20France%20Labs%20%20Suite%20à%20notre%20discussion%20au%20salon%20Big%20Data%20Paris.msg",
+  "features" : {
+    "originalScore" : 75.0759,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.354988,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/Datafari/Depliant/Plaquette_Datafari_Brochure_3_pans_minifie.pdf",
+  "features" : {
+    "originalScore" : 5648.717,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.20172144,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/Datafari/Depliant/Plaquette_Datafari_Brochure_Mairies-3pans-mini.pdf",
+  "features" : {
+    "originalScore" : 4760.0444,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2347803,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Graphisme/France%20Labs/Plaquette/Plaquette_France_Labs_Brochure_3_pans.pdf",
+  "features" : {
+    "originalScore" : 354.23877,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18708298,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Plaquette_France_Labs_Brochure_3_pans.pdf",
+  "features" : {
+    "originalScore" : 354.23877,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.18708298,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 10.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Website/FranceLabs/references.html",
+  "features" : {
+    "originalScore" : 105.46843,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "plaquette datafari",
+  "docid" : "file:/data/owncloud/France%20Labs/Marketing/Website/FranceLabs_v2/references.html",
+  "features" : {
+    "originalScore" : 107.05507,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Clients/2014/2014_Montpellier/Precedent_appel/Signés/Cadre_du_Memoire_Technique.xls",
+  "features" : {
+    "originalScore" : 95.03852,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.14359367,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/Dossier_Soumis/DossierCandidature/France%20Labs/Secure_Search_Candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 83.1873,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19631073,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/PSIM_Canveas%20candidature.xls",
+  "features" : {
+    "originalScore" : 83.1873,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19621065,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/2014_ConcoursMondialInnovation/PSIM_Canveas_candidature_FranceLabs.xls",
+  "features" : {
+    "originalScore" : 83.1873,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.19629046,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/Affaires_Classees/Perdu_Concours-OpenPACA-2013/reglement-consultation-concours-2013.pdf",
+  "features" : {
+    "originalScore" : 138.82907,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.17019005,
+    "isPdf" : 1.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "dossier incubateur paca est",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/CIR/2013/RESCRIT%20CIR.rtf",
+  "features" : {
+    "originalScore" : 90.19841,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.020387465,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150529.xlsx",
+  "features" : {
+    "originalScore" : 109.56527,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.27075323,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150629.xlsx",
+  "features" : {
+    "originalScore" : 109.56527,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.27356645,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150716.xlsx",
+  "features" : {
+    "originalScore" : 109.56527,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.27487925,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150724.xlsx",
+  "features" : {
+    "originalScore" : 101.46892,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.28397346,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20150902.xlsx",
+  "features" : {
+    "originalScore" : 106.98635,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.29330626,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151009.xlsx",
+  "features" : {
+    "originalScore" : 108.467026,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.2946899,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151016.xlsx",
+  "features" : {
+    "originalScore" : 108.467026,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.29519194,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20151110.xlsx",
+  "features" : {
+    "originalScore" : 110.79764,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.31096962,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_2015S1.xlsx",
+  "features" : {
+    "originalScore" : 109.56527,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.26521116,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+}, {
+  "query" : "facture questel avril 2016",
+  "docid" : "file:/data/owncloud/France%20Labs/Financements/TableauxDeFinancements_20161006.xlsx",
+  "features" : {
+    "originalScore" : 114.05961,
+    "isDoc" : 0.0,
+    "documentRecency" : 0.4235325,
+    "isPdf" : 0.0,
+    "isPpt" : 0.0
+  },
+  "score" : 1.0,
+  "type" : "QUERYEVAL"
+} ]

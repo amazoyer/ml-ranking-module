@@ -11,6 +11,8 @@ import com.datafari.ranking.dao.spark.SparkJobs;
 import com.datafari.ranking.dao.spark.SparkModelMapper;
 import com.datafari.ranking.model.QueryDocumentClickStat;
 import com.datafari.ranking.model.QueryEvaluation;
+import com.datafari.ranking.model.TrainingEntry;
+import com.datafari.ranking.model.TrainingQuery;
 
 @Named
 public class DatafariUsageDao {
@@ -19,12 +21,23 @@ public class DatafariUsageDao {
 	SparkJobs jobs;
 
 	public List<QueryEvaluation> listQueryEvaluations() {
-		return jobs.getQueryEvaluationRDD().cache().map(SparkModelMapper.createQueryEvaluation).collect();
+		return jobs.getAggregatedQueryEvaluationRDD().cache().map(SparkModelMapper.createQueryEvaluation).collect();
 	}
 
 	public List<QueryDocumentClickStat> listQueryClick() throws IOException {
-		return jobs.getQueryClickRDD().cache().map(SparkModelMapper.createQueryDocumentClickStat).collect().stream().flatMap(List::stream)
-		        .collect(Collectors.toList());
+		return jobs.getQueryClickRDD().cache().map(SparkModelMapper.createQueryDocumentClickStat).collect().stream()
+				.flatMap(List::stream).collect(Collectors.toList());
 	}
+
+	public List<TrainingEntry> listTrainingQueriesFromQueryEvaluation() throws IOException {
+		return jobs.getTrainingEntriesFromQueryEvaluation().cache()
+				.map(SparkModelMapper.createTrainingQueriesFromQueryEvaluation).collect();
+	}
+	//
+	// public List<TrainingEntry> listTrainingEntries(){
+	// jobs.getQueryEvaluationRDD();
+	//
+	//
+	// }
 
 }

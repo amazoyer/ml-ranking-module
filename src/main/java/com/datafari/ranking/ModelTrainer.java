@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -31,27 +33,25 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Assert;
 
-import com.datafari.ranking.configuration.ConfigUtils;
+import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.model.TrainingEntry;
 import com.francelabs.ranking.dao.ISolrClientProvider;
 import com.francelabs.ranking.dao.SolrHttpClientException;
 
 @Named
 public class ModelTrainer {
-	
-	
+
 	private ISolrClientProvider solrClientProvider;
 	Logger logger = Logger.getLogger(ModelTrainer.class.getName());
-	
+
 	@Inject
-	private ConfigUtils configUtils;
-	
+	private ResourceLoadingUtils configUtils;
+
 	@Inject
-	public ModelTrainer(ISolrClientProvider solrClientProvider){
+	public ModelTrainer(ISolrClientProvider solrClientProvider) {
 		this.solrClientProvider = solrClientProvider;
 	}
-	
-	
+
 	public final String store = "_DEFAULT_";
 	public final String efiUserQuery = "efi.user_query";
 
@@ -63,53 +63,54 @@ public class ModelTrainer {
 
 	public SolrQuery generateSolrQuery(String queryStr, String docId) {
 		SolrQuery query = new SolrQuery(queryStr);
-		query.addFilterQuery("id:(" + docId + ")");
+		query.addFilterQuery("id:(\"" + docId + "\")");
 		query.addField("id");
 		query.addField("score");
-		// query.addField("[features store=" + store + " " + efiUserQuery +
-		// "=\'\\\'" + efiQuery + "\\\'\']");
 		query.addField("[features]");
 		return query;
 	}
 
-
-
 	public QueryResponse sendQuery(SolrQuery solr) throws SolrServerException, IOException {
 		return solrClientProvider.getSolrClient().query(solr);
 	}
-	
+
 	private static String MODEL_RESOURCE_NAME = "schema/feature-store/_DEFAULT_";
 
-	public void sendFeatures(String obj) throws SolrHttpClientException, IOException  {
+	public void sendFeatures(String obj) throws SolrHttpClientException, IOException {
 		solrClientProvider.getSolrHttpClient().sendDelete(MODEL_RESOURCE_NAME);
 		solrClientProvider.getSolrHttpClient().sendPut(MODEL_RESOURCE_NAME, obj);
 	}
 
-	public List<TrainingEntry> getTrainingEntries() throws SolrServerException, IOException {
+	public List<TrainingEntry> getTrainingEntriesFromFile() throws SolrServerException, IOException {
 		Iterator<String> queryIterator = configUtils.getLine("user_queries.txt").iterator();
 		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
 		while (queryIterator.hasNext()) {
 			String[] userQuerySplitted = queryIterator.next().split("\\|");
-			String docid = userQuerySplitted[1];
+			String docId = userQuerySplitted[1];
 			String queryStr = userQuerySplitted[0];
 			Double score = Double.parseDouble(userQuerySplitted[2]);
 			String type = userQuerySplitted[3];
 
-			SolrQuery query = generateSolrQuery(queryStr, docid);
-			QueryResponse response = sendQuery(query);
-			SolrDocumentList results = response.getResults();
-			if (results.size() == 1) {
-				String featuresValues = (String) results.get(0).getFieldValue("[features]");
-				Map<String, Double> features = Arrays.stream(featuresValues.split(",")).collect(Collectors.toMap(
-						entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1])));
-				trainingEntries.add(new TrainingEntry(queryStr, docid, features, score, type));
-			} else {
-				logger.log(Level.WARNING, "Got " + results.size() + " results for query " + query.toQueryString());
-			}
+			getFeaturesMap(queryStr, docId).ifPresent(features -> trainingEntries.add(new TrainingEntry(queryStr, docId, features, score, type)));
 
 		}
 
 		return trainingEntries;
+	}
+
+	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
+			throws SolrServerException, IOException {
+		SolrQuery query = generateSolrQuery(queryStr, docId);
+		QueryResponse response = sendQuery(query);
+		SolrDocumentList results = response.getResults();
+		if (results.size() == 1) {
+			String featuresValues = (String) results.get(0).getFieldValue("[features]");
+			return Optional.of(Arrays.stream(featuresValues.split(",")).collect(Collectors
+					.toMap(entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1]))));
+		} else {
+			logger.log(Level.WARNING, "Got " + results.size() + " results for query " + query.toQueryString());
+			return Optional.empty();
+		}
 	}
 
 }

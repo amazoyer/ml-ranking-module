@@ -1,4 +1,4 @@
-package com.datafari.ranking;
+package com.datafari.ranking.config;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
 
-import com.datafari.ranking.configuration.ConfigUtils;
+import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.francelabs.ranking.dao.ISolrClientProvider;
 import com.francelabs.ranking.dao.SolrHttpClient;
 import com.lucidworks.spark.rdd.SolrJavaRDD;
@@ -18,7 +18,7 @@ public class TestSolrProvider implements ISolrClientProvider {
 
 	private EmbeddedSolrServer server;
 
-	public TestSolrProvider(ConfigUtils configUtils) throws IOException {
+	public TestSolrProvider(ResourceLoadingUtils configUtils) throws IOException {
 		File file = configUtils.getResource("solrhome_test").getFile();
 		server = new EmbeddedSolrServer(file.toPath(), "techproducts");
 

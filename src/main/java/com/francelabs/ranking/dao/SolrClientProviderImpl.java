@@ -25,6 +25,7 @@ public class SolrClientProviderImpl implements ISolrClientProvider{
 	public SolrClientProviderImpl(SparkContextProviderImpl sparkContextProvider) {
 		this.sparkContextProvider = sparkContextProvider;
 		solrClient = new CloudSolrClient.Builder().withZkHost("localhost" + ":2181").build();
+		solrClient.setDefaultCollection("FileShare");
 		solrJavaRDD = SolrJavaRDD.get("localhost:2181", "Statistics", sparkContextProvider.getSparkContext().sc());
 		solrHttpClient = new SolrHttpClient("localhost:8983", "FileShare");
 	}

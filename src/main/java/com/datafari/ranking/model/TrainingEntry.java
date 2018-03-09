@@ -1,16 +1,17 @@
 package com.datafari.ranking.model;
 
-
+import java.util.Collections;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 
-public class TrainingEntry {
+import scala.Serializable;
+
+public class TrainingEntry implements Serializable {
 
 	private String query;
 	private String docid;
-	private Map<String, Double> features;
+	private Map<String, Double> features = Collections.EMPTY_MAP;
 	private Double score;
 	private String type;
 
@@ -22,12 +23,18 @@ public class TrainingEntry {
 		this.setType(type);
 	}
 
+	public TrainingEntry() {
+
+	}
+
 	public Map<String, Double> getFeatures() {
 		return features;
 	}
 
 	public void setFeatures(Map<String, Double> features) {
-		this.features = features;
+		if (features != null) {
+			this.features = features;
+		}
 	}
 
 	public Double getScore() {
@@ -62,5 +69,30 @@ public class TrainingEntry {
 		this.query = query;
 	}
 
+	@Override
+	public String toString() {
+		return "query : " + query + " docid : " + docid + " score : " + score + " features : "
+				+ ((features == null) ? "empty"
+						: features.entrySet().stream().map(value -> value.getKey() + ":" + value.getValue())
+								.collect(Collectors.joining(",")));
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof TrainingEntry)) {
+			return false;
+		}
+		if (obj == this) {
+			return true;
+		}
+		TrainingEntry other = (TrainingEntry) obj;
+
+		if (!other.query.equals(this.query) || !other.docid.equals(this.docid) || !other.score.equals(this.score)
+				|| !other.features.equals(this.features)) {
+			return false;
+		}
+
+		return true;
+	}
 
 }

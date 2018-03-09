@@ -25,19 +25,33 @@ public class SparkFunctions {
 		}
 	};
 
+	private static int BAD_DOCUMENT_THRESHOLD = 5;
+
 	public static PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>> mapForEvaluation = new PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>>() {
 		@Override
 		public Tuple2<String, Tuple2<List<String>, List<String>>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
 			ArrayList<String> singletonArray = new ArrayList<>(Arrays.asList(entry.getString("document_id")));
 			ArrayList<String> emptyList = new ArrayList<String>();
-			if (entry.getLong("ranking") > 5) {
+			if (entry.getLong("ranking") > BAD_DOCUMENT_THRESHOLD) {
 				return new Tuple2<String, Tuple2<List<String>, List<String>>>(request,
 						new Tuple2<List<String>, List<String>>(singletonArray, emptyList));
 			} else {
 				return new Tuple2<String, Tuple2<List<String>, List<String>>>(request,
 						new Tuple2<List<String>, List<String>>(emptyList, singletonArray));
 			}
+		}
+	};
+
+	public static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
+		@Override
+		public Tuple2<String, Tuple3<String, String, Long>> call(CassandraRow entry) throws Exception {
+			String request = entry.getString("request");
+			String docId = entry.getString("document_id");
+			String id = request + "|" + docId;
+			Long ranking = entry.getLong("ranking");
+			return new Tuple2<String, Tuple3<String, String, Long>>(id,
+					new Tuple3<String, String, Long>(request, docId, ranking));
 		}
 	};
 
@@ -98,22 +112,20 @@ public class SparkFunctions {
 	 */
 	public static void addEntryToMap(Map<String, Tuple2<Long, Long>> mapListDocumentAndCound,
 			Tuple3<String, Long, Long> historyEntry) {
-		
+
 		// history entry value ( ex : 2, 2)
 		Tuple2<Long, Long> currentEntry = new Tuple2<Long, Long>(historyEntry._2(), historyEntry._3());
-		
-		// if  exist, merge with the existing entry
-		if (mapListDocumentAndCound.containsKey(historyEntry._1())) {			
+
+		// if exist, merge with the existing entry
+		if (mapListDocumentAndCound.containsKey(historyEntry._1())) {
 			// if exist, merge with last one
 			Tuple2<Long, Long> existingEntry = mapListDocumentAndCound.get(historyEntry._1());
 
 			// new value for document
-			currentEntry =  new Tuple2<Long, Long>(
-					currentEntry._1 + existingEntry._1,
-					currentEntry._2 + existingEntry._2	
-					);
+			currentEntry = new Tuple2<Long, Long>(currentEntry._1 + existingEntry._1,
+					currentEntry._2 + existingEntry._2);
 		}
-		
+
 		// push the new entry
 		mapListDocumentAndCound.put(historyEntry._1(), currentEntry);
 
@@ -136,6 +148,8 @@ public class SparkFunctions {
 			return mapListDocumentAndCound;
 		}
 	};
+
+	public static Function createTrainingQueries;
 
 	/**
 	 *
