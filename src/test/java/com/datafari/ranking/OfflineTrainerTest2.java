@@ -22,7 +22,9 @@ import org.json.simple.parser.ParseException;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.xml.sax.SAXException;
 
 import com.datafari.ranking.config.AbstractTest;
@@ -34,10 +36,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.francelabs.ranking.dao.SolrHttpClientException;
 
+@RunWith(SpringRunner.class)
 
 @ContextConfiguration(classes = LocalSolrTestConfig.class)
 public class OfflineTrainerTest2 extends OnlineAbstractTest {
-
 
 	@Inject
 	protected LtrClient ltrClient;
@@ -47,8 +49,6 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 		JSONObject config = parseConfig("config.json");
 		Assert.assertEquals("localhost", config.get("host"));
 	}
-
-
 
 	@Ignore
 	public void buildQuerySolr() throws IOException {
@@ -72,17 +72,18 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 	public void testTrain() throws SolrServerException, IOException, SAXException, ParserConfigurationException {
 		ClassLoader classLoader = getClass().getClassLoader();
 		List<TrainingEntry> trainingEntries = getTrainingEntriesFromFile();
-		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
-		evaluator.setNTrees(1);
-		String result = evaluator.evaluate(evaluator.readInput(trainingEntries, false, false), null, null);
+
+		mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1);
 	}
-	
-	@Test 
-	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException{
-		File trainingFile = resourceLoadingUtils.getResource("trainingEntriesFromCassandra.json").getFile();
-		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile, new TypeReference<List<TrainingEntry>>(){});
-		trainingEntries.forEach(System.out::println);
-	}
+
+//	@Test
+//	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException {
+//		File trainingFile = resourceLoadingUtils.getResource("trainingEntriesFromCassandra.json").getFile();
+//		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile,
+//				new TypeReference<List<TrainingEntry>>() {
+//				});
+//		trainingEntries.forEach(System.out::println);
+//	}
 
 	@Test
 	public void testConvert() throws SolrServerException, IOException {
@@ -95,7 +96,6 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 			Assert.assertEquals(expectedEntries.next(), entry);
 		});
 	}
-	
 
 	public List<TrainingEntry> getTrainingEntriesFromFile() throws SolrServerException, IOException {
 		Iterator<String> queryIterator = resourceLoadingUtils.getLine("user_queries.txt").iterator();
@@ -114,11 +114,29 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 
 		return trainingEntries;
 	}
-	
 
 	public JSONObject parseConfig(String configFileName) throws IOException, JSONException {
 		InputStream is = resourceLoadingUtils.getResource(configFileName).getInputStream();
 		String jsonTxt = IOUtils.toString(is);
 		return new JSONObject(jsonTxt);
+	}
+	
+
+	@Test 
+	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException, SAXException, ParserConfigurationException, ParseException{
+		File trainingFile = resourceLoadingUtils.getResource("trainingEntriesFromCassandra.json").getFile();
+		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile, new TypeReference<List<TrainingEntry>>(){});
+
+		//Collections.shuffle(trainingEntries);
+//		int midIndice = (trainingEntries.size()-1)/2;
+//	    List<TrainingEntry> training = trainingEntries.subList(0, midIndice);
+//	    List<TrainingEntry> validation = trainingEntries.subList(midIndice, trainingEntries.size()-1);
+//		
+
+		// with 1000 iteration, should have the same results
+		Object generatedModel = mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1000);
+				JSONParser parser = new JSONParser();
+		Object expectedModel = parser.parse(new InputStreamReader(resourceLoadingUtils.getResource("modelDatafari.json").getInputStream()));
+		Assert.assertEquals(expectedModel , generatedModel);
 	}
 }

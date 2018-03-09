@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 import javax.inject.Inject;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.config.OnlineAbstractTest;
@@ -16,6 +18,7 @@ import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.model.TrainingEntry;
 import com.francelabs.ranking.dao.DatafariUsageDao;
 
+@RunWith(SpringRunner.class)
 
 public class OnlineDatafariUsageTest extends OnlineAbstractTest {
 

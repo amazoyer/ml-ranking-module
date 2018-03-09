@@ -7,12 +7,15 @@ import javax.inject.Inject;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.model.TrainingEntry;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+@RunWith(SpringRunner.class)
 
 public class ResourceLoadingUtilsTest extends AbstractTest {
 

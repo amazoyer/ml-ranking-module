@@ -9,11 +9,14 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.dao.spark.SparkFunctions;
 
 import scala.Tuple2;
+@RunWith(SpringRunner.class)
 
 public class SparkFunctionTests extends AbstractTest{
 

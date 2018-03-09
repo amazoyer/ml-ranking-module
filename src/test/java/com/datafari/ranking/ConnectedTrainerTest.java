@@ -8,10 +8,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.config.OnlineAbstractTest;
 import com.francelabs.ranking.dao.SolrHttpClientException;
+
+@RunWith(SpringRunner.class)
 
 public class ConnectedTrainerTest extends OnlineAbstractTest {
 

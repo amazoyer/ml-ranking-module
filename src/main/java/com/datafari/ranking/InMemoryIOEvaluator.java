@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Logger;
+import org.json.simple.JSONObject;
 import org.xml.sax.SAXException;
 
 import com.datafari.ranking.model.TrainingEntry;
@@ -34,7 +35,7 @@ import ciir.umass.edu.utilities.SimpleMath;
 
 public class InMemoryIOEvaluator extends Evaluator {
 	
-	private static String MODEL_NAME = "DatafariModel";
+	private String modelName = "model";
 
 	private Map<String, Integer> queries = new HashMap<String, Integer>();
 	private Map<String, Integer> features = new HashMap<String, Integer>();
@@ -64,7 +65,7 @@ public class InMemoryIOEvaluator extends Evaluator {
 		super(RANKER_TYPE.LAMBDAMART, metric, metric);
 	}
 
-	public String evaluate(List<RankList> train, List<RankList> validation, List<RankList> test)
+	public JSONObject evaluate(List<RankList> train, List<RankList> validation, List<RankList> test)
 			throws IOException, SAXException, ParserConfigurationException {
 		int[] features = FeatureManager.getFeatureFromSampleVector(train);
 		if (normalize) {
@@ -88,12 +89,12 @@ public class InMemoryIOEvaluator extends Evaluator {
 			logger.info(testScorer.name() + " on test data: " + SimpleMath.round(rankScore, 4));
 		}
 
-		return new SolrLTROutputEnsemble(ranker.getEnsemble(), this.features).toSolrLtrJsonOuput(MODEL_NAME);
+		return new SolrLTROutputEnsemble(ranker.getEnsemble(), this.features).toSolrLtrJsonOuput(modelName);
 
 	}
 
 	/**
-	 * Read a set of rankings from a single file.
+	 * Read a set of rankings from TrainingEntry list
 	 * 
 	 * @param inputFile
 	 * @param mustHaveRelDoc
@@ -165,10 +166,18 @@ public class InMemoryIOEvaluator extends Evaluator {
 		LambdaMART.nTrees = i;
 	}
 
-	public String evaluateTrainingEntries(List<TrainingEntry> trainingEntries, List<TrainingEntry> validation,
+	public JSONObject evaluateTrainingEntries(List<TrainingEntry> trainingEntries, List<TrainingEntry> validation,
 			List<TrainingEntry> test) throws IOException, SAXException, ParserConfigurationException {
 		return evaluate(readInput(trainingEntries, false, false), readInput(validation, false, false),
 				readInput(test, false, false));
+	}
+
+	public String getModelName() {
+		return modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
 	}
 
 }

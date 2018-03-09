@@ -39,7 +39,7 @@ public class SolrLTROutputEnsemble extends Ensemble {
 		xmlParser = dbFactory.newDocumentBuilder();
 	}
 
-	public String toSolrLtrJsonOuput(String name) throws IOException, SAXException {
+	public JSONObject toSolrLtrJsonOuput(String name) throws IOException, SAXException {
 		JSONObject object = new JSONObject();
 		object.put("class", "org.apache.solr.ltr.model.MultipleAdditiveTreesModel");
 		object.put("name", name);
@@ -67,7 +67,7 @@ public class SolrLTROutputEnsemble extends Ensemble {
 			tree.put("root", splitXmlElementToJSON(split));
 		}
 
-		return object.toJSONString();
+		return object;
 	}
 
 	private JSONObject splitXmlElementToJSON(Element splitXML) {
