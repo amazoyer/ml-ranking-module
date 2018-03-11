@@ -1,4 +1,4 @@
-package com.datafari.ranking.dao.spark;
+package com.datafari.ranking.training.spark;
 
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
 
@@ -20,13 +20,13 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFunction;
 
-import com.datafari.ranking.LtrClient;
+import com.datafari.ranking.ltr.LtrClient;
 import com.datafari.ranking.model.TrainingQuery;
+import com.datafari.ranking.training.ISolrClientProvider;
+import com.datafari.ranking.training.ISparkContextProvider;
 import com.datastax.spark.connector.japi.CassandraRow;
 import com.datastax.spark.connector.japi.rdd.CassandraJavaRDD;
 import com.datastax.spark.connector.japi.rdd.CassandraTableScanJavaRDD;
-import com.francelabs.ranking.dao.ISolrClientProvider;
-import com.francelabs.ranking.dao.SparkContextProviderImpl;
 
 import scala.Tuple2;
 import scala.Tuple3;
@@ -35,7 +35,7 @@ import scala.Tuple3;
 public class SparkJobs {
 
 	@Inject
-	private SparkContextProviderImpl sparkContextProvider;
+	private ISparkContextProvider sparkContextProvider;
 
 	private static ISolrClientProvider solrClientProvider;
 

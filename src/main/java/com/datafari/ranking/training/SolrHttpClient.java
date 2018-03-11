@@ -1,4 +1,4 @@
-package com.francelabs.ranking.dao;
+package com.datafari.ranking.training;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -16,18 +16,17 @@ import org.apache.http.impl.client.HttpClients;
 public class SolrHttpClient {
 
 	private String url;
-	private CloseableHttpClient client;
 
 	public SolrHttpClient(String url) {
 		this.url = url;
-		client = HttpClients.createDefault();
 	}
 
-	public void sendDelete(String resourceUri) throws SolrHttpClientException {
+	public void sendDelete(String resourceUri) throws SolrHttpClientException, IOException {
 		sendQuery(new HttpDelete(url + resourceUri));
 	}
 
-	public void sendPut(String resourceUri, String value) throws SolrHttpClientException {
+	public void sendPut(String resourceUri, String value) throws SolrHttpClientException, IOException {
+
 		HttpPut httpPut = new HttpPut(url + resourceUri);
 		StringEntity entity;
 		try {
@@ -41,22 +40,23 @@ public class SolrHttpClient {
 		sendQuery(httpPut);
 	}
 
-	private void sendQuery(HttpUriRequest request) throws SolrHttpClientException {
+	private void sendQuery(HttpUriRequest request) throws SolrHttpClientException, IOException {
+
+		CloseableHttpClient client = HttpClients.createDefault();
 		CloseableHttpResponse response;
 		try {
 			response = client.execute(request);
+
+			int errorCode = response.getStatusLine().getStatusCode();
+			if (errorCode != 200) {
+				throw new SolrHttpClientException("Error code : " + errorCode);
+			}
 		} catch (IOException e) {
 			throw new SolrHttpClientException("Cannot send query : ", e);
-
+		} finally {
+			client.close();
 		}
-		int errorCode = response.getStatusLine().getStatusCode();
-		if (errorCode != 200) {
-			throw new SolrHttpClientException("Error code : " + errorCode);
-		}
-	}
 
-	public void close() throws IOException {
-		client.close();
 	}
 
 }

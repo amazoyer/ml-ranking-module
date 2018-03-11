@@ -1,14 +1,10 @@
-package com.datafari.ranking;
+package com.datafari.ranking.trainer;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import javax.xml.parsers.ParserConfigurationException;

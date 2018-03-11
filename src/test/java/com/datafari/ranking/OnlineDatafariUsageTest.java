@@ -16,14 +16,13 @@ import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.config.OnlineAbstractTest;
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.model.TrainingEntry;
-import com.francelabs.ranking.dao.DatafariUsageDao;
+import com.datafari.ranking.training.TrainingDataBuilder;
 
 @RunWith(SpringRunner.class)
-
 public class OnlineDatafariUsageTest extends OnlineAbstractTest {
 
 	@Inject
-	private DatafariUsageDao dud;
+	private TrainingDataBuilder dud;
 
 	@Inject
 	private ResourceLoadingUtils resourceLoadingUtils;
@@ -40,14 +39,14 @@ public class OnlineDatafariUsageTest extends OnlineAbstractTest {
 	
 	@Test
 	public void listTrainingEntriesFromQueryEvaluation() throws IOException {
-		dud.listTrainingQueriesFromQueryEvaluation().forEach(System.out::println);
+		dud.retrieveTrainingEntriesFromQueryEvaluation().forEach(System.out::println);
 		
 	}
 	
 
 	@Test
 	public void saveTrainingEntries() throws IOException {
-		List <TrainingEntry> trainingEntries = dud.listTrainingQueriesFromQueryEvaluation().stream().collect(Collectors.toList());
+		List <TrainingEntry> trainingEntries = dud.retrieveTrainingEntriesFromQueryEvaluation().stream().collect(Collectors.toList());
 		this.resourceLoadingUtils.getObjectMapper().writeValue(new File("D:\\mltest\\trainingEntries.json"), trainingEntries);
 	}
 //	

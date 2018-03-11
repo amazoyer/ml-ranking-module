@@ -1,4 +1,4 @@
-package com.francelabs.ranking.dao;
+package com.datafari.ranking.training;
 
 import java.io.IOException;
 

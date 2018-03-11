@@ -1,4 +1,4 @@
-package com.datafari.ranking;
+package com.datafari.ranking.trainer;
 
 
 

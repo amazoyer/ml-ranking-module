@@ -30,14 +30,15 @@ import org.xml.sax.SAXException;
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.config.LocalSolrTestConfig;
 import com.datafari.ranking.config.OnlineAbstractTest;
+import com.datafari.ranking.ltr.LtrClient;
 import com.datafari.ranking.model.TrainingEntry;
+import com.datafari.ranking.trainer.InMemoryIOEvaluator;
+import com.datafari.ranking.training.SolrHttpClientException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.francelabs.ranking.dao.SolrHttpClientException;
 
 @RunWith(SpringRunner.class)
-
 @ContextConfiguration(classes = LocalSolrTestConfig.class)
 public class OfflineTrainerTest2 extends OnlineAbstractTest {
 
@@ -57,15 +58,15 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 		URLDecoder decoder = new URLDecoder();
 		String userQueryOut = null;
 
-		Iterator<String> queryIterator = resourceLoadingUtils.getLine("user_queries.txt").iterator();
-		while (queryIterator.hasNext()) {
+		for (String line : resourceLoadingUtils.getLines("user_queries.txt")){
 			userQueryOut = readerOut.readLine();
-			String[] userQuerySplitted = queryIterator.next().split("\\|");
+			String[] userQuerySplitted = line.split("\\|");
 			String expectedQuery = "?" + decoder.decode(decoder.decode(userQueryOut, "UTF-8"));
 			String query = decoder.decode(
 					ltrClient.generateSolrQuery(userQuerySplitted[0], userQuerySplitted[1]).toQueryString(), "UTF-8");
 			Assert.assertEquals(expectedQuery, query);
-		}
+		};
+
 	}
 
 	@Test
@@ -73,24 +74,16 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 		ClassLoader classLoader = getClass().getClassLoader();
 		List<TrainingEntry> trainingEntries = getTrainingEntriesFromFile();
 
-		mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1);
+		mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1, "datafariModel");
 	}
 
-//	@Test
-//	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException {
-//		File trainingFile = resourceLoadingUtils.getResource("trainingEntriesFromCassandra.json").getFile();
-//		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile,
-//				new TypeReference<List<TrainingEntry>>() {
-//				});
-//		trainingEntries.forEach(System.out::println);
-//	}
 
 	@Test
 	public void testConvert() throws SolrServerException, IOException {
 		ClassLoader classLoader = getClass().getClassLoader();
 		List<TrainingEntry> trainingEntries = getTrainingEntriesFromFile();
 		InMemoryIOEvaluator evaluator = new InMemoryIOEvaluator("NDCG@10");
-		Iterator<String> expectedEntries = resourceLoadingUtils.getLine("expected_training_entry.txt").iterator();
+		Iterator<String> expectedEntries = resourceLoadingUtils.getLines("expected_training_entry.txt").iterator();
 		trainingEntries.stream().map(evaluator::convertToLambdaMARTFormat).forEach(entry -> {
 			Assert.assertTrue(expectedEntries.hasNext());
 			Assert.assertEquals(expectedEntries.next(), entry);
@@ -98,7 +91,7 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 	}
 
 	public List<TrainingEntry> getTrainingEntriesFromFile() throws SolrServerException, IOException {
-		Iterator<String> queryIterator = resourceLoadingUtils.getLine("user_queries.txt").iterator();
+		Iterator<String> queryIterator = resourceLoadingUtils.getLines("user_queries.txt").iterator();
 		List<TrainingEntry> trainingEntries = new ArrayList<TrainingEntry>();
 		while (queryIterator.hasNext()) {
 			String[] userQuerySplitted = queryIterator.next().split("\\|");
@@ -120,23 +113,27 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 		String jsonTxt = IOUtils.toString(is);
 		return new JSONObject(jsonTxt);
 	}
-	
 
-	@Test 
-	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException, SAXException, ParserConfigurationException, ParseException{
+	@Test
+	public void testTrainWithCassandraData() throws JsonParseException, JsonMappingException, IOException, SAXException,
+			ParserConfigurationException, ParseException {
 		File trainingFile = resourceLoadingUtils.getResource("trainingEntriesFromCassandra.json").getFile();
-		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile, new TypeReference<List<TrainingEntry>>(){});
+		List<TrainingEntry> trainingEntries = resourceLoadingUtils.getObjectMapper().readValue(trainingFile,
+				new TypeReference<List<TrainingEntry>>() {
+				});
 
-		//Collections.shuffle(trainingEntries);
-//		int midIndice = (trainingEntries.size()-1)/2;
-//	    List<TrainingEntry> training = trainingEntries.subList(0, midIndice);
-//	    List<TrainingEntry> validation = trainingEntries.subList(midIndice, trainingEntries.size()-1);
-//		
+		// Collections.shuffle(trainingEntries);
+		// int midIndice = (trainingEntries.size()-1)/2;
+		// List<TrainingEntry> training = trainingEntries.subList(0, midIndice);
+		// List<TrainingEntry> validation = trainingEntries.subList(midIndice,
+		// trainingEntries.size()-1);
+		//
 
 		// with 1000 iteration, should have the same results
-		Object generatedModel = mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1000);
-				JSONParser parser = new JSONParser();
-		Object expectedModel = parser.parse(new InputStreamReader(resourceLoadingUtils.getResource("modelDatafari.json").getInputStream()));
-		Assert.assertEquals(expectedModel , generatedModel);
+		Object generatedModel = mlTrainer.train(trainingEntries, null, null, "NDCG@10", 1000, "DatafariModel");
+		JSONParser parser = new JSONParser();
+		Object expectedModel = parser
+				.parse(new InputStreamReader(resourceLoadingUtils.getResource("modelDatafari.json").getInputStream()));
+		Assert.assertEquals(expectedModel, generatedModel);
 	}
 }

@@ -10,6 +10,12 @@ import java.util.List;
 
 import javax.inject.Named;
 
+import org.apache.commons.io.FileUtils;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONAware;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -26,15 +32,18 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class ResourceLoadingUtils implements ResourceLoaderAware {
 
 	private ObjectMapper mapper;
+	private JSONParser parser;
 
 	ResourceLoadingUtils() {
 		mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		parser = new JSONParser();
+
 	}
 
 	private ResourceLoader resourceLoader;
 
-	public ObjectMapper getObjectMapper(){
+	public ObjectMapper getObjectMapper() {
 		return mapper;
 	}
 
@@ -46,39 +55,14 @@ public class ResourceLoadingUtils implements ResourceLoaderAware {
 		return resourceLoader.getResource(location);
 	}
 
-	public Iterable<String> getLine(String fileName) throws IOException {
+	public <T extends JSONAware> T readJSON(String fileName, Class<T> clazz) throws IOException, ParseException {
 		InputStream in = getResource(fileName).getInputStream();
-		BufferedReader readerIn = new BufferedReader(new InputStreamReader(in));
-		return new Iterable<String>() {
-			@Override
-			public Iterator<String> iterator() {
-				return new Iterator<String>() {
-					String line = null;
-					boolean hasNextCalled = false;
-
-					@Override
-					public boolean hasNext() {
-						try {
-							line = readerIn.readLine();
-						} catch (IOException e) {
-							return false;
-						}
-						hasNextCalled = true;
-						return line != null;
-					}
-
-					@Override
-					public String next() {
-						if (!hasNextCalled){
-							hasNext();
-						}
-						hasNextCalled = false;
-						return line;
-						
-					}
-				};
-			}
-		};
-
+		return (T)parser.parse(new InputStreamReader(in));
 	}
+	
+
+	public List<String> getLines(String fileName) throws IOException {
+		return FileUtils.readLines(getResource(fileName).getFile(), "UTF-8");
+	}
+
 }

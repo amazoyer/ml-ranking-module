@@ -1,4 +1,4 @@
-package com.francelabs.ranking.dao;
+package com.datafari.ranking.training;
 
 public class SolrHttpClientException extends Exception{
 

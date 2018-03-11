@@ -1,4 +1,4 @@
-package com.datafari.ranking;
+package com.datafari.ranking.ltr;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.ext.ParamConverter.Lazy;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.ClientProtocolException;
@@ -34,19 +35,18 @@ import org.json.JSONObject;
 import org.junit.Assert;
 
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
+import com.datafari.ranking.ltr.LtrClient.LTR_OBJECT_TYPE;
 import com.datafari.ranking.model.TrainingEntry;
-import com.francelabs.ranking.dao.ISolrClientProvider;
-import com.francelabs.ranking.dao.SolrHttpClient;
-import com.francelabs.ranking.dao.SolrHttpClientException;
+import com.datafari.ranking.training.ISolrClientProvider;
+import com.datafari.ranking.training.SolrHttpClient;
+import com.datafari.ranking.training.SolrHttpClientException;
 
+@Lazy
 @Named
 public class LtrClient {
 
 	private ISolrClientProvider solrClientProvider;
 	Logger logger = Logger.getLogger(LtrClient.class.getName());
-
-	@Inject
-	private ResourceLoadingUtils configUtils;
 
 	@Inject
 	public LtrClient(ISolrClientProvider solrClientProvider) {
@@ -77,6 +77,14 @@ public class LtrClient {
 	private static String DEFAULT = "_DEFAULT_";
 	private static String STORE_SUFFIX = "-store";
 
+	public void sendFeatures(String features) throws SolrHttpClientException, IOException{
+		sendLtrObject(features, null, LTR_OBJECT_TYPE.feature);
+	}
+	
+	public void sendModel(String model, String modelName) throws SolrHttpClientException, IOException{
+		sendLtrObject(model, modelName, LTR_OBJECT_TYPE.model);
+	}
+	
 	public void sendLtrObject(String obj, String name,  LTR_OBJECT_TYPE ltrObjectType) throws SolrHttpClientException, IOException {
 		SolrHttpClient httpClient = solrClientProvider.getSolrHttpClient();
 		String resourceUrl = SCHEMA + "/" + ltrObjectType + STORE_SUFFIX + "/" + DEFAULT;
@@ -84,9 +92,7 @@ public class LtrClient {
 		httpClient.sendPut(resourceUrl, obj);
 
 	}
-
-
-
+	
 	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
 			throws SolrServerException, IOException {
 		SolrQuery query = generateSolrQuery(queryStr, docId);

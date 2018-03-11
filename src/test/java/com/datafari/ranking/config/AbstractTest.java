@@ -2,14 +2,13 @@ package com.datafari.ranking.config;
 
 import javax.inject.Inject;
 
-import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import com.datafari.ranking.MLTrainer;
+import com.datafari.ranking.configuration.ConfigProperties;
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
+import com.datafari.ranking.trainer.MLTrainer;
 
-@ContextConfiguration(classes = { ResourceLoadingUtils.class, MLTrainer.class})
+@ContextConfiguration(classes = ConfigProperties.class)
 public class AbstractTest {
 	
 	@Inject
@@ -18,5 +17,4 @@ public class AbstractTest {
 	@Inject
 	protected MLTrainer mlTrainer;
 	
-
 }

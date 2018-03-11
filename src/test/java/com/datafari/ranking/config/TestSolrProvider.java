@@ -10,8 +10,8 @@ import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.embedded.EmbeddedSolrServer;
 
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
-import com.francelabs.ranking.dao.ISolrClientProvider;
-import com.francelabs.ranking.dao.SolrHttpClient;
+import com.datafari.ranking.training.ISolrClientProvider;
+import com.datafari.ranking.training.SolrHttpClient;
 import com.lucidworks.spark.rdd.SolrJavaRDD;
 
 public class TestSolrProvider implements ISolrClientProvider {

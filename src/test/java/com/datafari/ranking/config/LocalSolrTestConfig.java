@@ -5,14 +5,17 @@ import java.io.IOException;
 import javax.inject.Inject;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
+import com.datafari.ranking.configuration.ConfigProperties;
 import com.datafari.ranking.configuration.ResourceLoadingUtils;
-import com.francelabs.ranking.dao.ISolrClientProvider;
+import com.datafari.ranking.training.ISolrClientProvider;
 
 
-public class LocalSolrTestConfig {
+public class LocalSolrTestConfig extends ConfigProperties{
 
-	
 	@Inject
 	ResourceLoadingUtils configUtils;
 	

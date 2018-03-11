@@ -1,7 +1,5 @@
 package com.datafari.ranking;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,11 +11,11 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.datafari.ranking.config.AbstractTest;
-import com.datafari.ranking.dao.spark.SparkFunctions;
+import com.datafari.ranking.training.spark.SparkFunctions;
 
 import scala.Tuple2;
-@RunWith(SpringRunner.class)
 
+@RunWith(SpringRunner.class)
 public class SparkFunctionTests extends AbstractTest{
 
 	@Test
