@@ -63,7 +63,7 @@ public class OfflineTrainerTest2 extends OnlineAbstractTest {
 			String[] userQuerySplitted = line.split("\\|");
 			String expectedQuery = "?" + decoder.decode(decoder.decode(userQueryOut, "UTF-8"));
 			String query = decoder.decode(
-					ltrClient.generateSolrQuery(userQuerySplitted[0], userQuerySplitted[1]).toQueryString(), "UTF-8");
+					ltrClient.generateSolrQueryGetDoc(userQuerySplitted[0], userQuerySplitted[1]).toQueryString(), "UTF-8");
 			Assert.assertEquals(expectedQuery, query);
 		};
 

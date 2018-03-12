@@ -36,16 +36,31 @@ public class SparkModelMapper {
 		}
 	};
 
+	
+	
+	public static Function<Tuple2<String,List<Tuple3<String,Long,Map<String,Double>>>>, List<TrainingEntry>> createTrainingQueriesFromQueryEvaluationList = new Function<Tuple2<String,List<Tuple3<String,Long,Map<String,Double>>>>, List<TrainingEntry>>() {
+		@Override
+		public List<TrainingEntry> call(Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>> entry)
+				throws Exception {
+			String query = entry._1();
+			List<Tuple3<String, Long, Map<String, Double>>> listDocEval = entry._2();
+			return listDocEval.stream()
+			.map(trainingEntry -> new TrainingEntry(query, trainingEntry._1(), trainingEntry._3(), ScoreMapper.convertScoreFromEvaluationEntry(trainingEntry._2()),
+					"HUMAN_JUDGEMENT")).collect(Collectors.toList());
+		}
+	};
+
 	public static Function<Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>, TrainingEntry> createTrainingQueriesFromQueryEvaluation = new Function<Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>, TrainingEntry>() {
 		@Override
 		public TrainingEntry call(
 				Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>> entry)
 				throws Exception {
 			Tuple3<String, String, Long> infoQuery = entry._2()._1();
-			Map<String, Double> features = entry._2()._2().orElseThrow(()-> new RuntimeException("Non present feature map should be filtered before"));
-			return new TrainingEntry(infoQuery._1(), infoQuery._2(), features, ScoreMapper.convertScoreFromEvaluationEntry(infoQuery._3()), "HUMAN_JUDGEMENT");
+			Map<String, Double> features = entry._2()._2()
+					.orElseThrow(() -> new RuntimeException("Non present feature map should be filtered before"));
+			return new TrainingEntry(infoQuery._1(), infoQuery._2(), features,
+					ScoreMapper.convertScoreFromEvaluationEntry(infoQuery._3()), "HUMAN_JUDGEMENT");
 		}
 	};
-	
 
 }

@@ -3,11 +3,13 @@ package com.datafari.ranking.training.spark;
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -36,6 +38,8 @@ public class SparkJobs {
 
 	@Inject
 	private ISparkContextProvider sparkContextProvider;
+
+	private Function createTrainingQueriesWithEmptyQueries;
 
 	private static ISolrClientProvider solrClientProvider;
 
@@ -159,6 +163,12 @@ public class SparkJobs {
 				.filter(entry -> entry._2()._2().isPresent());
 	}
 
+	public JavaRDD<Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>>> getTrainingEntriesFromQueryEvaluationWithNonEvaluatedDocument() {
+		JavaPairRDD<String, List<Tuple2<String, Long>>> listQueries = getQueryEvaluationRDD()
+				.mapToPair(SparkFunctions.mapRequestWithDocAndRank).reduceByKey(SparkFunctions.listReducer);
+		return listQueries.map(createTrainingQueriesWithNonEvaluatedDocuments);
+	}
+
 	public static Function<Tuple2<String, Tuple3<String, String, Long>>, Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>> createTrainingQueries = new Function<Tuple2<String, Tuple3<String, String, Long>>, Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>>() {
 		@Override
 		public Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>> call(
@@ -166,10 +176,63 @@ public class SparkJobs {
 			String queryStr = entry._2()._1();
 			String docId = entry._2()._2();
 			Optional<Map<String, Double>> featuresMap = ltrClient.getFeaturesMap(queryStr, docId);
-		
+
 			return new Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>>(entry._1(),
 					new Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>(entry._2(), featuresMap));
 		}
+	};
+
+	private static Long AVERAGE_RANK = 5L;
+	public static Function<Tuple2<String, List<Tuple2<String, Long>>>, Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>>> createTrainingQueriesWithNonEvaluatedDocuments = new Function<Tuple2<String, List<Tuple2<String, Long>>>, Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>>>() {
+		@Override
+		public Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>> call(
+				Tuple2<String, List<Tuple2<String, Long>>> entry) throws Exception {
+			String query = entry._1();
+			Map<String, Long> mapEvaluation = entry._2().stream()
+					.collect(Collectors.toMap(doc -> doc._1(), doc -> doc._2()));
+
+			List<Tuple3<String, Long, Map<String, Double>>> documentsWithEvaluationAndFeatures = new ArrayList<Tuple3<String, Long, Map<String, Double>>>();
+
+			// top 10 docs with features for the query
+			List<Tuple2<String, Map<String, Double>>> top10DocsWithFeatures = ltrClient.getFeaturesMapForTopNDocs(query,
+					10);
+
+			// get docsId
+			List<String> top10DocIds = top10DocsWithFeatures.stream().map(Tuple2::_1).collect(Collectors.toList());
+			// documents evaluated not in top 10
+			List<String> othersDocuments = mapEvaluation.entrySet().stream().map(Map.Entry::getKey)
+					.filter(((Predicate<String>) top10DocIds::contains).negate()).collect(Collectors.toList());
+
+			// add entry from TOP 10 results : use AVERAGE rank for docs that
+			// are not evaluated
+			top10DocsWithFeatures.forEach(docEntry -> documentsWithEvaluationAndFeatures
+					.add(new Tuple3<String, Long, Map<String, Double>>(docEntry._1(),
+							mapEvaluation.containsKey(docEntry._1()) ? mapEvaluation.get(docEntry._1()) : AVERAGE_RANK,
+							docEntry._2())));
+
+			// evaluate othersDocuments and add to list
+			for (String docId : othersDocuments) {
+				ltrClient.getFeaturesMap(query, docId).ifPresent(features -> documentsWithEvaluationAndFeatures
+						.add(new Tuple3<String, Long, Map<String, Double>>(docId, mapEvaluation.get(docId), features)));
+			}
+			return new Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>>(query,
+					documentsWithEvaluationAndFeatures);
+		}
+		// @Override
+		// public Tuple2<String, Tuple2<Tuple3<String, String, Long>,
+		// Optional<Map<String, Double>>>> call(
+		// Tuple2<String, Tuple3<String, String, Long>> entry) throws Exception
+		// {
+		// String queryStr = entry._2()._1();
+		// String docId = entry._2()._2();
+		// Optional<Map<String, Double>> featuresMap =
+		// ltrClient.getFeaturesMap(queryStr, docId);
+		//
+		// return new Tuple2<String, Tuple2<Tuple3<String, String, Long>,
+		// Optional<Map<String, Double>>>>(entry._1(),
+		// new Tuple2<Tuple3<String, String, Long>, Optional<Map<String,
+		// Double>>>(entry._2(), featuresMap));
+		// }
 	};
 
 	public JavaPairRDD<String, Tuple2<List<String>, List<String>>> getAggregatedQueryEvaluationRDD() {

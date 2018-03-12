@@ -41,6 +41,8 @@ import com.datafari.ranking.training.ISolrClientProvider;
 import com.datafari.ranking.training.SolrHttpClient;
 import com.datafari.ranking.training.SolrHttpClientException;
 
+import scala.Tuple2;
+
 @Lazy
 @Named
 public class LtrClient {
@@ -56,13 +58,23 @@ public class LtrClient {
 	public final String store = "_DEFAULT_";
 	public final String efiUserQuery = "efi.user_query";
 
-
-	public SolrQuery generateSolrQuery(String queryStr, String docId) {
+	private SolrQuery generateBaseSolrQuery(String queryStr){
 		SolrQuery query = new SolrQuery(queryStr);
-		query.addFilterQuery("id:(\"" + docId + "\")");
 		query.addField("id");
 		query.addField("score");
 		query.addField("[features]");
+		return query;
+	}
+	
+	private SolrQuery generateSolrQueryGetTopNDocs(String queryStr, int topN) {
+		SolrQuery query = generateBaseSolrQuery(queryStr);
+		query.setRows(topN);
+		return query;
+	}
+
+	public SolrQuery generateSolrQueryGetDoc(String queryStr, String docId) {
+		SolrQuery query = generateBaseSolrQuery(queryStr);
+		query.addFilterQuery("id:(\"" + docId + "\")");
 		return query;
 	}
 
@@ -95,17 +107,31 @@ public class LtrClient {
 	
 	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
 			throws SolrServerException, IOException {
-		SolrQuery query = generateSolrQuery(queryStr, docId);
+		SolrQuery query = generateSolrQueryGetDoc(queryStr, docId);
 		QueryResponse response = sendQuery(query);
 		SolrDocumentList results = response.getResults();
 		if (results.size() == 1) {
 			String featuresValues = (String) results.get(0).getFieldValue("[features]");
-			return Optional.of(Arrays.stream(featuresValues.split(",")).collect(Collectors
-					.toMap(entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1]))));
+			return Optional.of(parseFeatures(featuresValues));
 		} else {
 			logger.log(Level.WARNING, "Got " + results.size() + " results for query " + query.toQueryString());
 			return Optional.empty();
 		}
 	}
+	
+	private Map<String, Double> parseFeatures(String featuresValues){
+		return Arrays.stream(featuresValues.split(",")).collect(Collectors
+				.toMap(entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1])));
+	}
+
+	public List<Tuple2<String, Map<String, Double>>> getFeaturesMapForTopNDocs(String queryStr, int topN) throws SolrServerException, IOException {
+		SolrQuery query = generateSolrQueryGetTopNDocs(queryStr, topN);
+		QueryResponse response = sendQuery(query);
+		SolrDocumentList results = response.getResults();
+		return results.stream().map(result -> 
+			new Tuple2<String, Map<String, Double>>((String)result.getFieldValue("id"), parseFeatures((String)result.getFieldValue("[features]")))).collect(Collectors.toList());
+		
+	}
+
 
 }

@@ -43,6 +43,20 @@ public class SparkFunctions {
 		}
 	};
 
+	// create a list of document/evaluation per query ex : {query1, [{doc1, 9},
+	// {doc2, 1}]}
+	public static PairFunction<CassandraRow, String, List<Tuple2<String, Long>>> mapRequestWithDocAndRank = new PairFunction<CassandraRow, String, List<Tuple2<String, Long>>>() {
+		@Override
+		public Tuple2<String, List<Tuple2<String, Long>>> call(CassandraRow entry) throws Exception {
+			String request = entry.getString("request");
+			String docId = entry.getString("document_id");
+			Long ranking = entry.getLong("ranking");
+			return new Tuple2<String, List<Tuple2<String, Long>>>(request,
+					Arrays.asList(new Tuple2<String, Long>(docId, ranking)));
+		}
+
+	};
+
 	public static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
 		@Override
 		public Tuple2<String, Tuple3<String, String, Long>> call(CassandraRow entry) throws Exception {
@@ -150,6 +164,19 @@ public class SparkFunctions {
 	};
 
 	public static Function createTrainingQueries;
+
+	public static Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>> listReducer = new Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>>() {
+
+		@Override
+		public List<Tuple2<String, Long>> call(List<Tuple2<String, Long>> v1, List<Tuple2<String, Long>> v2)
+				throws Exception {
+			List<Tuple2<String, Long>> mergedList = new ArrayList<Tuple2<String, Long>>();
+			mergedList.addAll(v1);
+			mergedList.addAll(v2);
+			return mergedList;
+		}
+
+	};
 
 	/**
 	 *

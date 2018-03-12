@@ -22,31 +22,29 @@ import com.datafari.ranking.training.TrainingDataBuilder;
 public class OnlineDatafariUsageTest extends OnlineAbstractTest {
 
 	@Inject
-	private TrainingDataBuilder dud;
+	private TrainingDataBuilder tdb;
 
 	@Inject
 	private ResourceLoadingUtils resourceLoadingUtils;
 
-	@Test
-	public void listQueryEvaluation() throws InterruptedException {
-		dud.listQueryEvaluations().forEach(System.out::println);
-	}
+	
+	
 	
 	@Test
 	public void listQueryList() throws IOException {
-		dud.listQueryClick().forEach(System.out::println);
+		tdb.listQueryClick().forEach(System.out::println);
 	}
 	
 	@Test
 	public void listTrainingEntriesFromQueryEvaluation() throws IOException {
-		dud.retrieveTrainingEntriesFromQueryEvaluation().forEach(System.out::println);
+		tdb.retrieveTrainingEntriesFromQueryEvaluation().forEach(System.out::println);
 		
 	}
 	
 
 	@Test
 	public void saveTrainingEntries() throws IOException {
-		List <TrainingEntry> trainingEntries = dud.retrieveTrainingEntriesFromQueryEvaluation().stream().collect(Collectors.toList());
+		List <TrainingEntry> trainingEntries = tdb.retrieveTrainingEntriesFromQueryEvaluation().stream().collect(Collectors.toList());
 		this.resourceLoadingUtils.getObjectMapper().writeValue(new File("D:\\mltest\\trainingEntries.json"), trainingEntries);
 	}
 //	

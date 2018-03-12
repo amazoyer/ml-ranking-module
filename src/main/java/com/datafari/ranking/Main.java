@@ -29,7 +29,7 @@ public class Main {
 	private static String MODEL_NAME = "DatafariModel";
 	private static String METRIC = "NDCG@10";
 	private static String FEATURES_FILE = "featuresDatafari.json";
-	private static int nTrees = 100;
+	private static int nTrees = 300;
 	
 	private static Logger logger = Logger.getLogger(Main.class);
 
@@ -52,8 +52,8 @@ public class Main {
 		
 		// build features to train from manual query evaluation
 		logger.info("Starting retrieving training entries");
-		List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluation();	
-		logger.info("Training entries ready");
+		List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluationWithNonEvaluatedDocument();
+		logger.info("Trainin+g entries ready");
 
 		// serialize training entries
 
