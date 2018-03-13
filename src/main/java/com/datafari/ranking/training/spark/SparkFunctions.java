@@ -1,5 +1,6 @@
 package com.datafari.ranking.training.spark;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,6 +14,8 @@ import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
 import com.datafari.ranking.model.QueryEvaluation;
 import com.datastax.spark.connector.japi.CassandraRow;
+
+import jodd.util.URLDecoder;
 import scala.Tuple2;
 import scala.Tuple3;
 
@@ -49,24 +52,30 @@ public class SparkFunctions {
 		@Override
 		public Tuple2<String, List<Tuple2<String, Long>>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
-			String docId = cleanDocumentId(entry.getString("document_id"));
+			String docId = cleanDocumentIdFromEvaluationTable(entry.getString("document_id"));
 			Long ranking = entry.getLong("ranking");
 			return new Tuple2<String, List<Tuple2<String, Long>>>(request,
 					Arrays.asList(new Tuple2<String, Long>(docId, ranking)));
 		}
 
 	};
-	
-	//TODO remove this : only because our test data is dirty
-	private static String cleanDocumentId(String id){
-		return id.replaceAll("/home/datafari/", "/data/");
+
+	// TODO remove this : only because our test data is dirty
+	private static String cleanDocumentIdFromEvaluationTable(String id) {
+		return id.replaceAll("/home/[^/]*/", "/data/");
+	}
+
+	// TODO remove this : only because our test data is dirty
+	public static String cleanDocumentIdFromClickLog(String id) {
+		String cleanedId = id.replaceAll("/home/[^/]*/", "/data/").replaceAll(" ", "%20");
+		return cleanedId;
 	}
 
 	public static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
 		@Override
 		public Tuple2<String, Tuple3<String, String, Long>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
-			String docId = cleanDocumentId(entry.getString("document_id"));
+			String docId = cleanDocumentIdFromEvaluationTable(entry.getString("document_id"));
 			String id = request + "|" + docId;
 			Long ranking = entry.getLong("ranking");
 			return new Tuple2<String, Tuple3<String, String, Long>>(id,
@@ -199,7 +208,8 @@ public class SparkFunctions {
 		Pattern p = Pattern.compile("(file:.*)///([0-9]+)");
 		Matcher m = p.matcher(history);
 		if (m.find()) {
-			return new Tuple2<String, Long>(m.group(1), Long.parseLong(m.group(2)));
+			return new Tuple2<String, Long>(SparkFunctions.cleanDocumentIdFromClickLog(m.group(1)),
+					Long.parseLong(m.group(2)));
 		}
 		throw new RuntimeException("Cannot correctly parse entry : " + history);
 	}

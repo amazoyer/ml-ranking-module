@@ -62,18 +62,28 @@ public class LtrClient {
 		SolrQuery query = new SolrQuery(queryStr);
 		query.addField("id");
 		query.addField("score");
-		query.addField("[features " + efiUserQuery + "=\"" + queryStr + "\"]");
 		return query;
 	}
 
-	private SolrQuery generateSolrQueryGetTopNDocs(String queryStr, int topN) {
-		SolrQuery query = generateBaseSolrQuery(queryStr);
+	private SolrQuery addFeaturesQuery(SolrQuery query) {
+		query.addField("[features " + efiUserQuery + "=\"" + query.getQuery() + "\"]");
+		return query;
+	}
+
+	private SolrQuery generateSolrQueryGetTopNDocsWithFeatures(String queryStr, int topN) {
+		SolrQuery query = addFeaturesQuery(generateBaseSolrQuery(queryStr));
 		query.setRows(topN);
 		return query;
 	}
 
-	public SolrQuery generateSolrQueryGetDoc(String queryStr, String docId) {
-		SolrQuery query = generateBaseSolrQuery(queryStr);
+	private SolrQuery generateSolrQueryGetTopNDocs(String queryStr, int topN) {
+		SolrQuery query = addFeaturesQuery(generateBaseSolrQuery(queryStr));
+		query.setRows(topN);
+		return query;
+	}
+
+	public SolrQuery generateSolrQueryGetDocWithFeatures(String queryStr, String docId) {
+		SolrQuery query = addFeaturesQuery(generateBaseSolrQuery(queryStr));
 		query.addFilterQuery("id:(\"" + docId + "\")");
 		return query;
 	}
@@ -110,14 +120,14 @@ public class LtrClient {
 
 	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
 			throws SolrServerException, IOException {
-		SolrQuery query = generateSolrQueryGetDoc(queryStr, docId);
+		SolrQuery query = generateSolrQueryGetDocWithFeatures(queryStr, docId);
 		QueryResponse response = sendQuery(query);
 		SolrDocumentList results = response.getResults();
 		if (results.size() == 1) {
 			String featuresValues = (String) results.get(0).getFieldValue("[features]");
 			return Optional.of(parseFeatures(featuresValues));
 		} else {
-			logger.log(Level.WARNING, "Got " + results.size() + " results for query " + query.toQueryString());
+			logger.log(Level.WARNING, "Got " + results.size() + " results for query :\n" + solrClientProvider.getSolrHttpClient().getUrl() + "select" + query.toQueryString());
 			return Optional.empty();
 		}
 	}
@@ -129,7 +139,7 @@ public class LtrClient {
 
 	public List<Tuple2<String, Map<String, Double>>> getFeaturesMapForTopNDocs(String queryStr, int topN)
 			throws SolrServerException, IOException {
-		SolrQuery query = generateSolrQueryGetTopNDocs(queryStr, topN);
+		SolrQuery query = generateSolrQueryGetTopNDocsWithFeatures(queryStr, topN);
 		QueryResponse response = sendQuery(query);
 		SolrDocumentList results = response.getResults();
 		return results.stream()
@@ -137,6 +147,12 @@ public class LtrClient {
 						parseFeatures((String) result.getFieldValue("[features]"))))
 				.collect(Collectors.toList());
 
+	}
+
+	public List<String> getTopNDocs(String queryStr, int topN) throws SolrServerException, IOException {
+		SolrQuery query = generateSolrQueryGetTopNDocs(queryStr, topN);
+		QueryResponse response = sendQuery(query);
+		return response.getResults().stream().map(doc -> (String) doc.getFieldValue("id")).collect(Collectors.toList());
 	}
 
 }

@@ -30,6 +30,10 @@ public class QueryDocumentClickStat implements Serializable {
 	public Long getTotalClickPosition() {
 		return totalClickPosition;
 	}
+	
+	public Long getTotalClickCountForQuery(){
+		return totalClickCountForQuery;
+	}
 
 	public String getQuery() {
 		return query;
@@ -41,8 +45,9 @@ public class QueryDocumentClickStat implements Serializable {
 
 	@Override
 	public String toString() {
-		return "query : " + query + " document : " + documentID + " clickOnDocForQuery/totalClickForQuery : "
-				+ clickCount + "/" + totalClickCountForQuery + " averageClickPosition : " + averageClickPosition();
+		return "query : " + query + " document : " + documentID
+				+ ((clickCount > 0) ? " clickOnDocForQuery/totalClickForQuery : " + clickCount + "/"
+						+ totalClickCountForQuery + " averageClickPosition : " + averageClickPosition() : "");
 	}
 
 }

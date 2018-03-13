@@ -1,9 +1,12 @@
 package com.datafari.ranking.training;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -31,10 +34,34 @@ public class TrainingDataBuilder {
 		return jobs.getAggregatedQueryEvaluationRDD().cache().map(SparkModelMapper.createQueryEvaluation).collect();
 	}
 
-	public List<QueryDocumentClickStat> listQueryClick() throws IOException {
+	private Stream<QueryDocumentClickStat> listQueryClick() throws IOException {
 		return jobs.getQueryClickRDD().cache().map(SparkModelMapper.createQueryDocumentClickStat).collect().stream()
-				.flatMap(List::stream).collect(Collectors.toList());
+				.flatMap(List::stream);
 	}
+
+	private List<QueryDocumentClickStat> retreiveQueryClick() throws IOException {
+		return listQueryClick().collect(Collectors.toList());
+	}
+
+	public List<TrainingEntry> buildTrainingEntriesFromQueryClick() throws IOException {
+		Stream<QueryDocumentClickStat> stream = listQueryClick();
+		return stream.map(SparkModelMapper.buildTrainingEntryFromQueryClickStat).collect(Collectors.toList());
+	}
+
+	private void test() {
+		ArrayList<String> list = new ArrayList<String>();
+		Stream<String> listS = list.stream();
+		listS.map(mapper);
+	}
+
+	private static Function<String, Long> mapper = new Function<String, Long>() {
+
+		@Override
+		public Long apply(String t) {
+			return 0L;
+		}
+
+	};
 
 	public List<TrainingEntry> retrieveTrainingEntriesFromQueryEvaluation() throws IOException {
 		return jobs.getTrainingEntriesFromQueryEvaluation().cache()

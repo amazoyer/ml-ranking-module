@@ -45,7 +45,7 @@ public class TestSolrProvider implements ISolrClientProvider {
 	@Override
 	public SolrHttpClient getSolrHttpClient() throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		return new SolrHttpClient("EMBEDDED_SOLR_SERVER/");
 	}
 
 

@@ -28,11 +28,9 @@ public class OnlineDatafariUsageTest extends OnlineAbstractTest {
 	private ResourceLoadingUtils resourceLoadingUtils;
 
 	
-	
-	
 	@Test
 	public void listQueryList() throws IOException {
-		tdb.listQueryClick().forEach(System.out::println);
+		//tdb.listQueryClick().forEach(System.out::println);
 	}
 	
 	@Test

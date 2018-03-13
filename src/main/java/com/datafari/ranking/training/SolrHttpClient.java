@@ -59,4 +59,8 @@ public class SolrHttpClient {
 
 	}
 
+	public String getUrl() {
+		return url;
+	}
+
 }
