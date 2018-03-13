@@ -19,6 +19,7 @@ public class LocalSolrTestConfig extends ConfigProperties{
 	@Inject
 	ResourceLoadingUtils configUtils;
 	
+	@Override
 	@Bean
 	public ISolrClientProvider solrClientProvider() throws IOException {
 		return new TestSolrProvider(configUtils);

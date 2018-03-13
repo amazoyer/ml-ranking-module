@@ -16,7 +16,7 @@ import com.datafari.ranking.training.spark.SparkFunctions;
 import scala.Tuple2;
 
 @RunWith(SpringRunner.class)
-public class SparkFunctionTests extends AbstractTest{
+public class SparkFunctionTests extends AbstractTest {
 
 	@Test
 	public void localClickLogAggregatorTest() throws Exception {

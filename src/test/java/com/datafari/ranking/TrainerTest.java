@@ -29,27 +29,17 @@ import org.xml.sax.SAXException;
 
 import com.datafari.ranking.config.AbstractTest;
 import com.datafari.ranking.config.LocalSolrTestConfig;
-import com.datafari.ranking.config.OnlineAbstractTest;
 import com.datafari.ranking.ltr.LtrClient;
 import com.datafari.ranking.model.TrainingEntry;
 import com.datafari.ranking.trainer.InMemoryIOEvaluator;
-import com.datafari.ranking.training.SolrHttpClientException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
-
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = LocalSolrTestConfig.class)
-public class OfflineTrainerTest2 extends OnlineAbstractTest {
+public class TrainerTest extends AbstractTest {
 
 	@Inject
 	protected LtrClient ltrClient;
 
-	@Test
-	public void readConfig() throws IOException, JSONException {
-		JSONObject config = parseConfig("config.json");
-		Assert.assertEquals("localhost", config.get("host"));
-	}
 
 	@Ignore
 	public void buildQuerySolr() throws IOException {

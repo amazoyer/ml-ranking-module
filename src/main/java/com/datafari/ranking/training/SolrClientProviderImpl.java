@@ -14,20 +14,19 @@ import com.lucidworks.spark.rdd.SolrJavaRDD;
 public class SolrClientProviderImpl implements ISolrClientProvider {
 	private static String FILESHARE = "FileShare";
 	private static String STATISTICS = "Statistics";
-	private static String ZK_HOST = "localhost";
-	private static String ZK_PORT = "2181";
-	
 
 	private SolrHttpClient solrHttpClient;
 	private SolrJavaRDD solrJavaRDD;
 	private CloudSolrClient solrClient;
 
-	@Inject
-	public SolrClientProviderImpl(ISparkContextProvider sparkContextProvider) {
-		solrClient = new CloudSolrClient.Builder().withZkHost(ZK_HOST + ":" + ZK_PORT).build();
+	public SolrClientProviderImpl(ISparkContextProvider sparkContextProvider, String zkHost, String zkPort) {
+		solrClient = new CloudSolrClient.Builder().withZkHost(zkHost + ":" + zkPort).build();
 		solrClient.setDefaultCollection(FILESHARE);
-		solrJavaRDD = SolrJavaRDD.get(ZK_HOST + ":" + ZK_PORT, STATISTICS, sparkContextProvider.getSparkContext().sc());
+		solrJavaRDD = SolrJavaRDD.get(zkHost + ":" + zkPort, STATISTICS, sparkContextProvider.getSparkContext().sc());
 		solrHttpClient = new SolrHttpClient(solrClient.getZkStateReader().getLeader(FILESHARE, "shard1").getCoreUrl());
+	}
+
+	public SolrClientProviderImpl() {
 	}
 
 	public SolrClient getSolrClient() {
@@ -42,6 +41,5 @@ public class SolrClientProviderImpl implements ISolrClientProvider {
 	public SolrHttpClient getSolrHttpClient() throws IOException {
 		return solrHttpClient;
 	}
-
 
 }
