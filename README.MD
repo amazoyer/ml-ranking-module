@@ -21,6 +21,7 @@ Add a new lib path to the new lib folder in solrconfig.xml of the Datafari FileS
 
 Add the following component to solrconfig.xml of the Datafari FileShare core :
 
+```xml
 <!-- Feature Values Cache : Cache used by the Learning To Rank (LTR) contrib module-->
 <cache enable="true" name="QUERY_DOC_FV"
      class="solr.search.LRUCache"
@@ -39,6 +40,7 @@ Add the following component to solrconfig.xml of the Datafari FileShare core :
 <transformer enable="true" name="features" class="org.apache.solr.ltr.response.transform.LTRFeatureLoggerTransformerFactory">
     <str name="fvCacheName">QUERY_DOC_FV</str>
 </transformer>
+```
 
 ### Reload config
 
