@@ -49,19 +49,24 @@ public class SparkFunctions {
 		@Override
 		public Tuple2<String, List<Tuple2<String, Long>>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
-			String docId = entry.getString("document_id");
+			String docId = cleanDocumentId(entry.getString("document_id"));
 			Long ranking = entry.getLong("ranking");
 			return new Tuple2<String, List<Tuple2<String, Long>>>(request,
 					Arrays.asList(new Tuple2<String, Long>(docId, ranking)));
 		}
 
 	};
+	
+	//TODO remove this : only because our test data is dirty
+	private static String cleanDocumentId(String id){
+		return id.replaceAll("/home/datafari/", "/data/");
+	}
 
 	public static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
 		@Override
 		public Tuple2<String, Tuple3<String, String, Long>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
-			String docId = entry.getString("document_id");
+			String docId = cleanDocumentId(entry.getString("document_id"));
 			String id = request + "|" + docId;
 			Long ranking = entry.getLong("ranking");
 			return new Tuple2<String, Tuple3<String, String, Long>>(id,

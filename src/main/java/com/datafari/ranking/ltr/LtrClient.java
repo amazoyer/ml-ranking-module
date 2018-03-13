@@ -56,16 +56,16 @@ public class LtrClient {
 	}
 
 	public final String store = "_DEFAULT_";
-	public final String efiUserQuery = "efi.user_query";
+	public final String efiUserQuery = "efi.query";
 
-	private SolrQuery generateBaseSolrQuery(String queryStr){
+	private SolrQuery generateBaseSolrQuery(String queryStr) {
 		SolrQuery query = new SolrQuery(queryStr);
 		query.addField("id");
 		query.addField("score");
-		query.addField("[features]");
+		query.addField("[features " + efiUserQuery + "=\"" + queryStr + "\"]");
 		return query;
 	}
-	
+
 	private SolrQuery generateSolrQueryGetTopNDocs(String queryStr, int topN) {
 		SolrQuery query = generateBaseSolrQuery(queryStr);
 		query.setRows(topN);
@@ -85,26 +85,29 @@ public class LtrClient {
 	public enum LTR_OBJECT_TYPE {
 		model, feature;
 	}
+
 	private static String SCHEMA = "schema";
 	private static String DEFAULT = "_DEFAULT_";
 	private static String STORE_SUFFIX = "-store";
 
-	public void sendFeatures(String features) throws SolrHttpClientException, IOException{
+	public void sendFeatures(String features) throws SolrHttpClientException, IOException {
 		sendLtrObject(features, null, LTR_OBJECT_TYPE.feature);
 	}
-	
-	public void sendModel(String model, String modelName) throws SolrHttpClientException, IOException{
+
+	public void sendModel(String model, String modelName) throws SolrHttpClientException, IOException {
 		sendLtrObject(model, modelName, LTR_OBJECT_TYPE.model);
 	}
-	
-	public void sendLtrObject(String obj, String name,  LTR_OBJECT_TYPE ltrObjectType) throws SolrHttpClientException, IOException {
+
+	public void sendLtrObject(String obj, String name, LTR_OBJECT_TYPE ltrObjectType)
+			throws SolrHttpClientException, IOException {
 		SolrHttpClient httpClient = solrClientProvider.getSolrHttpClient();
 		String resourceUrl = SCHEMA + "/" + ltrObjectType + STORE_SUFFIX + "/" + DEFAULT;
-		httpClient.sendDelete(ltrObjectType.equals(LTR_OBJECT_TYPE.model) ? resourceUrl.replace(DEFAULT, name) : resourceUrl);
+		httpClient.sendDelete(
+				ltrObjectType.equals(LTR_OBJECT_TYPE.model) ? resourceUrl.replace(DEFAULT, name) : resourceUrl);
 		httpClient.sendPut(resourceUrl, obj);
 
 	}
-	
+
 	public Optional<Map<String, Double>> getFeaturesMap(String queryStr, String docId)
 			throws SolrServerException, IOException {
 		SolrQuery query = generateSolrQueryGetDoc(queryStr, docId);
@@ -118,20 +121,22 @@ public class LtrClient {
 			return Optional.empty();
 		}
 	}
-	
-	private Map<String, Double> parseFeatures(String featuresValues){
-		return Arrays.stream(featuresValues.split(",")).collect(Collectors
-				.toMap(entry -> (String) entry.split("=")[0], entry -> Double.parseDouble(entry.split("=")[1])));
+
+	private Map<String, Double> parseFeatures(String featuresValues) {
+		return Arrays.stream(featuresValues.split(",")).collect(Collectors.toMap(entry -> (String) entry.split("=")[0],
+				entry -> Double.parseDouble(entry.split("=")[1])));
 	}
 
-	public List<Tuple2<String, Map<String, Double>>> getFeaturesMapForTopNDocs(String queryStr, int topN) throws SolrServerException, IOException {
+	public List<Tuple2<String, Map<String, Double>>> getFeaturesMapForTopNDocs(String queryStr, int topN)
+			throws SolrServerException, IOException {
 		SolrQuery query = generateSolrQueryGetTopNDocs(queryStr, topN);
 		QueryResponse response = sendQuery(query);
 		SolrDocumentList results = response.getResults();
-		return results.stream().map(result -> 
-			new Tuple2<String, Map<String, Double>>((String)result.getFieldValue("id"), parseFeatures((String)result.getFieldValue("[features]")))).collect(Collectors.toList());
-		
-	}
+		return results.stream()
+				.map(result -> new Tuple2<String, Map<String, Double>>((String) result.getFieldValue("id"),
+						parseFeatures((String) result.getFieldValue("[features]"))))
+				.collect(Collectors.toList());
 
+	}
 
 }

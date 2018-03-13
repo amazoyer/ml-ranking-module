@@ -2,6 +2,7 @@ package com.datafari.ranking;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Named;
@@ -26,6 +27,7 @@ import com.datafari.ranking.training.TrainingDataBuilder;
 
 public class Main {
 
+	private static final boolean SPLIT_TRAINING_DATA = true;
 	private static String MODEL_NAME = "DatafariModel";
 	private static String METRIC = "NDCG@10";
 	private static String FEATURES_FILE = "featuresDatafari.json";
@@ -53,18 +55,26 @@ public class Main {
 		// build features to train from manual query evaluation
 		logger.info("Starting retrieving training entries");
 		List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluationWithNonEvaluatedDocument();
-		logger.info("Trainin+g entries ready");
+		//List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluation();
+		logger.info("Training entries ready");
 
-		// serialize training entries
-
-		//Object to JSON in file
-		resourceLoadingUtils.getObjectMapper().writer().writeValue(new File("D:\\mltest\\debugTraining.json"), trainingEntries);
+		// serialize training entries to JSON in file
+		 resourceLoadingUtils.getObjectMapper().writer().writeValue(new File("D:\\mltest\\debugTraining.json"), trainingEntries);
 
 		
 		
 		// train the model (use all available training entries for training set)
 		logger.info("Starting to train the model");
-		JSONObject model = mLTrainer.train(trainingEntries, null, null, METRIC, nTrees, MODEL_NAME);
+		
+		
+		List<TrainingEntry> validationEntries = null;
+		if (SPLIT_TRAINING_DATA){
+			validationEntries = trainingEntries.subList((trainingEntries.size()+1)/2, trainingEntries.size());
+			trainingEntries = trainingEntries.subList(0, (trainingEntries.size()+1)/2);
+		}
+		
+		
+		JSONObject model = mLTrainer.train(trainingEntries, validationEntries, null, METRIC, nTrees, MODEL_NAME);
 		logger.info("Model successfully trained");
 
 		
