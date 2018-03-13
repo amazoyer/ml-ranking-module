@@ -88,11 +88,14 @@ The ML ranking training process is divided into different steps:
 * Build training entries
 * Train model
 * Upload model to Solr
+
 All these steps are detailled in main method :
 ```
 com.datafari.ranking.Main.main
 ```
-## The way score for training entry is calculated can be modified in class : 
+### Training entry score calculation
+
+The way score for training entry is calculated can be modified in class : 
 ```
 com.datafari.ranking.trainer.TrainingEntryScoreCalculator
 ```
