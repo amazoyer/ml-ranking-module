@@ -35,6 +35,9 @@ import com.datafari.ranking.trainer.InMemoryIOEvaluator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
+
+@RunWith(SpringRunner.class)
+
 public class TrainerTest extends AbstractTest {
 
 	@Inject

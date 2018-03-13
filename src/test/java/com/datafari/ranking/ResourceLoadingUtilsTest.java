@@ -18,6 +18,7 @@ import com.datafari.ranking.model.TrainingEntry;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+
 @RunWith(SpringRunner.class)
 public class ResourceLoadingUtilsTest extends AbstractTest {
 

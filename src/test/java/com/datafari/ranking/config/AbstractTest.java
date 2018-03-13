@@ -11,7 +11,6 @@ import com.datafari.ranking.configuration.ResourceLoadingUtils;
 import com.datafari.ranking.trainer.MLTrainer;
 
 
-@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = LocalSolrTestConfig.class)
 public class AbstractTest {
 	
