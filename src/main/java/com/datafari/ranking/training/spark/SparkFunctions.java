@@ -1,6 +1,5 @@
 package com.datafari.ranking.training.spark;
 
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,19 +8,19 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
-import com.datafari.ranking.model.QueryEvaluation;
 import com.datastax.spark.connector.japi.CassandraRow;
 
-import jodd.util.URLDecoder;
 import scala.Tuple2;
 import scala.Tuple3;
 
+/**
+ * Static function used to process data
+ * 
+ */
 public class SparkFunctions {
-
-	public static PairFunction<CassandraRow, String, Long> cassandraRankingMapper = new PairFunction<CassandraRow, String, Long>() {
+	static PairFunction<CassandraRow, String, Long> cassandraRankingMapper = new PairFunction<CassandraRow, String, Long>() {
 		@Override
 		public Tuple2<String, Long> call(CassandraRow entry) throws Exception {
 			return new Tuple2<String, Long>(entry.getString("request"), entry.getLong("ranking"));
@@ -30,13 +29,18 @@ public class SparkFunctions {
 
 	private static int BAD_DOCUMENT_THRESHOLD = 5;
 
-	public static PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>> mapForEvaluation = new PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>>() {
+	/**
+	 * 
+	 * Split documents into two parts. Documents with rank lower or equals to 
+	 * 
+	 */
+	static PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>> mapForEvaluation = new PairFunction<CassandraRow, String, Tuple2<List<String>, List<String>>>() {
 		@Override
 		public Tuple2<String, Tuple2<List<String>, List<String>>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
 			ArrayList<String> singletonArray = new ArrayList<>(Arrays.asList(entry.getString("document_id")));
 			ArrayList<String> emptyList = new ArrayList<String>();
-			if (entry.getLong("ranking") > BAD_DOCUMENT_THRESHOLD) {
+			if (entry.getLong("ranking") >= BAD_DOCUMENT_THRESHOLD) {
 				return new Tuple2<String, Tuple2<List<String>, List<String>>>(request,
 						new Tuple2<List<String>, List<String>>(singletonArray, emptyList));
 			} else {
@@ -48,7 +52,7 @@ public class SparkFunctions {
 
 	// create a list of document/evaluation per query ex : {query1, [{doc1, 9},
 	// {doc2, 1}]}
-	public static PairFunction<CassandraRow, String, List<Tuple2<String, Long>>> mapRequestWithDocAndRank = new PairFunction<CassandraRow, String, List<Tuple2<String, Long>>>() {
+	static PairFunction<CassandraRow, String, List<Tuple2<String, Long>>> mapRequestWithDocAndRank = new PairFunction<CassandraRow, String, List<Tuple2<String, Long>>>() {
 		@Override
 		public Tuple2<String, List<Tuple2<String, Long>>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
@@ -57,7 +61,6 @@ public class SparkFunctions {
 			return new Tuple2<String, List<Tuple2<String, Long>>>(request,
 					Arrays.asList(new Tuple2<String, Long>(docId, ranking)));
 		}
-
 	};
 
 	// TODO remove this : only because our test data is dirty
@@ -66,12 +69,12 @@ public class SparkFunctions {
 	}
 
 	// TODO remove this : only because our test data is dirty
-	public static String cleanDocumentIdFromClickLog(String id) {
+	private static String cleanDocumentIdFromClickLog(String id) {
 		String cleanedId = id.replaceAll("/home/[^/]*/", "/data/").replaceAll(" ", "%20");
 		return cleanedId;
 	}
 
-	public static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
+	static PairFunction<CassandraRow, String, Tuple3<String, String, Long>> mapCassandraEntryForTrainingEntries = new PairFunction<CassandraRow, String, Tuple3<String, String, Long>>() {
 		@Override
 		public Tuple2<String, Tuple3<String, String, Long>> call(CassandraRow entry) throws Exception {
 			String request = entry.getString("request");
@@ -83,28 +86,25 @@ public class SparkFunctions {
 		}
 	};
 
-	public static Function2<Long, Long, Long> functionSum = new Function2<Long, Long, Long>() {
-		@Override
-		public Long call(Long value1, Long value2) throws Exception {
-			return value1 + value2;
-		}
-	};
-
-	public static Function2<Long, Long, Long> sum = new Function2<Long, Long, Long>() {
+	static Function2<Long, Long, Long> sum = new Function2<Long, Long, Long>() {
 		@Override
 		public Long call(Long v1, Long v2) throws Exception {
 			return v1 + v2;
 		}
 	};
 
-	public static PairFunction<CassandraRow, String, Long> groupByDocumentID = new PairFunction<CassandraRow, String, Long>() {
+	static PairFunction<CassandraRow, String, Long> groupByDocumentID = new PairFunction<CassandraRow, String, Long>() {
 		@Override
 		public Tuple2<String, Long> call(CassandraRow row) throws Exception {
 			return new Tuple2<String, Long>(row.getString("document_id"), 1L);
 		}
 	};
 
-	public static Function2<Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>> doubleListReducer = new Function2<Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>>() {
+	/**
+	 * Merge two lists
+	 * 
+	 */
+	static Function2<Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>> doubleListReducer = new Function2<Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>, Tuple2<List<String>, List<String>>>() {
 		@Override
 		public Tuple2<List<String>, List<String>> call(Tuple2<List<String>, List<String>> v1,
 				Tuple2<List<String>, List<String>> v2) throws Exception {
@@ -119,7 +119,7 @@ public class SparkFunctions {
 	 * Merge 2 maps of documents + count + sum of click positions
 	 * 
 	 */
-	public static Function2<Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>> documentClickCountGlobalAggregator = new Function2<Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>>() {
+	static Function2<Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>> documentClickCountGlobalAggregator = new Function2<Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>, Map<String, Tuple2<Long, Long>>>() {
 		@Override
 		public Map<String, Tuple2<Long, Long>> call(Map<String, Tuple2<Long, Long>> map1,
 				Map<String, Tuple2<Long, Long>> map2) throws Exception {
@@ -138,7 +138,7 @@ public class SparkFunctions {
 	 * @param mapListDocumentAndCound
 	 * @param historyEntry
 	 */
-	public static void addEntryToMap(Map<String, Tuple2<Long, Long>> mapListDocumentAndCound,
+	private static void addEntryToMap(Map<String, Tuple2<Long, Long>> mapListDocumentAndCound,
 			Tuple3<String, Long, Long> historyEntry) {
 
 		// history entry value ( ex : 2, 2)
@@ -165,7 +165,7 @@ public class SparkFunctions {
 	 * position of click
 	 * 
 	 */
-	public static Function2<Map<String, Tuple2<Long, Long>>, Collection<String>, Map<String, Tuple2<Long, Long>>> documentClickCountLocalAggregator = new Function2<Map<String, Tuple2<Long, Long>>, Collection<String>, Map<String, Tuple2<Long, Long>>>() {
+	static Function2<Map<String, Tuple2<Long, Long>>, Collection<String>, Map<String, Tuple2<Long, Long>>> documentClickCountLocalAggregator = new Function2<Map<String, Tuple2<Long, Long>>, Collection<String>, Map<String, Tuple2<Long, Long>>>() {
 		@Override
 		public Map<String, Tuple2<Long, Long>> call(Map<String, Tuple2<Long, Long>> mapListDocumentAndCound,
 				Collection<String> documentIDsList) throws Exception {
@@ -177,9 +177,7 @@ public class SparkFunctions {
 		}
 	};
 
-	public static Function createTrainingQueries;
-
-	public static Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>> listReducer = new Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>>() {
+	static Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>> listReducer = new Function2<List<Tuple2<String, Long>>, List<Tuple2<String, Long>>, List<Tuple2<String, Long>>>() {
 
 		@Override
 		public List<Tuple2<String, Long>> call(List<Tuple2<String, Long>> v1, List<Tuple2<String, Long>> v2)
@@ -204,7 +202,7 @@ public class SparkFunctions {
 	 * 
 	 * @param history
 	 */
-	public static Tuple2<String, Long> parseHistoryString(String history) {
+	static Tuple2<String, Long> parseHistoryString(String history) {
 		Pattern p = Pattern.compile("(file:.*)///([0-9]+)");
 		Matcher m = p.matcher(history);
 		if (m.find()) {

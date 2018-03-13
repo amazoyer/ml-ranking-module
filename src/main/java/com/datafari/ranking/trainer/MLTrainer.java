@@ -9,6 +9,11 @@ import org.json.simple.JSONObject;
 import org.xml.sax.SAXException;
 import com.datafari.ranking.model.TrainingEntry;
 
+/**
+ * 
+ * Service that uses ranklib to train the model
+ *
+ */
 @Lazy
 @Named
 public class MLTrainer {

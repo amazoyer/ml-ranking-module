@@ -3,7 +3,6 @@ package com.datafari.ranking.configuration;
 import java.io.IOException;
 
 import javax.inject.Inject;
-import javax.ws.rs.ext.ParamConverter.Lazy;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;

@@ -1,11 +1,8 @@
 package com.datafari.ranking.configuration;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Named;
@@ -20,11 +17,6 @@ import org.springframework.context.ResourceLoaderAware;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
-import com.datafari.ranking.model.TrainingEntry;
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -57,9 +49,8 @@ public class ResourceLoadingUtils implements ResourceLoaderAware {
 
 	public <T extends JSONAware> T readJSON(String fileName, Class<T> clazz) throws IOException, ParseException {
 		InputStream in = getResource(fileName).getInputStream();
-		return (T)parser.parse(new InputStreamReader(in));
+		return (T) parser.parse(new InputStreamReader(in));
 	}
-	
 
 	public List<String> getLines(String fileName) throws IOException {
 		return FileUtils.readLines(getResource(fileName).getFile(), "UTF-8");

@@ -7,6 +7,15 @@ import java.util.stream.Collectors;
 
 import scala.Serializable;
 
+
+
+/**
+ * 
+ * Training entry. Can be used by InMemoryIOEvalutor to train the model
+ * through Ranklib
+ * Contains a couple of doc/query + associated features and a rank
+ *
+ */
 public class TrainingEntry implements Serializable {
 
 	private String query;

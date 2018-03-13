@@ -69,5 +69,32 @@ to add the line (for example line 60):
 
 Manager.store.addByValue("rq", '{!ltr model=DatafariModel reRankDocs=100}');
 
-     
+# Configuration
+
+## Connection to Datafari
+Connection to Datafari Cassandra and Datafari Solr can be modified in :
+```
+ml-ranking-module\src\main\resources\config.properties
+```
+## Features
+Features to train model can be modified in :
+
+```
+ml-ranking-module\src\main\resources\featuresDatafari.json
+```
+## ML Ranking training process
+The ML ranking training process is divided into different steps:
+* Upload features to Solr
+* Build training entries
+* Train model
+* Upload model to Solr
+All these steps are detailled in main method :
+```
+com.datafari.ranking.Main.main
+```
+## The way score for training entry is calculated can be modified in class : 
+```
+com.datafari.ranking.trainer.TrainingEntryScoreCalculator
+```
+  
 More information on LTR : https://lucene.apache.org/solr/guide/learning-to-rank.html

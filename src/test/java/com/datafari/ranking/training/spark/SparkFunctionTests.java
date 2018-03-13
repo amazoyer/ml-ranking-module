@@ -1,4 +1,4 @@
-package com.datafari.ranking;
+package com.datafari.ranking.training.spark;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -43,6 +43,12 @@ import com.datafari.ranking.training.SolrHttpClientException;
 
 import scala.Tuple2;
 
+/**
+ * 
+ * Class that interacts with Solr to push features/model or to evaluate features
+ * on documents
+ *
+ */
 @Lazy
 @Named
 public class LtrClient {
@@ -127,7 +133,8 @@ public class LtrClient {
 			String featuresValues = (String) results.get(0).getFieldValue("[features]");
 			return Optional.of(parseFeatures(featuresValues));
 		} else {
-			logger.log(Level.WARNING, "Got " + results.size() + " results for query :\n" + solrClientProvider.getSolrHttpClient().getUrl() + "select" + query.toQueryString());
+			logger.log(Level.WARNING, "Got " + results.size() + " results for query :\n"
+					+ solrClientProvider.getSolrHttpClient().getUrl() + "select" + query.toQueryString());
 			return Optional.empty();
 		}
 	}

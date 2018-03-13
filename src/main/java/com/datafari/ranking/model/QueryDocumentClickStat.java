@@ -2,6 +2,11 @@ package com.datafari.ranking.model;
 
 import scala.Serializable;
 
+/**
+ * 
+ * Click stat for a couple of query/doc
+ *
+ */
 public class QueryDocumentClickStat implements Serializable {
 
 	private String query;

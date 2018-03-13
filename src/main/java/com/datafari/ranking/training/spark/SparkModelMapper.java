@@ -10,11 +10,16 @@ import org.apache.spark.api.java.function.Function;
 import com.datafari.ranking.model.QueryDocumentClickStat;
 import com.datafari.ranking.model.QueryEvaluation;
 import com.datafari.ranking.model.TrainingEntry;
-import com.datafari.ranking.training.ScoreMapper;
+import com.datafari.ranking.trainer.TrainingEntryScoreCalculator;
 
 import scala.Tuple2;
 import scala.Tuple3;
 
+/**
+ * 
+ * Create Model Object from Scala Tuples
+ *
+ */
 public class SparkModelMapper {
 
 	public static Function<Tuple2<String, Tuple2<List<String>, List<String>>>, QueryEvaluation> createQueryEvaluation = new Function<Tuple2<String, Tuple2<List<String>, List<String>>>, QueryEvaluation>() {
@@ -45,7 +50,7 @@ public class SparkModelMapper {
 			List<Tuple3<String, Long, Map<String, Double>>> listDocEval = entry._2();
 			return listDocEval.stream()
 					.map(trainingEntry -> new TrainingEntry(query, trainingEntry._1(), trainingEntry._3(),
-							ScoreMapper.convertScoreFromEvaluationEntry(trainingEntry._2()), "HUMAN_JUDGEMENT"))
+							TrainingEntryScoreCalculator.convertScoreFromEvaluationEntry(trainingEntry._2()), "HUMAN_JUDGEMENT"))
 					.collect(Collectors.toList());
 		}
 	};
@@ -59,7 +64,7 @@ public class SparkModelMapper {
 			Map<String, Double> features = entry._2()._2()
 					.orElseThrow(() -> new RuntimeException("Non present feature map should be filtered before"));
 			return new TrainingEntry(infoQuery._1(), infoQuery._2(), features,
-					ScoreMapper.convertScoreFromEvaluationEntry(infoQuery._3()), "HUMAN_JUDGEMENT");
+					TrainingEntryScoreCalculator.convertScoreFromEvaluationEntry(infoQuery._3()), "HUMAN_JUDGEMENT");
 		}
 	};
 
@@ -67,28 +72,9 @@ public class SparkModelMapper {
 		@Override
 		public TrainingEntry apply(QueryDocumentClickStat queryDocumentStat) {
 			return new TrainingEntry(queryDocumentStat.getQuery(), queryDocumentStat.getDocumentID(), null,
-					buildScoreFromClickStat(queryDocumentStat), "QUERY_LOG");
+					TrainingEntryScoreCalculator.buildScoreFromClickStat(queryDocumentStat), "QUERY_LOG");
 		}
 
 	};
 
-	private static Double buildScoreFromClickStat(QueryDocumentClickStat queryDocumentStat) {
-		// TODO should promote high click count (with getClickCount) or
-		// percentage of click : (with getTotalClickCountForQuery)
-		// TODO should promote document clicked with an high position (with
-		// averageClickPosition)
-
-		// here very simple rule
-		if (queryDocumentStat.getClickCount() == 0) {
-			return 0.1D;
-		}
-		// high clicked doc if clicked more than 10%
-		if (new Double(queryDocumentStat.getClickCount())
-				/ new Double(queryDocumentStat.getTotalClickCountForQuery()) > 0.1D) {
-			return 1D;
-		}
-
-		return 0.5D;
-
-	}
 }

@@ -21,14 +21,19 @@ import ciir.umass.edu.learning.DataPoint;
 import ciir.umass.edu.learning.DenseDataPoint;
 import ciir.umass.edu.learning.RANKER_TYPE;
 import ciir.umass.edu.learning.RankList;
-import ciir.umass.edu.learning.Ranker;
 import ciir.umass.edu.learning.RankerTrainer;
 import ciir.umass.edu.learning.SparseDataPoint;
 import ciir.umass.edu.learning.tree.LambdaMART;
-import ciir.umass.edu.utilities.FileUtils;
 import ciir.umass.edu.utilities.RankLibError;
 import ciir.umass.edu.utilities.SimpleMath;
 
+
+/**
+ * 
+ * Ranklib evaluator wrapper.
+ * Works in memory and produce @SolrLTROutputEnsemble that can be uploaded to Solr LTR
+ *
+ */
 public class InMemoryIOEvaluator extends Evaluator {
 	
 	private String modelName = "model";

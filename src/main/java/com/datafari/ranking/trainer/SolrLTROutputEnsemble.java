@@ -25,6 +25,13 @@ import ciir.umass.edu.learning.tree.Ensemble;
 import ciir.umass.edu.learning.tree.RegressionTree;
 import ciir.umass.edu.learning.tree.Split;
 
+
+/**
+ * 
+ * Multiple additive tree model that can be uploaded to Solr LTR
+ * 3
+ *
+ */
 public class SolrLTROutputEnsemble extends Ensemble {
 
 	private Map<Integer, String> reverseFeaturesMap;
