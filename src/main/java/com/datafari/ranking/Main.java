@@ -10,6 +10,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.xml.sax.SAXException;
 
@@ -19,6 +20,7 @@ import com.datafari.ranking.ltr.LtrClient;
 import com.datafari.ranking.ltr.LtrClient.LTR_OBJECT_TYPE;
 import com.datafari.ranking.model.TrainingEntry;
 import com.datafari.ranking.trainer.MLTrainer;
+import com.datafari.ranking.training.ISparkContextProvider;
 import com.datafari.ranking.training.SolrHttpClientException;
 import com.datafari.ranking.training.TrainingDataBuilder;
 
@@ -78,6 +80,9 @@ public class Main {
 		// send model to Datafari
 		ltrClient.sendLtrObject(model.toJSONString(), MODEL_NAME, LTR_OBJECT_TYPE.model);
 		logger.info("Model sent to Solr");
+		
+		// close all
+		((ConfigurableApplicationContext)ctx).close();
 
 	}
 }

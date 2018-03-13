@@ -42,4 +42,13 @@ public class SolrClientProviderImpl implements ISolrClientProvider {
 		return solrHttpClient;
 	}
 
+	@Override
+	public void close() {
+		try {
+			solrClient.getZkStateReader().close();
+			solrClient.close();
+		} catch (IOException e) {
+		}
+	}
+
 }

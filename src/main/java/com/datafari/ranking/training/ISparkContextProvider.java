@@ -12,4 +12,6 @@ public interface ISparkContextProvider {
 
 	public JavaSparkContext getSparkContext();
 
+	void close();
+
 }

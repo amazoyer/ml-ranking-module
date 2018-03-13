@@ -19,5 +19,10 @@ public class SparkContextProviderImpl implements ISparkContextProvider {
 	public JavaSparkContext getSparkContext() {
 		return sparkContext;
 	}
+	
+	@Override
+	public void close(){
+		sparkContext.close();
+	}
 
 }

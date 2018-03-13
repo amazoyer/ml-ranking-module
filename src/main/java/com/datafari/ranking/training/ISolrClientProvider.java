@@ -13,5 +13,7 @@ public interface ISolrClientProvider {
 	public SolrJavaRDD getSolrJavaRDD() throws IOException;
 
 	public SolrHttpClient getSolrHttpClient() throws IOException;
+	
+	public void close();
 
 }
