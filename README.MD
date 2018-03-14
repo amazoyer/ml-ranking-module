@@ -44,10 +44,10 @@ Add the following component to solrconfig.xml of the Datafari FileShare core :
 
 ### Reload config
 
-Load the new configuration:
+We need to reload the configuration, to do that go to :
 
 ```
-In /opt/datafari/bin/zkUtils
+/opt/datafari/bin/zkUtils
 ```
 
 Run :
@@ -66,8 +66,33 @@ and then run :
 
 Modify /opt/datafari/tomcat/webapps/Datafari/js/main.js file
 to add the line (for example line 60):
+Copy the widget file from :
+```
+ml-ranking-module\src\main\resources\Ltr.widget.js
+```
+to :
+```
+/opt/datafari/tomcat/webapps/Datafari/js/AjaxFranceLabs/widget
+```
+Then add the following line :
+```
+<script type="text/javascript" src="js/AjaxFranceLabs/widgets/Ltr.widget.js"></script>
+```
+in 
+```
+/opt/datafari/tomcat/webapps/Datafari/searchView.jsp
+```
+Then add the following lines :
+```
+Manager.addWidget(new AjaxFranceLabs.LtrWidget({
+   id : 'ltrWidget'
+}));
+```
+at the end(line 150 for example) of : 
+```
+/opt/datafari/tomcat/webapps/Datafari/js/search.js
+```
 
-Manager.store.addByValue("rq", '{!ltr model=DatafariModel reRankDocs=100}');
 
 # Configuration
 
