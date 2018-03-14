@@ -30,8 +30,8 @@ public class TrainingEntryScoreCalculator {
 			return 1D;
 		}
 
-		// if not clicked, put a middle score
-		return 0.5D;
+		// if clicked, put a middle score
+		return 0.7D;
 	}
 
 	/*

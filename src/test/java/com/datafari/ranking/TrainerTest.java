@@ -9,12 +9,14 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.spark.api.java.Optional;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -93,9 +95,11 @@ public class TrainerTest extends AbstractTest {
 			Double score = Double.parseDouble(userQuerySplitted[2]);
 			String type = userQuerySplitted[3];
 
-			ltrClient.getFeaturesMap(queryStr, docId).ifPresent(
-					features -> trainingEntries.add(new TrainingEntry(queryStr, docId, features, score, type)));
-
+			Optional<Map<String, Double>> features = ltrClient.getFeaturesMap(queryStr, docId);
+			if (features.isPresent()){
+				trainingEntries.add(new TrainingEntry(queryStr, docId, features.get(), score, type));
+			}
+			
 		}
 
 		return trainingEntries;

@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
@@ -19,6 +18,7 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFunction;
 
@@ -257,10 +257,13 @@ public class SparkJobs {
 
 			// evaluate othersDocuments and add to list
 			for (String docId : othersDocuments) {
-				ltrClient.getFeaturesMap(query, docId)
-						.ifPresent(features -> documentsWithEvaluationAndFeatures
-								.add(new Tuple3<String, Long, Map<String, Double>>(docId,
-										mapEvaluation.get(docId).longValue(), features)));
+				
+				Optional<Map<String, Double>> featuresMap = ltrClient.getFeaturesMap(query, docId);
+				if (featuresMap.isPresent()){
+					documentsWithEvaluationAndFeatures
+							.add(new Tuple3<String, Long, Map<String, Double>>(docId,
+									mapEvaluation.get(docId).longValue(), featuresMap.get()));
+				}
 			}
 			return new Tuple2<String, List<Tuple3<String, Long, Map<String, Double>>>>(query,
 					documentsWithEvaluationAndFeatures);

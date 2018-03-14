@@ -1,6 +1,8 @@
 package com.datafari.ranking;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -26,15 +28,16 @@ import com.datafari.ranking.training.TrainingDataBuilder;
 
 public class Main {
 
-	private static final boolean SPLIT_TRAINING_DATA = true;
+	private static final boolean SPLIT_TRAINING_DATA_FOR_VALIDATION = false;
 	private static String MODEL_NAME = "DatafariModel";
 	private static String METRIC = "NDCG@10";
 	private static String FEATURES_FILE = "featuresDatafari.json";
 	private static int nTrees = 300;
-	
+
 	private static Logger logger = Logger.getLogger(Main.class);
 
-	public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, SolrHttpClientException, ParseException {
+	public static void main(String[] args)
+			throws IOException, SAXException, ParserConfigurationException, SolrHttpClientException, ParseException {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigProperties.class);
 		MLTrainer mLTrainer = ctx.getBean(MLTrainer.class);
 		LtrClient ltrClient = ctx.getBean(LtrClient.class);
@@ -42,47 +45,54 @@ public class Main {
 		ResourceLoadingUtils resourceLoadingUtils = ctx.getBean(ResourceLoadingUtils.class);
 
 		// read features file
-		JSONArray features =  resourceLoadingUtils.readJSON(FEATURES_FILE, JSONArray.class);
-		logger.info("Features "+FEATURES_FILE+ " loaded");
+		JSONArray features = resourceLoadingUtils.readJSON(FEATURES_FILE, JSONArray.class);
+		logger.info("Features " + FEATURES_FILE + " loaded");
 
-		
 		// send it to Solr
 		ltrClient.sendFeatures(features.toJSONString());
 		logger.info("Features sent to Solr");
 
-		
 		// build features to train from manual query evaluation
 		logger.info("Starting retrieving training entries");
-		List<TrainingEntry> validationEntries = null;
-		List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluation();
+		
+		
+		/**
+		 * ------------------------------------------
+		 * ------------------------------------------
+		 * Build Training and Validation entries here
+		 * 
+		 */
+		// in this exemple, we use query evaluation for training entries and click logs for validation
+		List<TrainingEntry> trainingEntries = trainingDataBuilder.retrieveTrainingEntriesFromQueryEvaluationWithNonEvaluatedDocument();
+		List<TrainingEntry> validationEntries = trainingDataBuilder.buildTrainingEntriesFromQueryClick();
+
+		if (SPLIT_TRAINING_DATA_FOR_VALIDATION) {
+			validationEntries = trainingEntries.subList((trainingEntries.size() + 1) / 2, trainingEntries.size());
+			trainingEntries = trainingEntries.subList(0, (trainingEntries.size() + 1) / 2);
+		}
+		/**
+		 * ------------------------------------------
+		 * ------------------------------------------
+		 */
+
 		logger.info("Training entries ready");
 
-		// serialize training entries to JSON in file
+		// Uncomment to serialize training entries to JSON in file
 		// resourceLoadingUtils.getObjectMapper().writer().writeValue(new File("D:\\mltest\\debugTraining.json"), trainingEntries);
 
-		
-		
 		// train the model (use all available training entries for training set)
 		logger.info("Starting to train the model");
-		
-		
-		//List<TrainingEntry> validationEntries = null;
-		if (SPLIT_TRAINING_DATA){
-			validationEntries = trainingEntries.subList((trainingEntries.size()+1)/2, trainingEntries.size());
-			trainingEntries = trainingEntries.subList(0, (trainingEntries.size()+1)/2);
-		}
-		
-		
+
+
 		JSONObject model = mLTrainer.train(trainingEntries, validationEntries, null, METRIC, nTrees, MODEL_NAME);
 		logger.info("Model successfully trained");
 
-		
 		// send model to Datafari
 		ltrClient.sendLtrObject(model.toJSONString(), MODEL_NAME, LTR_OBJECT_TYPE.model);
 		logger.info("Model sent to Solr");
-		
+
 		// close all
-		((ConfigurableApplicationContext)ctx).close();
+		((ConfigurableApplicationContext) ctx).close();
 
 	}
 }

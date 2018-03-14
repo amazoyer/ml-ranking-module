@@ -2,9 +2,9 @@ package com.datafari.ranking.training.spark;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.Function;
 
 import com.datafari.ranking.model.QueryDocumentClickStat;
@@ -37,7 +37,7 @@ public class SparkModelMapper {
 			Long totalClickForQuery = entry._2().values().stream().mapToLong(tuple -> tuple._2()._1()).sum();
 			return entry._2().entrySet().stream().filter(subEntry -> subEntry.getValue()._1().isPresent())
 					.map(subEntry -> new QueryDocumentClickStat(entry._1(), subEntry.getKey(),
-							subEntry.getValue()._2()._1(), subEntry.getValue()._2()._2(), totalClickForQuery))
+							subEntry.getValue()._2()._1(), subEntry.getValue()._2()._2(), totalClickForQuery, subEntry.getValue()._1().get()))
 					.collect(Collectors.toList());
 		}
 	};
@@ -61,9 +61,7 @@ public class SparkModelMapper {
 				Tuple2<String, Tuple2<Tuple3<String, String, Long>, Optional<Map<String, Double>>>> entry)
 				throws Exception {
 			Tuple3<String, String, Long> infoQuery = entry._2()._1();
-			Map<String, Double> features = entry._2()._2()
-					.orElseThrow(() -> new RuntimeException("Non present feature map should be filtered before"));
-			return new TrainingEntry(infoQuery._1(), infoQuery._2(), features,
+			return new TrainingEntry(infoQuery._1(), infoQuery._2(), entry._2()._2().get(),
 					TrainingEntryScoreCalculator.convertScoreFromEvaluationEntry(infoQuery._3()), "HUMAN_JUDGEMENT");
 		}
 	};
@@ -71,7 +69,7 @@ public class SparkModelMapper {
 	public static java.util.function.Function<QueryDocumentClickStat, TrainingEntry> buildTrainingEntryFromQueryClickStat = new java.util.function.Function<QueryDocumentClickStat, TrainingEntry>() {
 		@Override
 		public TrainingEntry apply(QueryDocumentClickStat queryDocumentStat) {
-			return new TrainingEntry(queryDocumentStat.getQuery(), queryDocumentStat.getDocumentID(), null,
+			return new TrainingEntry(queryDocumentStat.getQuery(), queryDocumentStat.getDocumentID(), queryDocumentStat.getFeatures(),
 					TrainingEntryScoreCalculator.buildScoreFromClickStat(queryDocumentStat), "QUERY_LOG");
 		}
 
